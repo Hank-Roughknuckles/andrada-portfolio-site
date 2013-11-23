@@ -1,4 +1,4 @@
 class AdministratorController < ApplicationController
-  def home
+  def control_panel
   end
 end
