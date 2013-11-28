@@ -1,5 +1,6 @@
 AndradaPortfolioSite::Application.routes.draw do
-  root 'administrator#control_panel'
+  devise_for :users
+  root to: 'administrator#control_panel'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
