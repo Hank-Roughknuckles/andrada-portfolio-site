@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Andrada Popan-Dorca</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<h1>Control Panel</h1>
+<ul>
+  <li><%= link_to 'About Me', {:controller => 'administrator', 
+                            :action => 'about_me'} %></li>
+  <li><%= link_to 'Showreel', {:controller => 'administrator', 
+                           :action => 'showreel'} %></li>
+  <li><%= link_to 'Works', {:controller => 'administrator', 
+                        :action => 'works'} %></li>
+  <li><%= link_to 'Current Projects', {:controller => 'administrator', 
+                                   :action => 'current_projects'} %></li>
+  <li><%= link_to 'Contact', {:controller => 'administrator', 
+                          :action => 'contact'} %></li>
+</ul>
+<%= yield %>
+
+</body>
+</html>
