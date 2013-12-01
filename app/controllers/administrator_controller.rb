@@ -1,5 +1,4 @@
 class AdministratorController < ApplicationController
-  layout "admin"
   def about_me
   end
 

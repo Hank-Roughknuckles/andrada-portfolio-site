@@ -1,40 +1,55 @@
+<% if request.path =~ /\/admin\// %>
+  <div id="border">
+<% else %>
+  <div id="envelope">
+<% end %>
     <div id="titlebar"></div>
 
     <ul class="navbar">
       <li><%= link_to 'About Me', 
-                      {:controller => 'administrator', 
-                       :action => 'about_me'}, 
-                      {:class => 
-                        ('selected' if request.path == "/admin/about_me")} 
-          %>
+        {
+          :controller => 
+            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+          :action => 'about_me'
+        }, 
+        { :class => ('selected' if request.path =~ /about_me/) } 
+        %>
       </li>
       <li><%= link_to 'Showreel', 
-                      {:controller => 'administrator', 
-                       :action => 'showreel'}, 
-                      {:class => 
-                        ('selected' if request.path == "/admin/showreel")} 
-          %>
+        {
+          :controller => 
+            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+          :action => 'showreel'
+        }, 
+        { :class => ('selected' if request.path =~ /showreel/) } 
+        %>
       </li>
       <li><%= link_to 'Works', 
-                      {:controller => 'administrator', 
-                       :action => 'works'}, 
-                      {:class => 
-                        ('selected' if request.path == "/admin/works")} 
-          %>
+        {
+          :controller => 
+            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+          :action => 'works'
+        }, 
+        { :class => ('selected' if request.path =~ /works/) } 
+        %>
       </li>
       <li><%= link_to 'Current Projects', 
-                      {:controller => 'administrator', 
-                       :action => 'current_projects'}, 
-                      {:class => 
-                       ('selected' if request.path == 
-                                        "/admin/current_projects")} 
-          %>
+        {
+          :controller => 
+            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+          :action => 'current_projects'
+        }, 
+        { :class => ('selected' if request.path =~ /current_projects/) } 
+        %>
       </li>
       <li><%= link_to 'Contact', 
-                      {:controller => 'administrator', 
-                       :action => 'contact'}, 
-                      {:class => 
-                        ('selected' if request.path == "/admin/contact")} 
-          %>
+        {
+          :controller => 
+            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+          :action => 'contact'
+        }, 
+        { :class => ('selected' if request.path =~ /contact/) } 
+        %>
       </li>
     </ul>
+  </div>
