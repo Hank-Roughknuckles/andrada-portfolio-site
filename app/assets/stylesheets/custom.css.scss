@@ -1,0 +1,75 @@
+@import "bootstrap";
+
+$background_tan: #f2e9d8;
+$charcoal_grey: #464646;
+$selected_blue: #8094a6;
+
+@font-face
+{
+  font-family: 'fauna-one';
+  src: font-url('FaunaOne-Regular.ttf');
+}
+
+body{
+  background-color: $background_tan;
+  color: $charcoal_grey;
+  font-family: 'fauna-one';
+
+  .container
+  {
+    h1 
+    {
+      margin-bottom: 20px;
+    }
+  }
+
+  .emphasis
+  {
+    color: $selected_blue;
+  }
+
+  #envelope
+  {
+    border: black 1px dotted;
+    padding-bottom: 60px;
+  }
+
+  #titlebar
+  {
+    background: url("Andrada_Popan_Dorca_titlebar.png");
+    width: 685px;
+    height: 144px;
+  }
+
+  .navbar
+  {
+    margin-left: 63px;
+
+    li
+    {
+      float:left;
+      list-style-type:none;
+    }
+
+    a
+    {
+      font-size: 133%;
+      color: #464646;
+      display: block;
+      margin: 5px auto;
+      padding: 0px 41px;
+      max-width: 185px;
+      &:hover
+      {
+        color: $selected_blue;
+        text-decoration: none;
+      }
+    }
+
+    .selected
+    {
+      color: $selected_blue;
+    }
+  }
+}
+    

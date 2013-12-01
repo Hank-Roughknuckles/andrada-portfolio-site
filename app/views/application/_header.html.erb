@@ -1,0 +1,40 @@
+    <div id="titlebar"></div>
+
+    <ul class="navbar">
+      <li><%= link_to 'About Me', 
+                      {:controller => 'administrator', 
+                       :action => 'about_me'}, 
+                      {:class => 
+                        ('selected' if request.path == "/admin/about_me")} 
+          %>
+      </li>
+      <li><%= link_to 'Showreel', 
+                      {:controller => 'administrator', 
+                       :action => 'showreel'}, 
+                      {:class => 
+                        ('selected' if request.path == "/admin/showreel")} 
+          %>
+      </li>
+      <li><%= link_to 'Works', 
+                      {:controller => 'administrator', 
+                       :action => 'works'}, 
+                      {:class => 
+                        ('selected' if request.path == "/admin/works")} 
+          %>
+      </li>
+      <li><%= link_to 'Current Projects', 
+                      {:controller => 'administrator', 
+                       :action => 'current_projects'}, 
+                      {:class => 
+                       ('selected' if request.path == 
+                                        "/admin/current_projects")} 
+          %>
+      </li>
+      <li><%= link_to 'Contact', 
+                      {:controller => 'administrator', 
+                       :action => 'contact'}, 
+                      {:class => 
+                        ('selected' if request.path == "/admin/contact")} 
+          %>
+      </li>
+    </ul>
