@@ -9,7 +9,7 @@
       <li><%= link_to 'About Me', 
         {
           :controller => 
-            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+            request.path =~ /\/admin\// ? 'admin' : 'guest', 
           :action => 'about_me'
         }, 
         { :class => ('selected' if request.path =~ /about_me/) } 
@@ -18,7 +18,7 @@
       <li><%= link_to 'Showreel', 
         {
           :controller => 
-            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+            request.path =~ /\/admin\// ? 'admin' : 'guest', 
           :action => 'showreel'
         }, 
         { :class => ('selected' if request.path =~ /showreel/) } 
@@ -27,7 +27,7 @@
       <li><%= link_to 'Works', 
         {
           :controller => 
-            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+            request.path =~ /\/admin\// ? 'admin' : 'guest', 
           :action => 'works'
         }, 
         { :class => ('selected' if request.path =~ /works/) } 
@@ -36,7 +36,7 @@
       <li><%= link_to 'Current Projects', 
         {
           :controller => 
-            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+            request.path =~ /\/admin\// ? 'admin' : 'guest', 
           :action => 'current_projects'
         }, 
         { :class => ('selected' if request.path =~ /current_projects/) } 
@@ -45,7 +45,7 @@
       <li><%= link_to 'Contact', 
         {
           :controller => 
-            request.path =~ /\/admin\// ? 'administrator' : 'guest', 
+            request.path =~ /\/admin\// ? 'admin' : 'guest', 
           :action => 'contact'
         }, 
         { :class => ('selected' if request.path =~ /contact/) } 

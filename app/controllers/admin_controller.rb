@@ -1,4 +1,4 @@
-class AdministratorController < ApplicationController
+class AdminController < ApplicationController
   def about_me
   end
 
