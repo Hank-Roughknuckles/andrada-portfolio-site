@@ -1,6 +1,12 @@
 AndradaPortfolioSite::Application.routes.draw do
   devise_for :users
-  root to: 'administrator#about_me'
+  root to: 'guest#about_me'
+
+  get 'guest/about_me' => 'guest#about_me'
+  get 'guest/showreel' => 'guest#showreel'
+  get 'guest/works' => 'guest#works'
+  get 'guest/current_projects' => 'guest#current_projects'
+  get 'guest/contact' => 'guest#contact'
 
   get 'admin/about_me' => 'administrator#about_me'
   get 'admin/showreel' => 'administrator#showreel'
