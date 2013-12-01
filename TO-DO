@@ -1,0 +1,4 @@
+TO-DO
+=====
+
+want to modify the routes to where they automatically point to the 'admin' controller, etc.  want to make it cleaner.  If possible, it would be good to make it to where if I changed the name of the controller or action or something, the links in the navbar would still point to the same place
