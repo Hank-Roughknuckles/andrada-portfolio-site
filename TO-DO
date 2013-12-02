@@ -6,3 +6,5 @@ Make model/table for about_me.  it will have rows for each page on the carousel.
 center navbar within the home screen
 
 make login for admin
+
+get rid of the styling for the devise div at the top of the page (notice and alert classes)
