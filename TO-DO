@@ -1,4 +1,8 @@
 TO-DO
 =====
 
-want to modify the routes to where they automatically point to the 'admin' controller, etc.  want to make it cleaner.  If possible, it would be good to make it to where if I changed the name of the controller or action or something, the links in the navbar would still point to the same place
+Make model/table for about_me.  it will have rows for each page on the carousel.  table columns will be header, picture, description, button-title (for what the next button on other carousel pages will say to navigate to this carousel page)
+
+center navbar within the home screen
+
+make login for admin
