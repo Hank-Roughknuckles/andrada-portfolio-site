@@ -8,11 +8,7 @@ AndradaPortfolioSite::Application.routes.draw do
   get '/current_projects' => 'guest#current_projects'
   get '/contact' => 'guest#contact'
 
-  get 'admin/about_me' => 'admin#about_me'
-  get 'admin/showreel' => 'admin#showreel'
-  get 'admin/works' => 'admin#works'
-  get 'admin/current_projects' => 'admin#current_projects'
-  get 'admin/contact' => 'admin#contact'
+  get ':controller/:action'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
