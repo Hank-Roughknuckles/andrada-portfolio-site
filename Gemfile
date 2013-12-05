@@ -9,6 +9,9 @@ gem 'sass-rails', '~> 4.0.0'
 #Paperclip for the user to upload files
 gem 'paperclip'
 
+#Rambling slider for image carousel
+# gem 'rambling-slider-rails', :git => 'https://github.com/gonzedge/rambling-slider-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
