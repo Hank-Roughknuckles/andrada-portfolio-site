@@ -8,6 +8,7 @@ AndradaPortfolioSite::Application.routes.draw do
   get '/current_projects' => 'guest#current_projects'
   get '/contact' => 'guest#contact'
 
+  #useful for linking to the admin/[page_name] pages
   get ':controller/:action'
 
   # The priority is based upon order of creation: first created -> highest priority.
