@@ -1,10 +1,8 @@
 AndradaPortfolioSite::Application.routes.draw do
   devise_for :users
-  root to: 'guest#about_me'
+  root to: 'about_me_contents#show'
 
-  namespace 'admin' do
-    resources :about_me_contents
-  end
+  resource :about_me_content
 
   get '/about_me' => 'guest#about_me'
   get '/showreel' => 'guest#showreel'
