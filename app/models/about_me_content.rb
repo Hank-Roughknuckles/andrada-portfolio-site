@@ -1,3 +1,3 @@
 class AboutMeContent < ActiveRecord::Base
-  has_attachment: background_image
+  # has_attachment: background_image
 end
