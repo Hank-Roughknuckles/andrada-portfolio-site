@@ -6,11 +6,11 @@ gem 'rails', '4.0.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Twitter bootstrap
+gem 'bootstrap-sass'
+
 #Paperclip for the user to upload files
 gem 'paperclip'
-
-#For help with debugging
-gem 'debugger'
 
 #Rambling slider for image carousel
 # gem 'rambling-slider-rails', :git => 'https://github.com/gonzedge/rambling-slider-rails'

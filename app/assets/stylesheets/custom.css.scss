@@ -15,6 +15,12 @@ body{
   color: $charcoal_grey;
   font-family: 'fauna-one';
 
+  .notice, .alert
+  {
+    background-color: $background_tan;
+    border: 0;
+  }
+
   .container
   {
     h1 
