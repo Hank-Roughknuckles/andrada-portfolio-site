@@ -2,6 +2,7 @@ class AboutMeContentsController < ApplicationController
   before_filter :authorize, :except => :index
 
   def index
+    @count = AboutMeContent.count
     @contents = AboutMeContent.all
   end
 

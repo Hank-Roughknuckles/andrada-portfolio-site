@@ -3,8 +3,23 @@
     <% if admin? %>
     <%= link_to "Edit", edit_about_me_content_path(content) %>
     <% end %>
-    <%= content.button_title %>
-    <%= content.header %>
-    <%= content.description %>
+
+    <div class="slide-header">
+      <%= content.header %>
+    </div>
+
+    <div class="slide-description">
+      <%= content.description %>
+    </div>
+
+    <% left_slide = AboutMeContent.find((content.id - 1) % @count) %>
+    <div class="slide-button button-left">
+      <%= left_slide.button_title %>
+    </div>
+
+    <% right_slide = AboutMeContent.find((content.id + 1) % @count) %>
+    <div class="slide-button button-right">
+      <%= right_slide.button_title %>
+    </div>
   </div>
 <% end %>
