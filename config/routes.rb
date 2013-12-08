@@ -2,7 +2,7 @@ AndradaPortfolioSite::Application.routes.draw do
   devise_for :users
   root to: 'about_me_contents#show'
 
-  resource :about_me_content
+  resources :about_me_contents, path: "about_me"
 
   get '/about_me' => 'guest#about_me'
   get '/showreel' => 'guest#showreel'

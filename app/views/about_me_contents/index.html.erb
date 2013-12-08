@@ -1,6 +1,6 @@
 <% for content in @contents %>
   <div class="slide">
-    <%= link_to "Edit", edit_about_me_path(content) %>
+    <%= link_to "Edit", edit_about_me_content_path(content) %>
     <%= content.button_title %>
     <%= content.header %>
     <%= content.description %>

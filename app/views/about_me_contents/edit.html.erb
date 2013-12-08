@@ -1,0 +1,10 @@
+<%= form_for @content do |f| %>
+  <%= f.label :background_image %>
+  <%# insert bg adder here %>
+
+  <%= f.text_field :header %>
+  <%= f.text_field :description %>
+  <%= f.text_field :button_title %>
+
+  <%= f.submit "Save" %>
+<% end %>

@@ -1,13 +1,24 @@
 class AboutMeContentsController < ApplicationController
-  def show
+  def index
     @contents = AboutMeContent.all
   end
 
   def edit
+    @content = AboutMeContent.find(params[:id])
+  end
+
+  def content_params
+    # TODO: add background image to this list
+    params.require(:about_me_content).permit(:header, :description, :button_title)
   end
 
   def update
-    id = AboutMeContent.find_by(header: params[:about_me_content][:header])
-    redirect_to("/about_me_content/edit/" + @about_me_content.id)
+    @content = AboutMeContent.find(params[:id])
+    if @content.update_attributes content_params
+      @contents = AboutMeContent.all
+      redirect_to action: "index"
+    else
+      render 'edit'
+    end
   end
 end
