@@ -1,15 +1,13 @@
 TO-DO
 =====
 
-Make model/table for about_me.  it will have rows for each page on the carousel.  table columns will be header, picture, description, button-title (for what the next button on other carousel pages will say to navigate to this carousel page)
+Change authentication in application_controller to check to see if the user matches what is in the db
 
 when something is changed without saving on the admin page, make a popup appear that says "You have made changes, but have not saved them.  Click the "Save" button at the bottom
 
 Make the background picture loader automatically reload the background image when an image is selected
 
 center navbar within the home screen
-
-make login for admin
 
 get rid of the styling for the devise div at the top of the page (notice and alert classes)
 
