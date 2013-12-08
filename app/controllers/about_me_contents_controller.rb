@@ -1,4 +1,6 @@
 class AboutMeContentsController < ApplicationController
+  before_filter :authorize, :except => :index
+
   def index
     @contents = AboutMeContent.all
   end

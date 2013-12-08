@@ -1,6 +1,8 @@
 <% for content in @contents %>
   <div class="slide">
+    <% if admin? %>
     <%= link_to "Edit", edit_about_me_content_path(content) %>
+    <% end %>
     <%= content.button_title %>
     <%= content.header %>
     <%= content.description %>
