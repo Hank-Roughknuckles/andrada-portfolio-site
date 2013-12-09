@@ -1,25 +1,37 @@
 <% for content in @contents %>
+
   <div class="slide">
-    <% if admin? %>
-    <%= link_to "Edit", edit_about_me_content_path(content) %>
-    <% end %>
 
-    <div class="slide-header">
-      <%= content.header %>
-    </div>
+    <div class="slide-box description-box">
+      <div class="slide-header">
+        <%= content.header %>
+      </div>
 
-    <div class="slide-description">
-      <%= content.description %>
+      <div class="slide-description">
+        <%= content.description %>
+      </div>
     </div>
 
     <% left_slide = AboutMeContent.find((content.id - 1) % @count) %>
-    <div class="slide-button button-left">
-      <%= left_slide.button_title %>
+    <div class="direction-button">
+      <div class="left-arrow"><</div>
+      <div class="left-button-text">
+        <%= left_slide.button_title %>
+      </div>
     </div>
 
     <% right_slide = AboutMeContent.find((content.id + 1) % @count) %>
-    <div class="slide-button button-right">
-      <%= right_slide.button_title %>
+    <div class="direction-button">
+      <div class="right-button-text">
+        <%= right_slide.button_title %>
+      </div>
+      <div class="arrow-button right-arrow">></div>
     </div>
+
   </div>
+
+  <% if admin? %>
+  <%= link_to "Edit", edit_about_me_content_path(content) %>
+  <% end %>
+
 <% end %>

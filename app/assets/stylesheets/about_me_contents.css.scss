@@ -3,3 +3,110 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap";
+
+@font-face
+{
+  font-family: 'Khmer';
+  src: font-url('KhmerUI.ttf')
+}
+
+.slide
+{
+  border: black 1px solid;
+  margin-top: 90px;
+  height: 452px;
+  width: 944px;
+
+  .slide-box, .direction-button
+  {
+    background: rgb(0,0,0);
+    opacity: 0.55;
+    color: #f2e9d8;
+  }
+
+  .description-box
+  {
+    margin-top: 24px;
+    margin-left: 81px;
+    margin-right: 10px;
+    max-width: 385px;
+    height: 410px;
+    border-radius: 15px;
+    overflow:auto;
+    float: left;
+  }
+
+  .slide-header
+  {
+    font-size: 25px;
+    margin-left: 14px;
+    margin-top: 27px;
+  }
+
+  .slide-description
+  {
+    margin-top: 20px;
+    margin-left: 48px;
+    margin-right: 12px;
+    max-width: 236px;
+  }
+
+
+  // Buttons
+
+  $arrow-outside-padding: 10px;
+
+  .direction-button
+  {
+    font-size: 25px;  
+    font-family: 'Khmer';
+    margin-top: 382px;
+    margin-right: 10px;
+    float: left;
+    height: 50px;
+    width: 235px;
+    border-radius: 5px;
+  }
+
+  // All stuff regarding buttons
+  .left-button-text, .right-button-text, .left-arrow, .right-arrow
+  {
+    float: left;
+    padding-top: 13px;
+  }
+
+  //stuff only pertaining to the arrows inside the buttons
+  .left-arrow, .right-arrow
+  {
+    width: 30px;
+    overflow: hidden;
+  }
+
+  //stuff only pertaining to the text inside the buttons
+  .left-button-text, .right-button-text
+  {
+    text-align: center;
+    width: 165px;
+  }
+
+  .left-arrow
+  {
+    padding-left: $arrow-outside-padding;
+  }
+
+  .right-arrow
+  {
+    padding-left: 5px;
+    margin-left: 5px;
+  }
+
+  .left-button-text
+  {
+    margin-right: 10px;
+  }
+
+  .right-button-text
+  {
+    margin-left: 30px;
+  }
+}
