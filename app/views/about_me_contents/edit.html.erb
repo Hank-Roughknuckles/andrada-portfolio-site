@@ -1,10 +1,15 @@
-<%= form_for @content do |f| %>
-  <%= f.label :background_image %>
-  <%# insert bg adder here %>
+<%= form_for @content, :html => {:multipart => true} do |f| %>
+  <div>
+    <%= image_tag @content.background_image.url %>
+    <%= f.label :background_image %>
+    <%= f.file_field :background_image %>
+  </div>
 
-  <%= f.text_field :header, placeholder: "Header" %>
-  <%= f.text_field :description, placeholder: "Description" %>
-  <%= f.text_field :button_title, placeholder: "Button Title" %>
+  <div><%= f.text_field :header, placeholder: "Header" %></div>
+  <div><%= f.text_field :description, placeholder: "Description" %></div>
+  <div>
+    <%= f.text_field :button_title, placeholder: "Button Title" %>
+  </div>
 
   <%= f.submit "Save" %>
 <% end %>

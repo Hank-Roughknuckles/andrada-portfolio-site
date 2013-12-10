@@ -1,5 +1,6 @@
 class AboutMeContentsController < ApplicationController
   before_filter :authorize, :except => :index
+  helper_method :all_contents
 
   def index
     @count = AboutMeContent.count
@@ -11,8 +12,11 @@ class AboutMeContentsController < ApplicationController
   end
 
   def content_params
-    # TODO: add background image to this list
-    params.require(:about_me_content).permit(:header, :description, :button_title)
+    params.require(:about_me_content).permit(:background_image, :header, :description, :button_title)
+  end
+
+  def all_contents
+    AboutMeContent.all
   end
 
   def update

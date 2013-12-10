@@ -10,7 +10,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 
 #Paperclip for the user to upload files
-gem 'paperclip'
+gem 'paperclip', "~> 3.0"
 
 #Rambling slider for image carousel
 # gem 'rambling-slider-rails', :git => 'https://github.com/gonzedge/rambling-slider-rails'

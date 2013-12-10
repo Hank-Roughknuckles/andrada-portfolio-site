@@ -168,7 +168,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
-  paperclip
+  paperclip (~> 3.0)
   rails (= 4.0.1)
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.0)
