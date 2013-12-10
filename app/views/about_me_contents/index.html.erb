@@ -1,8 +1,6 @@
 <% for content in @contents %>
 
-  <%= image_tag content.background_image.url %>
-
-  <div class="slide">
+  <div class="slide" style="<%= get_slide_background_css content.id %>;">
 
     <div class="slide-box description-box">
       <div class="slide-header">
