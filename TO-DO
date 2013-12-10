@@ -3,6 +3,8 @@ TO-DO
 
 Make uploaded image appear on the "edit" page before user selects save
 
+Set up heroku
+
 Change authentication in application_controller to check to see if the user matches what is in the db
 
 when something is changed without saving on the admin page, make a popup appear that says "You have made changes, but have not saved them.  Click the "Save" button at the bottom
