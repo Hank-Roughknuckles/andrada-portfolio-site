@@ -5,7 +5,7 @@ describe "AboutMePages" do
   subject{ page }
 
   describe "'About Me' Page" do
-    it { should have_content 'Sample App' }
-    
+    before { visit root_path }
+    it { should have_title 'Andrada Popan-Dorca' }
   end
 end
