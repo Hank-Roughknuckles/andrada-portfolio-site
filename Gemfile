@@ -40,7 +40,9 @@ group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem "spork", "> 0.9.0.rc"
   gem 'guard-rspec'
+  gem "guard-spork"
 end
 
 group :test do
