@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :admin?
 
-
   protected
 
   def authorize
@@ -17,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    if session[:user_type] == "admin"
+    if user_signed_in?
       return true
     else
       return false

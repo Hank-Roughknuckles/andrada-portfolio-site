@@ -31,7 +31,7 @@
 
   </div>
 
-  <% if admin? %>
+  <% if user_signed_in? %>
   <%= link_to "Edit", edit_about_me_content_path(content) %>
   <% end %>
 

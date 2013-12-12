@@ -17,14 +17,15 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <% if request.path =~ /\/admin\// %>
-    <h1>Control Panel - Edit the <span class="emphasis">'<%=
-      yield(:page_title) %>'</span> page</h1> 
+  <% if user_signed_in? %>
+    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
   <% end %>
 
-    <%= render 'header' %>
-    <%= yield %>
-    </div> <%# END border (or envelope) div from the _header partial %>
+  <%= render 'header' %>
+  <%= yield %>
+  </div> <%# END border (or envelope) div from the _header partial %>
 </div>
 </body>
 </html>
