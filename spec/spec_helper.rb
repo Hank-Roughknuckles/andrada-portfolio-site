@@ -34,12 +34,22 @@ Spork.prefork do
 
     config.order = "random"
     config.include Capybara::DSL
+
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :truncation
+    end
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
   end
 end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
-
+  FactoryGirl.reload
 end
 
 # --- Instructions ---
