@@ -25,7 +25,6 @@ describe "AboutMePages" do
     before do
       add_content
       visit root_path
-      # print page.html
     end
 
     it { should have_content "Edit" }

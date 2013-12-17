@@ -52,3 +52,7 @@
         %>
       </li>
     </ul>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Edit Navigation Bar', root_path %>
+    <% end %>
