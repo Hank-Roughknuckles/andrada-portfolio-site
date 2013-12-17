@@ -8,18 +8,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def authorize
-    unless admin?
-      flash[:error] = "unauthorized access"
+    unless user_signed_in?
+      flash[:alert] = "Unauthorized access! Please log in first."
       redirect_to root_path
       false
-    end
-  end
-
-  def admin?
-    if user_signed_in?
-      return true
-    else
-      return false
     end
   end
 end
