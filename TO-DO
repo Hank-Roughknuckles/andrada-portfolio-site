@@ -1,6 +1,8 @@
 TO-DO
 =====
 
+Make clicking the andrada popan-dorca picture take the user to the home page
+
 Make uploaded image appear on the "edit" page before user selects save
 
 when something is changed without saving on the admin page, make a popup appear that says "You have made changes, but have not saved them.  Click the "Save" button at the bottom
