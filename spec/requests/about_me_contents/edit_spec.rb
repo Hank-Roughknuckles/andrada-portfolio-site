@@ -4,6 +4,7 @@ describe "EditAboutMeContents" do
 
   subject{ page }
   let(:about_me_content) { FactoryGirl.create :about_me_content }
+  let(:nav_item) { FactoryGirl.create :nav_item }
   let(:user) { FactoryGirl.create :user }
 
   before do
@@ -13,7 +14,6 @@ describe "EditAboutMeContents" do
   describe "Edit Page" do
     before do 
       visit edit_about_me_content_path about_me_content.id
-      # print page.html
     end
 
     describe "page contents" do

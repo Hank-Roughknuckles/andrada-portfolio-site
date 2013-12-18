@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212172217) do
+ActiveRecord::Schema.define(version: 20131217073924) do
 
   create_table "about_me_contents", force: true do |t|
     t.string   "header"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20131212172217) do
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
+  end
+
+  create_table "nav_items", force: true do |t|
+    t.string   "link_1_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "link_2_name"
+    t.string   "link_3_name"
+    t.string   "link_4_name"
+    t.string   "link_5_name"
   end
 
   create_table "users", force: true do |t|

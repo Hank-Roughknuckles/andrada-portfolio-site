@@ -14,3 +14,14 @@ FactoryGirl.define do
   end
 end
 
+FactoryGirl.define do
+  factory :nav_item do
+    id "0"
+    link_1_name "About Me"
+    link_2_name "Showreel"
+    link_3_name "Works"
+    link_4_name "Current Projects"
+    link_5_name "Contact"
+  end
+end
+

@@ -13,6 +13,7 @@ end
 describe "AboutMePages" do
 
   let(:about_me_content) { FactoryGirl.create :about_me_content }
+  let(:nav_item) { FactoryGirl.create :nav_item }
   let(:user) { FactoryGirl.create :user }
 
   subject{ page }

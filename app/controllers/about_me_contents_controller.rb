@@ -13,7 +13,7 @@ class AboutMeContentsController < ApplicationController
 
   def update
     @content = AboutMeContent.find(params[:id])
-    if @content.update_attributes content_params
+    if @content.update_attributes! content_params
       @contents = AboutMeContent.all
       redirect_to action: "index"
     else
