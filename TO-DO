@@ -1,6 +1,8 @@
 TO-DO
 =====
 
+Make the nav-bar auto adjust spacing based on size of elements so that the navbar always ONLY takes up one line
+
 Make clicking the andrada popan-dorca picture take the user to the home page
 
 Make uploaded image appear on the "edit" page before user selects save
