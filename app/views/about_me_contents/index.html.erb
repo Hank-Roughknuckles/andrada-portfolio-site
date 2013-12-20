@@ -1,3 +1,5 @@
+<% provide( :title, "About Me" ) %>
+
 <ul class="slider">
   <% for content in @contents %>
   <li class="slide" style="<%= get_slide_background_css content.id %>;">
