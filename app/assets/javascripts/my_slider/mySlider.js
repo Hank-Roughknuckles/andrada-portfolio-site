@@ -2,7 +2,7 @@ $(function(){
 
   var slides = $(".slide");
   var currentIndex = 0;
-  var fadeTime = 500; //the time to fade in and out (in ms)
+  var fadeTime = 700; //the time to fade in and out (in ms)
 
   //fade out all except the first slide
   slides.each(function( idx, element ){
