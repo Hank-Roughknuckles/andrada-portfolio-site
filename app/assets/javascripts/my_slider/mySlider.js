@@ -2,14 +2,15 @@ $(function(){
 
   var slides = $(".slide");
   var currentIndex = 0;
+  var fadeTime = 500; //the time to fade in and out (in ms)
 
-  // //fade out all except the first slide
-  // slides.each(function( idx, element ){
-  //   var slide = $(element);
-  //   if (slide.index() != 0) {
-  //     slide.fadeOut();
-  //   }
-  // });
+  //fade out all except the first slide
+  slides.each(function( idx, element ){
+    var slide = $(element);
+    if (slide.index() != 0) {
+      slide.fadeOut();
+    }
+  });
 
 
   /**
@@ -19,8 +20,8 @@ $(function(){
    *  targetIndex
    */
   function changeToSlide( targetIndex ) {
-    slides.eq(currentIndex).fadeOut(300);
-    slides.eq(targetIndex).fadeIn(300);
+    slides.eq(currentIndex).fadeOut(fadeTime);
+    slides.eq(targetIndex).fadeIn(fadeTime);
     currentIndex = targetIndex;
   }
   
