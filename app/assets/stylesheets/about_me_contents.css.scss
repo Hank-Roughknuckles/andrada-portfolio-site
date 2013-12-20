@@ -10,16 +10,17 @@
   src: font-url('KhmerUI.ttf')
 }
 
-li.slide
+.slider
 {
-  list-style-type:none;
+  margin: 0px;
 }
 
 .slide
 {
+  list-style-type:none;
   position: absolute;
   border: black 1px solid;
-  margin-top: 90px;
+  margin-top: 20px;
   height: 452px;
   width: 944px;
 
@@ -153,4 +154,12 @@ li.slide
   {
     margin-left: 30px;
   }
+}
+
+.spacer
+{
+  height: 50px;
+  margin: 454px 0 0 0;
+  /* margin: 20px 0 -50px 0; use this if you want #container to have a 'bottom padding', in this case of 20px */
+  // background: transparent; /* you'll need this if #container's parent element has a different background from #container itself */
 }
