@@ -31,6 +31,11 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <% if user_signed_in? %>
+    <div class="edit-navbar">
+      <%= link_to 'Edit Navigation Bar', edit_nav_item_path(1) %>
+    </div>
+  <% end %>
 </div>
 </body>
 </html>

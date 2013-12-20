@@ -1,11 +1,5 @@
 <% provide( :title, "About Me" ) %>
 
-<% if user_signed_in? %>
-  <span class="edit-content">
-    <%= link_to "Edit Slider Content", edit_about_me_content_path(0) %>
-  </span>
-<% end %>
-
 <ul class="slider">
   <% for content in @contents %>
   <li class="slide" style="<%= get_slide_background_css content.id %>;">
@@ -46,4 +40,10 @@
   </li>
   <% end %>
 </ul>
+
+<% if user_signed_in? %>
+  <span class="edit-content">
+    <%= link_to "Edit Slider Content", edit_about_me_content_path(0) %>
+  </span>
+<% end %>
 <div class="spacer"></div><!-- to add space below the absolutely positioned slider -->
