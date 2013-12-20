@@ -18,6 +18,7 @@ body{
   .notice, .alert
   {
     background-color: $background_tan;
+    float:left;
     border: 0;
   }
 
@@ -76,6 +77,12 @@ body{
     {
       color: $selected_blue;
     }
+  }
+
+  .sign-in
+  {
+    float: right;
+    margin-bottom: 10px;
   }
 }
     
