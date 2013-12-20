@@ -55,8 +55,8 @@
       </li>
     </ul>
 
-    <div class="edit-link">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <span class="edit-navbar">
         <%= link_to 'Edit Navigation Bar', edit_nav_item_path(1) %>
-      <% end %>
-    </div>
+      </span>
+    <% end %>
