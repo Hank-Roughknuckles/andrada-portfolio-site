@@ -1,6 +1,8 @@
 TO-DO
 =====
 
+change cursor when over slider buttons to be the finger pointing (like when you mouse over a link)
+
 change edit button to make it edit all about-me content
 
 Make the nav-bar auto adjust spacing based on size of elements so that the navbar always ONLY takes up one line
