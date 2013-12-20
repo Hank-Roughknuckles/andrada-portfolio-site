@@ -10,24 +10,67 @@
   src: font-url('KhmerUI.ttf')
 }
 
+li.slide
+{
+  list-style-type:none;
+}
+
 .slide
 {
+  position: absolute;
   border: black 1px solid;
   margin-top: 90px;
   height: 452px;
   width: 944px;
 
+  .frame
+  {
+    height: 454px;
+    width: 60px;
+    background-color: rgba(28,28,28,0.3);
+  }
+
+  .frame-left
+  {
+    float:left;
+  }
+
+  .frame-right
+  {
+    float:right;
+  }
+
+  .frame-arrow
+  {
+    margin-top: 215px;
+    margin-left: 15px;
+    border-radius: 15px;
+    font-size: 30px;
+    background-color: #959595;
+    opacity: 1;
+    color: #d1d1d1;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+  }
+
+  .frame-button-right
+  {
+    float: right;
+  }
+
   .slide-box, .direction-button
   {
-    background: rgb(0,0,0);
-    opacity: 0.55;
+    background: rgba(0,0,0,0.55);
     color: #f2e9d8;
   }
 
   .description-box
   {
     margin-top: 24px;
-    margin-left: 81px;
+    margin-left: 22px;
     margin-right: 10px;
     max-width: 385px;
     height: 410px;
