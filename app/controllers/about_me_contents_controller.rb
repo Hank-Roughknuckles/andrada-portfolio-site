@@ -7,6 +7,10 @@ class AboutMeContentsController < ApplicationController
     @contents = AboutMeContent.all
   end
 
+  def admin_index
+    @contents = AboutMeContent.all
+  end
+
   def edit
     @content = AboutMeContent.find(params[:id])
   end
