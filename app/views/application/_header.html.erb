@@ -3,54 +3,56 @@
 <% else %>
   <div id="envelope">
 <% end %>
-    <div id="titlebar"></div> <!-- The image of Andrada's name -->
+  <div id="titlebar">
+    <%= link_to image_tag("Andrada_Popan_Dorca_titlebar.png"), root_path %>
+  </div>
 
-    <% nav = NavItem.first %>
+  <% nav = NavItem.first %>
 
-    <ul class="navbar">
-      <li><%= link_to nav.link_1_name, 
-        {
-          :controller => 
-            request.path =~ /\/admin\// ? 'admin' : 'guest', 
-          :action => 'about_me'
-        }, 
-        { :class => ('selected' if request.path =~ /about_me/) } 
-        %>
-      </li>
-      <li><%= link_to nav.link_2_name, 
-        {
-          :controller => 
-            request.path =~ /\/admin\// ? 'admin' : 'guest', 
-          :action => 'showreel'
-        }, 
-        { :class => ('selected' if request.path =~ /showreel/) } 
-        %>
-      </li>
-      <li><%= link_to nav.link_3_name, 
-        {
-          :controller => 
-            request.path =~ /\/admin\// ? 'admin' : 'guest', 
-          :action => 'works'
-        }, 
-        { :class => ('selected' if request.path =~ /works/) } 
-        %>
-      </li>
-      <li><%= link_to nav.link_4_name, 
-        {
-          :controller => 
-            request.path =~ /\/admin\// ? 'admin' : 'guest', 
-          :action => 'current_projects'
-        }, 
-        { :class => ('selected' if request.path =~ /current_projects/) } 
-        %>
-      </li>
-      <li><%= link_to nav.link_5_name, 
-        {
-          :controller => 
-            request.path =~ /\/admin\// ? 'admin' : 'guest', 
-          :action => 'contact'
-        }, 
-        { :class => ('selected' if request.path =~ /contact/) } 
-        %>
-      </li>
-    </ul>
+  <ul class="navbar">
+    <li><%= link_to nav.link_1_name, 
+      {
+        :controller => 
+          request.path =~ /\/admin\// ? 'admin' : 'guest', 
+        :action => 'about_me'
+      }, 
+      { :class => ('selected' if request.path =~ /about_me/) } 
+      %>
+    </li>
+    <li><%= link_to nav.link_2_name, 
+      {
+        :controller => 
+          request.path =~ /\/admin\// ? 'admin' : 'guest', 
+        :action => 'showreel'
+      }, 
+      { :class => ('selected' if request.path =~ /showreel/) } 
+      %>
+    </li>
+    <li><%= link_to nav.link_3_name, 
+      {
+        :controller => 
+          request.path =~ /\/admin\// ? 'admin' : 'guest', 
+        :action => 'works'
+      }, 
+      { :class => ('selected' if request.path =~ /works/) } 
+      %>
+    </li>
+    <li><%= link_to nav.link_4_name, 
+      {
+        :controller => 
+          request.path =~ /\/admin\// ? 'admin' : 'guest', 
+        :action => 'current_projects'
+      }, 
+      { :class => ('selected' if request.path =~ /current_projects/) } 
+      %>
+    </li>
+    <li><%= link_to nav.link_5_name, 
+      {
+        :controller => 
+          request.path =~ /\/admin\// ? 'admin' : 'guest', 
+        :action => 'contact'
+      }, 
+      { :class => ('selected' if request.path =~ /contact/) } 
+      %>
+    </li>
+  </ul>
