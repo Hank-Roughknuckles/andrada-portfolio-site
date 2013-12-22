@@ -1,6 +1,8 @@
 TO-DO
 =====
 
+Make the edit page for each slide actually display the content slide in the edit page so she can see what it looks like without having to save and go to the home page
+
 make method for title that will display just "Andrada Popan-Dorca" if no title is yielded by the page
 
 change cursor when over slider buttons to be the finger pointing (like when you mouse over a link)
