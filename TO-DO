@@ -2,6 +2,8 @@ TO-DO
 =====
 
 Make the edit page for each slide actually display the content slide in the edit page so she can see what it looks like without having to save and go to the home page
+  -Use JS to automatically update the content on the about_me_contents/edit.html.erb file
+  -DRY out the content in the about_me_contents/edit.html.erb file to where it will automatically be the same as that in the index.html.erb file
 
 make method for title that will display just "Andrada Popan-Dorca" if no title is yielded by the page
 
