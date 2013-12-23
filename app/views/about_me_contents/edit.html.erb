@@ -36,11 +36,11 @@ index.html.erb file %>
       <%= @content.header %>
     </div>
 
-
     <div class="slide-description" id="description-preview">
       <%= @content.description %>
     </div>
   </div>
+
   <% left_slide = AboutMeContent.find((@content.id - 1) % @count) %>
   <div class="direction-button prev-control">
     <div class="left-arrow">&lt;</div>
