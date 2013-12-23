@@ -1,55 +1,62 @@
 <%= form_for @content, :html => {:multipart => true} do |f| %>
   <div slide-edit>
-    <%= image_tag @content.background_image.url %>
-    <%= f.label :background_image %>
-    <%= f.file_field :background_image %>
+    <%# <%= image_tag @content.background_image.url %>
+    <%# <%= f.label :background_image %>
+    <%# <%= f.file_field :background_image %>
 
-    <div><%= f.text_field :header, placeholder: "Header" %></div>
-    <div><%= f.text_area :description, placeholder: "Description", size:
-      "20x10" %></div>
-    <div>
-      <%= f.text_field :button_title, placeholder: "Button Title" %>
+    <p>
+      <%= label_tag :header %>
+      <%= f.text_field :header, placeholder: "Header", 
+        id: "header-form" %>
+    </p>
+    <p>
+      <%= label_tag :description %>
+      <%= f.text_area :description, placeholder: "Description", 
+        id: "description-form", size: "20x10" %>
+    </p>
+    <p>
+      <%= label_tag :button_title %>
+      <%= f.text_field :button_title, placeholder: "Button Title", id:
+        "button-title-form" %>
+    </p>
+  </div>
+<%= f.submit "Save" %>
+<% end %>
+
+<%# The Slide Preview %>
+<%# TODO: DRY this out %>
+<li class="slide" style="<%= get_slide_background_css @content.id %>">
+  <div class="frame frame-left prev-control">
+    <div class="frame-arrow">&lt;</div>
+  </div>
+
+  <div class="slide-box description-box">
+    <div class="slide-header" id="header-preview">
+      <%= @content.header %>
+    </div>
+
+
+    <div class="slide-description" id="description-preview">
+      <%= @content.description %>
+    </div>
+  </div>
+  <% left_slide = AboutMeContent.find((@content.id - 1) % @count) %>
+  <div class="direction-button prev-control">
+    <div class="left-arrow">&lt;</div>
+    <div class="left-button-text">
+      <%= left_slide.button_title %>
     </div>
   </div>
 
-
-  <%# TODO: DRY this out %>
-  <%# The slider preview %>
-  <li class="slide" style="<%= get_slide_background_css content.id %>;">
-    <div class="frame frame-left prev-control">
-      <div class="frame-arrow">&lt;</div>
+  <% right_slide = AboutMeContent.find((@content.id + 1) % @count) %>
+  <div class="direction-button next-control">
+    <div class="right-button-text">
+      <%= right_slide.button_title %>
     </div>
+    <div class="arrow-button right-arrow">&gt;</div>
+  </div>
 
-    <div class="slide-box description-box">
-      <div class="slide-header">
-        <%# todo change this to dynamically update using js %>
-      </div>
-
-
-      <div class="slide-description">
-        <%# todo change this to dynamically update using js %>
-      </div>
-    </div>
-
-    <% left_slide = AboutMeContent.find((content.id - 1) % @count) %>
-    <div class="direction-button prev-control">
-      <div class="left-arrow">&lt;</div>
-      <div class="left-button-text">
-        <%= left_slide.button_title %>
-      </div>
-    </div>
-
-    <% right_slide = AboutMeContent.find((content.id + 1) % @count) %>
-    <div class="direction-button next-control">
-      <div class="right-button-text">
-        <%= right_slide.button_title %>
-      </div>
-      <div class="arrow-button right-arrow">&gt;</div>
-    </div>
-
-    <div class="frame frame-right next-control">
-      <div class="frame-arrow">&gt;</div>
-    </div>
-  </li>
-  <%= f.submit "Save" %>
-<% end %>
+  <div class="frame frame-right next-control">
+    <div class="frame-arrow">&gt;</div>
+  </div>
+</li>

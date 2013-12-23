@@ -13,6 +13,7 @@ class AboutMeContentsController < ApplicationController
 
   def edit
     @content = AboutMeContent.find(params[:id])
+    @count = AboutMeContent.count
   end
 
   def update
