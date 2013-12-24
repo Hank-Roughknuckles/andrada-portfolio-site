@@ -2,7 +2,8 @@
 
 <ul class="slider">
   <% for content in @contents %>
-  <li class="slide" style="<%= get_slide_background_css content.id %>;">
+    <li class="slide" style="<%= get_slide_background_css content.id %>;
+      <%= "display: none" if content.id != 0 %>">
     <div class="frame frame-left prev-control">
       <div class="frame-arrow">&lt;</div>
     </div>
@@ -46,4 +47,6 @@
     <%= link_to "Edit Slider Content", :action => "admin_index" %>
   </span>
 <% end %>
-<div class="spacer"></div><!-- to add space below the absolutely positioned slider -->
+
+<!-- to add space below the absolutely positioned slider -->
+<div class="spacer"></div>
