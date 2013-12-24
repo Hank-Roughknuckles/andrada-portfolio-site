@@ -1,8 +1,6 @@
 <%= form_for @content, :html => {:multipart => true} do |f| %>
   <div slide-edit>
     <%# <%= image_tag @content.background_image.url %>
-    <%# <%= f.label :background_image %>
-    <%# <%= f.file_field :background_image %>
 
     <p>
       <%= label_tag :header %>
@@ -19,6 +17,10 @@
       <%= f.text_field :button_title, placeholder: "Button Title", id:
         "button-title-form" %>
     </p>
+    <p>
+      <%= f.label :background_image %>
+      <%= f.file_field :background_image, id: "background-image-upload" %>
+    </p>
   </div>
 <%= f.submit "Save" %>
 <% end %>
@@ -26,7 +28,7 @@
 <%# The Slide Preview %>
 <%# TODO: DRY this out, this is practially the same as what's in the
 index.html.erb file %>
-<li class="slide" style="<%= get_slide_background_css @content.id %>">
+<li class="slide" id="slide-preview" style="<%= get_slide_background_css @content.id %>">
   <div class="frame frame-left prev-control">
     <div class="frame-arrow">&lt;</div>
   </div>

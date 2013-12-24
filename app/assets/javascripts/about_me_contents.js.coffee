@@ -10,3 +10,19 @@ $ ->
 
   $("#description-form").keyup ->
     $('#description-preview').html($("#description-form").val())
+
+
+  preview = $(".upload-preview img")
+
+  # Change background of slide preview when upload a new image
+  $("#background-image-upload").change (event) ->
+    input = $(event.currentTarget)
+    file = input[0].files[0]
+    reader = new FileReader()
+    reader.onload = (e) ->
+      image_base64 = e.target.result
+      $("#slide-preview").css({"background": "url(#{image_base64})"})
+
+    reader.readAsDataURL file
+
+

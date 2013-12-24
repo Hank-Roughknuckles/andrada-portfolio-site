@@ -8,7 +8,7 @@ $(function(){
   slides.each(function( idx, element ){
     var slide = $(element);
     if (slide.index() != 0) {
-      slide.fadeOut();
+      // slide.fadeOut();
     }
   });
 
