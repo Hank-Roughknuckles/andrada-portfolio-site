@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$ ->
+attachHandlers = ->
   $("#header-form").keyup ->
     $('#header-preview').html($("#header-form").val())
 
@@ -25,4 +25,4 @@ $ ->
 
     reader.readAsDataURL file
 
-
+$(document).on "page:load", attachHandlers

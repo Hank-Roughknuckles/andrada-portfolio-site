@@ -1,4 +1,5 @@
-$(function(){
+var slider;
+slider = function(){
 
   var slides = $(".slide");
   var currentIndex = 0;
@@ -55,4 +56,6 @@ $(function(){
     changeToSlide( targetIndex );
   });
 
-});
+};
+
+$(document).on("page:load", slider);
