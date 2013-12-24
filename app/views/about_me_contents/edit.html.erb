@@ -1,7 +1,5 @@
 <%= form_for @content, :html => {:multipart => true} do |f| %>
   <div slide-edit>
-    <%# <%= image_tag @content.background_image.url %>
-
     <p>
       <%= label_tag :header %>
       <%= f.text_field :header, placeholder: "Header", 
