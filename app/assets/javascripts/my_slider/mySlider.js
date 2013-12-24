@@ -5,13 +5,13 @@ slider = function(){
   var currentIndex = 0;
   var fadeTime = 700; //the time to fade in and out (in ms)
 
-  // fade out all except the first slide
-  slides.each(function( idx, element ){
-    var slide = $(element);
-    if (slide.index() != 0) {
-      // slide.fadeOut();
-    }
-  });
+  // // fade out all except the first slide
+  // slides.each(function( idx, element ){
+  //   var slide = $(element);
+  //   if (slide.index() != 0) {
+  //     // slide.fadeOut();
+  //   }
+  // });
 
 
   /**
