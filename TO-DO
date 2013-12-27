@@ -19,3 +19,5 @@ Make uploaded image appear on the "edit" page before user selects save
 when something is changed without saving on the admin page, make a popup appear that says "You have made changes, but have not saved them.  Click the "Save" button at the bottom
 
 center navbar within the home screen
+
+Re-enable turbolinks after finishing site and get it to work with everything
