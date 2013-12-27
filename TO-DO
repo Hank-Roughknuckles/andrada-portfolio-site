@@ -5,8 +5,7 @@ Fix bug where mySlider.js makes all the preview slides in the edit page fade out
 
 Preview slide isn't showing anything when edit page first loads
 
-Make the edit page for each slide actually display the content slide in the edit page so she can see what it looks like without having to save and go to the home page
-  -DRY out the content in the about_me_contents/edit.html.erb file to where it will automatically be the same as that in the index.html.erb file
+DRY out the content in the about_me_contents/edit.html.erb file to where it will automatically be the same as that in the index.html.erb file
 
 make method for title that will display just "Andrada Popan-Dorca" if no title is yielded by the page
 
@@ -20,4 +19,6 @@ when something is changed without saving on the admin page, make a popup appear 
 
 center navbar within the home screen
 
+fix sign-out button on about me edit page
+ 
 Re-enable turbolinks after finishing site and get it to work with everything
