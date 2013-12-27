@@ -23,7 +23,7 @@ $ ->
     reader = new FileReader()
     reader.onload = (e) ->
       image_base64 = e.target.result
-      $("#slide-preview").css({"background": "url(#{image_base64})"})
+      $(".slide-preview .slide").css({"background": "url(#{image_base64})"})
 
     reader.readAsDataURL file
 

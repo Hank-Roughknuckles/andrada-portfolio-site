@@ -5,6 +5,7 @@ class AboutMeContentsController < ApplicationController
   def index
     @count = AboutMeContent.count
     @contents = AboutMeContent.all
+    @active_content_id = 0
   end
 
   def admin_index
@@ -12,7 +13,9 @@ class AboutMeContentsController < ApplicationController
   end
 
   def edit
+    @contents = AboutMeContent.find_all_by_id(params[:id])
     @content = AboutMeContent.find(params[:id])
+    @active_content_id = @content.id
     @count = AboutMeContent.count
   end
 

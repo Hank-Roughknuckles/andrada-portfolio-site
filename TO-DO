@@ -5,8 +5,6 @@ Fix bug where mySlider.js makes all the preview slides in the edit page fade out
 
 Preview slide isn't showing anything when edit page first loads
 
-DRY out the content in the about_me_contents/edit.html.erb file to where it will automatically be the same as that in the index.html.erb file
-
 make method for title that will display just "Andrada Popan-Dorca" if no title is yielded by the page
 
 change cursor when over slider buttons to be the finger pointing (like when you mouse over a link)

@@ -1,45 +1,7 @@
 <% provide( :title, "About Me" ) %>
 
 <ul class="slider">
-  <% for content in @contents %>
-    <li class="slide" style="<%= get_slide_background_css content.id %>;
-      <%= "display: none" if content.id != 0 %>">
-    <div class="frame frame-left prev-control">
-      <div class="frame-arrow">&lt;</div>
-    </div>
-
-    <div class="slide-box description-box">
-      <div class="slide-header">
-        <%= content.header %>
-      </div>
-
-
-      <div class="slide-description">
-        <%= content.description %>
-      </div>
-    </div>
-
-    <% left_slide = AboutMeContent.find((content.id - 1) % @count) %>
-    <div class="direction-button prev-control">
-      <div class="left-arrow">&lt;</div>
-      <div class="left-button-text">
-        <%= left_slide.button_title %>
-      </div>
-    </div>
-
-    <% right_slide = AboutMeContent.find((content.id + 1) % @count) %>
-    <div class="direction-button next-control">
-      <div class="right-button-text">
-        <%= right_slide.button_title %>
-      </div>
-      <div class="arrow-button right-arrow">&gt;</div>
-    </div>
-
-    <div class="frame frame-right next-control">
-      <div class="frame-arrow">&gt;</div>
-    </div>
-  </li>
-  <% end %>
+  <%= render "slides" %>
 </ul>
 
 <% if user_signed_in? %>

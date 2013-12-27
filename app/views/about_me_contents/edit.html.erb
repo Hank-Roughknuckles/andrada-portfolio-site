@@ -23,41 +23,6 @@
 <%= f.submit "Save" %>
 <% end %>
 
-<%# The Slide Preview %>
-<%# TODO: DRY this out, this is practially the same as what's in the
-index.html.erb file %>
-<li class="slide" id="slide-preview" style="<%= get_slide_background_css @content.id %>">
-  <div class="frame frame-left prev-control">
-    <div class="frame-arrow">&lt;</div>
-  </div>
-
-  <div class="slide-box description-box">
-    <div class="slide-header" id="header-preview">
-      <%= @content.header %>
-    </div>
-
-    <div class="slide-description" id="description-preview">
-      <%= @content.description %>
-    </div>
-  </div>
-
-  <% left_slide = AboutMeContent.find((@content.id - 1) % @count) %>
-  <div class="direction-button prev-control">
-    <div class="left-arrow">&lt;</div>
-    <div class="left-button-text">
-      <%= left_slide.button_title %>
-    </div>
-  </div>
-
-  <% right_slide = AboutMeContent.find((@content.id + 1) % @count) %>
-  <div class="direction-button next-control">
-    <div class="right-button-text">
-      <%= right_slide.button_title %>
-    </div>
-    <div class="arrow-button right-arrow">&gt;</div>
-  </div>
-
-  <div class="frame frame-right next-control">
-    <div class="frame-arrow">&gt;</div>
-  </div>
-</li>
+<div class="slide-preview">
+  <%= render "slides" %>
+</div>
