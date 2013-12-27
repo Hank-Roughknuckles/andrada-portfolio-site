@@ -1,5 +1,6 @@
-var slider;
-slider = function(){
+// var slider; //uncomment when turbolinks is re-enabled
+// slider = function(){ //uncomment when turbolinks is re-enabled
+$(function(){
 
   var slides = $(".slide");
   var currentIndex = 0;
@@ -56,6 +57,8 @@ slider = function(){
     changeToSlide( targetIndex );
   });
 
-};
+});
+// }; //uncomment when turbolinks is re-enabled
 
-$(document).on("page:load", slider);
+//un-comment this when you re-enable turbolinks
+// $(document).on("page:load", slider);

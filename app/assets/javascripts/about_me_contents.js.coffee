@@ -3,7 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-attachHandlers = ->
+# attachHandlers = -> //uncomment when turbolinks is re-enabled
+
+$ ->
   $("#header-form").keyup ->
     $('#header-preview').html($("#header-form").val())
 
@@ -25,4 +27,5 @@ attachHandlers = ->
 
     reader.readAsDataURL file
 
-$(document).on "page:load", attachHandlers
+# $(document).on "page:load", attachHandlers //uncomment when turbolinks is re-enabled
+
