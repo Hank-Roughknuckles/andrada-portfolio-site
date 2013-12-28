@@ -1,9 +1,9 @@
 <%= form_for @navItem do |f| %>
-  <%= f.text_field :link_1_name, placeholder: "1st Navbar Link" %>
-  <%= f.text_field :link_2_name, placeholder: "2nd Navbar Link" %>
-  <%= f.text_field :link_3_name, placeholder: "3rd Navbar Link" %>
-  <%= f.text_field :link_4_name, placeholder: "4th Navbar Link" %>
-  <%= f.text_field :link_5_name, placeholder: "5th Navbar Link" %>
+  <%= f.text_field :link_1_name, placeholder: "1st Navbar Link", id: "nav_1_edit" %>
+  <%= f.text_field :link_2_name, placeholder: "2nd Navbar Link", id: "nav_2_edit"  %>
+  <%= f.text_field :link_3_name, placeholder: "3rd Navbar Link", id: "nav_3_edit"  %>
+  <%= f.text_field :link_4_name, placeholder: "4th Navbar Link", id: "nav_4_edit"  %>
+  <%= f.text_field :link_5_name, placeholder: "5th Navbar Link", id: "nav_5_edit"  %>
 
   <%= f.submit "Save" %>
 <% end %>
