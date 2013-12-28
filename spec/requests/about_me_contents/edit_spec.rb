@@ -18,15 +18,15 @@ describe "EditAboutMeContents" do
 
     describe "page contents" do
       it { should have_content "image" }
-      it { should have_field "about_me_content_header" }
-      it { should have_field "about_me_content_description" }
-      it { should have_field "about_me_content_button_title" }
+      it { should have_field "about_me_content[header]" }
+      it { should have_field "about_me_content[description]" }
+      it { should have_field "about_me_content[button_title]" }
       it { should have_link "Sign Out" }
       it { should_not have_link "Sign In" }
 
       describe "field contents" do
         it { should have_xpath "//input[@value=\"#{about_me_content.header}\"]" }
-        it { should have_xpath "//input[@value=\"#{about_me_content.description}\"]" }
+        it { should have_content about_me_content.description }
         it { should have_xpath "//input[@value=\"#{about_me_content.button_title}\"]" }
       end
     end
