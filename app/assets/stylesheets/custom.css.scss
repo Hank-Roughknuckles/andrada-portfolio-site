@@ -10,7 +10,8 @@ $selected_blue: #8094a6;
   src: font-url('FaunaOne-Regular.ttf');
 }
 
-body{
+body
+{
   background-color: $background_tan;
   color: $charcoal_grey;
   font-family: 'fauna-one';
@@ -22,6 +23,12 @@ body{
     top: -24px;
     left: -1000px;
     float: right;
+  }
+
+  #save-reminder
+  {
+    margin-bottom: 10px;
+    color: $selected_blue;
   }
 
   .edit-content
