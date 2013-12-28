@@ -12,19 +12,19 @@ describe "Edit navbar" do
       visit edit_nav_item_path nav_item.id
     end
 
-    it { should have_xpath "//input[@id=\"nav_item_link_1_name\"]" }
-    it { should have_xpath "//input[@id=\"nav_item_link_2_name\"]" }
-    it { should have_xpath "//input[@id=\"nav_item_link_3_name\"]" }
-    it { should have_xpath "//input[@id=\"nav_item_link_4_name\"]" }
-    it { should have_xpath "//input[@id=\"nav_item_link_5_name\"]" }
+    it { should have_xpath "//input[@id=\"nav_1_edit\"]" }
+    it { should have_xpath "//input[@id=\"nav_2_edit\"]" }
+    it { should have_xpath "//input[@id=\"nav_3_edit\"]" }
+    it { should have_xpath "//input[@id=\"nav_4_edit\"]" }
+    it { should have_xpath "//input[@id=\"nav_5_edit\"]" }
 
     describe "The navbar editing process" do
       before do
-        fill_in "nav_item_link_1_name", with: "Test_Link_1"
-        fill_in "nav_item_link_2_name", with: "Test_Link_2"
-        fill_in "nav_item_link_3_name", with: "Test_Link_3"
-        fill_in "nav_item_link_4_name", with: "Test_Link_4"
-        fill_in "nav_item_link_5_name", with: "Test_Link_5"
+        fill_in "nav_1_edit", with: "Test_Link_1"
+        fill_in "nav_2_edit", with: "Test_Link_2"
+        fill_in "nav_3_edit", with: "Test_Link_3"
+        fill_in "nav_4_edit", with: "Test_Link_4"
+        fill_in "nav_5_edit", with: "Test_Link_5"
         click_button "Save"
       end
         
