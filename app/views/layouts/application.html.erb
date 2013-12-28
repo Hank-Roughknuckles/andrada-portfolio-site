@@ -19,12 +19,12 @@
   <%= yield %>
 
   <% if user_signed_in? %>
-    <div class="sign-in">
+    <div class="sign_in">
       <%= link_to "Sign Out", destroy_user_session_path, :method =>
       :delete %>
     </div>
   <% else %>
-    <div class="sign-in">
+    <div class="sign_in">
       <%= link_to "Sign In", new_user_session_path %>
     </div>
   <% end %>

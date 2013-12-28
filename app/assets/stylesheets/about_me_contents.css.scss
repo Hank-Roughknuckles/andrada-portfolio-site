@@ -31,17 +31,17 @@
     background-color: rgba(28,28,28,0.3);
   }
 
-  .frame-left
+  .frame_left
   {
     float:left;
   }
 
-  .frame-right
+  .frame_right
   {
     float:right;
   }
 
-  .frame-arrow
+  .frame_arrow
   {
     margin-top: 215px;
     margin-left: 15px;
@@ -57,18 +57,18 @@
     line-height: 30px;
   }
 
-  .frame-button-right
+  .frame_button_right
   {
     float: right;
   }
 
-  .slide-box, .direction-button
+  .slide_box, .direction_button
   {
     background: rgba(0,0,0,0.55);
     color: #f2e9d8;
   }
 
-  .description-box
+  .description_box
   {
     margin-top: 24px;
     margin-left: 22px;
@@ -80,14 +80,14 @@
     float: left;
   }
 
-  .slide-header
+  .slide_header
   {
     font-size: 25px;
     margin-left: 14px;
     margin-top: 27px;
   }
 
-  .slide-description
+  .slide_description
   {
     margin-top: 20px;
     margin-left: 48px;
@@ -101,7 +101,7 @@
 
   $arrow-outside-padding: 10px;
 
-  .direction-button
+  .direction_button
   {
     font-size: 25px;  
     font-family: 'Khmer';
@@ -114,7 +114,7 @@
   }
 
   // All stuff regarding buttons
-  .left-button-text, .right-button-text, .left-arrow, .right-arrow
+  .left_button_text, .right_button_text, .left_arrow, .right_arrow
   {
     float: left;
     padding-top: 13px;
@@ -128,29 +128,29 @@
   }
 
   //stuff only pertaining to the text inside the buttons
-  .left-button-text, .right-button-text
+  .left_button_text, .right_button_text
   {
     text-align: center;
     width: 165px;
   }
 
-  .left-arrow
+  .left_arrow
   {
     padding-left: $arrow-outside-padding;
   }
 
-  .right-arrow
+  .right_arrow
   {
     padding-left: 5px;
     margin-left: 5px;
   }
 
-  .left-button-text
+  .left_button_text
   {
     margin-right: 10px;
   }
 
-  .right-button-text
+  .right_button_text
   {
     margin-left: 30px;
   }

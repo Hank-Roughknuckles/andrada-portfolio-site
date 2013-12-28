@@ -5,7 +5,7 @@
   <% nav = NavItem.first %>
 
   <ul class="navbar">
-    <li><%= link_to nav.link_1_name, 
+    <li id="nav_item_1"><%= link_to nav.link_1_name, 
       {
         :controller => 
           request.path =~ /\/admin\// ? 'admin' : 'guest', 
@@ -14,7 +14,7 @@
       { :class => ('selected' if request.path =~ /about_me/) } 
       %>
     </li>
-    <li><%= link_to nav.link_2_name, 
+    <li id="nav_item_2"><%= link_to nav.link_2_name, 
       {
         :controller => 
           request.path =~ /\/admin\// ? 'admin' : 'guest', 
@@ -23,7 +23,7 @@
       { :class => ('selected' if request.path =~ /showreel/) } 
       %>
     </li>
-    <li><%= link_to nav.link_3_name, 
+    <li id="nav_item_3"><%= link_to nav.link_3_name, 
       {
         :controller => 
           request.path =~ /\/admin\// ? 'admin' : 'guest', 
@@ -32,7 +32,7 @@
       { :class => ('selected' if request.path =~ /works/) } 
       %>
     </li>
-    <li><%= link_to nav.link_4_name, 
+    <li id="nav_item_4"><%= link_to nav.link_4_name, 
       {
         :controller => 
           request.path =~ /\/admin\// ? 'admin' : 'guest', 
@@ -41,7 +41,7 @@
       { :class => ('selected' if request.path =~ /current_projects/) } 
       %>
     </li>
-    <li><%= link_to nav.link_5_name, 
+    <li id="nav_item_5"><%= link_to nav.link_5_name, 
       {
         :controller => 
           request.path =~ /\/admin\// ? 'admin' : 'guest', 
@@ -52,7 +52,7 @@
     </li>
   </ul>
   <% if user_signed_in? %>
-    <div class="edit-navbar">
+    <div class="edit_navbar">
       <%= link_to 'Edit Navigation Bar', edit_nav_item_path(1) %>
     </div>
   <% end %>

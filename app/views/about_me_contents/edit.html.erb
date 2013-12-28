@@ -1,28 +1,28 @@
 <%= form_for @content, :html => {:multipart => true} do |f| %>
-  <div slide-edit>
+  <div slide_edit>
     <p>
       <%= label_tag :header %>
       <%= f.text_field :header, placeholder: "Header", 
-        id: "header-form" %>
+        id: "header_form" %>
     </p>
     <p>
       <%= label_tag :description %>
       <%= f.text_area :description, placeholder: "Description", 
-        id: "description-form", size: "20x10" %>
+        id: "description_form", size: "20x10" %>
     </p>
     <p>
       <%= label_tag :button_title %>
       <%= f.text_field :button_title, placeholder: "Button Title", id:
-        "button-title-form" %>
+        "button_title_form" %>
     </p>
     <p>
       <%= f.label :background_image %>
-      <%= f.file_field :background_image, id: "background-image-upload" %>
+      <%= f.file_field :background_image, id: "background_image_upload" %>
     </p>
   </div>
 <%= f.submit "Save" %>
 <% end %>
 
-<div class="slide-preview">
+<div class="slide_preview">
   <%= render "slides" %>
 </div>

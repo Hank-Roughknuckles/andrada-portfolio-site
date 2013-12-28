@@ -29,10 +29,10 @@ $(function(){
   
 
   /**
-   *  clicking the next-control button will make the slider show the next
+   *  clicking the next_control button will make the slider show the next
    *  slide
    */
-  $(".next-control").click(function() {
+  $(".next_control").click(function() {
     var targetIndex = currentIndex + 1;
 
     if (targetIndex > slides.length - 1) {
@@ -44,10 +44,10 @@ $(function(){
 
 
   /**
-   *  clicking the prev-control button will make the slider show the next
+   *  clicking the prev_control button will make the slider show the next
    *  slide
    */
-  $(".prev-control").click(function() {
+  $(".prev_control").click(function() {
     var targetIndex = currentIndex - 1;
 
     if (targetIndex < 0) {

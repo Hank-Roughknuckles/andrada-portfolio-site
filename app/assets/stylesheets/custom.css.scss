@@ -16,7 +16,7 @@ body
   color: $charcoal_grey;
   font-family: 'fauna-one';
 
-  .edit-navbar
+  .edit_navbar
   {
     position: relative;
     z-index:99;
@@ -25,13 +25,13 @@ body
     float: right;
   }
 
-  #save-reminder
+  #save_reminder
   {
     margin-bottom: 10px;
     color: $selected_blue;
   }
 
-  .edit-content
+  .edit_content
   {
     position: relative;
     z-index:99;
@@ -107,10 +107,9 @@ body
     }
   }
 
-  .sign-in
+  .sign_in
   {
     float: right;
     margin-bottom: 10px;
   }
 }
-    

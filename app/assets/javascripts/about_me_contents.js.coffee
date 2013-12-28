@@ -5,54 +5,54 @@
 # attachHandlers = -> //uncomment when turbolinks is re-enabled
 
 $ ->
-  originalHeader = $('#header-form').val()
-  originalDescription = $('#description-form').val()
-  originalButtonTitle = $('#button-title-form').val()
+  originalHeader = $('#header_form').val()
+  originalDescription = $('#description_form').val()
+  originalButtonTitle = $('#button_title_form').val()
 
-  $("#header-form").keyup ->
-    $('#header-preview').html($("#header-form").val())
-    if $("#header-form").val() != originalHeader
+  $("#header_form").keyup ->
+    $('#header_preview').html($("#header_form").val())
+    if $("#header_form").val() != originalHeader
       showSaveReminder()
     else
       hideSaveReminder()
 
 
-  $("#description-form").keyup ->
-    $('#description-preview').html($("#description-form").val())
-    if $('#description-form').val() != originalDescription
+  $("#description_form").keyup ->
+    $('#description_preview').html($("#description_form").val())
+    if $('#description_form').val() != originalDescription
       showSaveReminder()
     else
       hideSaveReminder()
 
 
-  $("#button-title-form").keyup ->
-    if $('#button-title-form').val() != originalButtonTitle
+  $("#button_title_form").keyup ->
+    if $('#button_title_form').val() != originalButtonTitle
       showSaveReminder()
     else
       hideSaveReminder()
 
 
   # Change background of slide preview when upload a new image
-  $("#background-image-upload").change (event) ->
+  $("#background_image_upload").change (event) ->
     input = $(event.currentTarget)
     file = input[0].files[0]
     reader = new FileReader()
     reader.onload = (e) ->
       image_base64 = e.target.result
-      $(".slide-preview .slide").css({"background": "url(#{image_base64})"})
+      $(".slide_preview .slide").css({"background": "url(#{image_base64})"})
       showSaveReminder()
 
     reader.readAsDataURL file
 
   showSaveReminder = ->
-    # TODO: make this just search for #save-reminder and if it returns
-    # nil, then add the #save-reminder
-    $("#save-reminder").remove()
-    $(".edit-navbar").after("<div id=\"save-reminder\">You have changed a value. Please remember to press the save button.</div>");
+    # TODO: make this just search for #save_reminder and if it returns
+    # nil, then add the #save_reminder
+    $("#save_reminder").remove()
+    $(".edit_navbar").after("<div id=\"save_reminder\">You have changed a value. Please remember to press the save button.</div>");
 
   hideSaveReminder = ->
-    if $("#header-form").val() == originalHeader && $('#description-form').val() == originalDescription && $('#button-title-form').val() == originalButtonTitle
-      $("#save-reminder").remove()
+    if $("#header_form").val() == originalHeader && $('#description_form').val() == originalDescription && $('#button_title_form').val() == originalButtonTitle
+      $("#save_reminder").remove()
 
 
 # $(document).on "page:load", attachHandlers //uncomment when turbolinks is re-enabled
