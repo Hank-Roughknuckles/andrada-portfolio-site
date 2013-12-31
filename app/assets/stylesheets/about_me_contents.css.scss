@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap";
+@import "custom";
 
 @font-face
 {
@@ -10,6 +11,17 @@
   src: font-url('KhmerUI.ttf')
 }
 
+//slide editing forms
+#button_title_description_helper
+{
+  color: $selected_blue;
+  margin-left: 10px;
+  vertical-align: super;
+  display: none;
+}
+
+
+//the slider
 .slider
 {
   margin: 0px;

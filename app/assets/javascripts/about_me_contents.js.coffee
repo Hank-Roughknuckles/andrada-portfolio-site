@@ -45,14 +45,24 @@ $ ->
     reader.readAsDataURL file
 
   showSaveReminder = ->
-    # TODO: make this just search for #save_reminder and if it returns
-    # nil, then add the #save_reminder
-    $("#save_reminder").remove()
-    $(".edit_navbar").after("<div id=\"save_reminder\">You have changed a value. Please remember to press the save button.</div>");
+    if $("#save_reminder").length == 0
+      $(".edit_navbar").after("<div id=\"save_reminder\">You have changed
+        a value. Please remember to press the save button.</div>");
 
   hideSaveReminder = ->
     if $("#header_form").val() == originalHeader && $('#description_form').val() == originalDescription && $('#button_title_form').val() == originalButtonTitle
       $("#save_reminder").remove()
 
+  $("#button_title_form").focus ->
+    if $("#button_title_description_helper").length == 0
+      $("#button_title_form").after( "<span
+      id=\"button_title_description_helper\">
+      The name for this slide that appears on the nav buttons in other
+      slides
+      </span>")
+      $("#button_title_description_helper").fadeIn(200)
+
+  $("#button_title_form").blur ->
+    $("#button_title_description_helper").fadeOut(200)
 
 # $(document).on "page:load", attachHandlers //uncomment when turbolinks is re-enabled
