@@ -28,6 +28,7 @@ describe "AboutMePages" do
       visit root_path
     end
 
+    it { should have_title "About Me" }
     it { should have_content "Edit" }
 
   end
