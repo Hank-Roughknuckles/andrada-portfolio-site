@@ -17,6 +17,7 @@ describe "EditAboutMeContents" do
     end
 
     describe "page contents" do
+      it { should have_title "Edit" }
       it { should have_content "image" }
       it { should have_field "about_me_content[header]" }
       it { should have_field "about_me_content[description]" }
