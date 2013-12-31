@@ -1,7 +1,7 @@
 TO-DO
 =====
 
-[ACTIVE]change button title helper to not mess up the alignment of everything when it appears
+Make slide preview in edit form scaled down so everything fits in one page.  In other words, make the preview be a smaller version of the slide
 
 make save helper always have a height to give spacing between navbar and content area.  change js to check if it's empty or not (rather than to see if it exists)
 

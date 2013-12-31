@@ -55,11 +55,11 @@ $ ->
 
   $("#button_title_form").focus ->
     if $("#button_title_description_helper").length == 0
-      $("#button_title_form").after( "<span
+      $("#button_title_form").after( "<div
       id=\"button_title_description_helper\">
-      The name for this slide that appears on the nav buttons in other
-      slides
-      </span>")
+      Button Title is the name for this slide that appears on the nav
+      buttons in other slides
+      </div>")
       $("#button_title_description_helper").fadeIn(200)
 
   $("#button_title_form").blur ->
