@@ -12,12 +12,50 @@
 }
 
 //slide editing forms
+.header_group
+{
+  float: left;
+  margin-left: 10px;
+
+  submit
+  {
+    margin-top: 10px;
+  }
+}
+
+.slide_edit
+{
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
 #button_title_description_helper
 {
   color: $selected_blue;
   margin-left: 10px;
   vertical-align: super;
   display: none;
+}
+
+#header_form
+{
+  width: 130px;
+}
+
+#button_title_form
+{
+  width: 130px;
+}
+
+#background_image_upload
+{
+  width: 175px;
+}
+
+#save_button
+{
+  margin-top: 25px;
+  margin-left: 20px;
 }
 
 
