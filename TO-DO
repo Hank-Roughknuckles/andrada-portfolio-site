@@ -1,12 +1,7 @@
 TO-DO
 =====
 
-[ACTIVE] Make nav-bar auto update before saving to show what it will look like when editing
-  --and Write tests
-
-Make method for title that will display just "Andrada Popan-Dorca" if no title is yielded by the page
-
-Change cursor when over slider buttons to be the finger pointing (like when you mouse over a link)
+Make helper tip appear next to button_title field in edit page so Andrada knows what button title is
 
 Make the nav-bar auto adjust spacing based on size of elements so that the navbar always ONLY takes up one line
 
