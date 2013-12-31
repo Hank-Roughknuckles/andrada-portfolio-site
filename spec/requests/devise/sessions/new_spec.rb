@@ -6,6 +6,14 @@ describe "SignInPages" do
   subject {page}
   let(:user) { FactoryGirl.create :user }
 
+  describe "the sign-in page" do
+    it { should have_title "Sign in" }
+    it { should have_content "Email" }
+    it { should have_content "Password" }
+    it { should have_content "Remember me" }
+    it { should have_button "Sign in" }
+  end
+
   describe "the sign-in process" do
 
     describe "with valid info" do
@@ -22,7 +30,6 @@ describe "SignInPages" do
         fill_in "Email",    with: "wrong"
         fill_in "Password", with: "wrong"
         click_button "Sign in"
-        # print page.html
       end
       it { should have_content("Invalid") }
     end
