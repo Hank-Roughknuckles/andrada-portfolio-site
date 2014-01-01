@@ -44,15 +44,20 @@ $ ->
 
     reader.readAsDataURL file
 
+
+  #Save reminder stuff
   showSaveReminder = ->
     if $("#save_reminder").length == 0
       $(".edit_navbar").after("<div id=\"save_reminder\">You have changed
         a value. Please remember to press the save button.</div>");
 
+
   hideSaveReminder = ->
     if $("#header_form").val() == originalHeader && $('#description_form').val() == originalDescription && $('#button_title_form').val() == originalButtonTitle
       $("#save_reminder").remove()
 
+
+  #Button title edit stuff
   $("#button_title_form").focus ->
     if $("#button_title_description_helper").length == 0
       $("#button_title_form").after( "<div
