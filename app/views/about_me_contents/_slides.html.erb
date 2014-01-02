@@ -1,12 +1,11 @@
 <%# The Slide Preview %>
 
 <% for content in @contents %>
-  <li class="slide" style="<%= get_slide_background_css content.id %>;
+  <li class="<%= @is_preview ? "slide_preview" : "slide" %>" style="<%= get_slide_background_css content.id %>;
     <%= "display: none" if content.id != @active_content_id %>">
 
-    <a name="slides"></a>
-    <a href="#slides">
-      <div class="frame frame_left prev_control">
+    <a href="#">
+      <div class="frame frame_left prev_control left_frame_button">
         <div class="frame_arrow">&lt;</div>
       </div>
     </a>
@@ -22,8 +21,8 @@
     </div>
 
     <% left_slide = AboutMeContent.find((content.id - 1) % @count) %>
-    <a href="#slides">
-      <div class="direction_button prev_control">
+    <a href="#">
+      <div class="direction_button prev_control left_direction_button">
         <div class="left_arrow">&lt;</div>
         <div class="left_button_text">
           <%= left_slide.button_title %>
@@ -32,8 +31,8 @@
     </a>
 
     <% right_slide = AboutMeContent.find((content.id + 1) % @count) %>
-    <a href="#slides">
-      <div class="direction_button next_control">
+    <a href="#">
+      <div class="direction_button next_control right_direction_button">
         <div class="right_button_text">
           <%= right_slide.button_title %>
         </div>
@@ -41,8 +40,8 @@
       </div>
     </a>
 
-    <a href="#slides">
-      <div class="frame frame_right next_control">
+    <a href="#">
+      <div class="frame frame_right next_control right_frame_button">
         <div class="frame_arrow">&gt;</div>
       </div>
     </a>

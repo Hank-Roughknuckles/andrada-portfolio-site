@@ -12,6 +12,11 @@
 }
 
 //slide editing forms
+.edit_about_me-content
+{
+  margin-top: 500px;
+}
+
 .header_group
 {
   float: left;
@@ -67,10 +72,19 @@
 
 .slide
 {
-  list-style-type:none;
   position: absolute;
+}
+
+.slide_preview
+{
+  position: relative;
+}
+
+.slide, .slide_preview
+{
+  list-style-type:none;
   border: black 1px solid;
-  margin-top: 20px;
+  margin-top: 40px;
   height: 452px;
   width: 944px;
 
@@ -83,6 +97,7 @@
 
   .frame_left
   {
+    margin-top: -1px;
     float:left;
   }
 
@@ -206,10 +221,23 @@
   }
 }
 
+
+//Fix formatting when the slide is a preview
+.slide_preview
+{
+  .right_direction_button
+  {
+    margin-top: 373px;
+  }
+
+  .right_frame_button
+  {
+    margin-top: -10px;
+  }
+}
+
 .spacer
 {
   height: 50px;
   margin: 454px 0 0 0;
-  /* margin: 20px 0 -50px 0; use this if you want #container to have a 'bottom padding', in this case of 20px */
-  // background: transparent; /* you'll need this if #container's parent element has a different background from #container itself */
 }

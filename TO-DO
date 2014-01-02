@@ -1,7 +1,7 @@
 TO-DO
 =====
 
-Make slide preview in edit form scaled down so everything fits in one page.  In other words, make the preview be a smaller version of the slide
+fix sign out button on index
 
 make save helper always have a height to give spacing between navbar and content area.  change js to check if it's empty or not (rather than to see if it exists)
 
@@ -9,13 +9,12 @@ Make the nav-bar auto adjust spacing based on size of elements so that the navba
 
 center navbar within the home screen
 
-fix sign-out button on about me edit page
- 
 Re-enable turbolinks after finishing site and get it to work with everything
   Preview slide isn't showing anything when edit page first loads
 
 install ack and ack-vim
 
+Make slide preview in edit form scaled down so everything fits in one page.  In other words, make the preview be a smaller version of the slide
 
 
 REFACTOR

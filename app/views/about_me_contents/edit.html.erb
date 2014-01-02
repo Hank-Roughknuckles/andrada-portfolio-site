@@ -1,5 +1,6 @@
 <% provide( :title, "About Me - Edit" ) %>
 
+<%= render "slides" %>
 
 <%= form_for @content, :html => {:multipart => true} do |f| %>
   <div class="slide_edit">
@@ -33,7 +34,3 @@
     </div>
   </div>
 <% end %>
-
-<div class="slide_preview">
-  <%= render "slides" %>
-</div>

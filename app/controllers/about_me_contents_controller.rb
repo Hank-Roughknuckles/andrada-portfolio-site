@@ -17,6 +17,7 @@ class AboutMeContentsController < ApplicationController
     @content = AboutMeContent.find(params[:id])
     @active_content_id = @content.id
     @count = AboutMeContent.count
+    @is_preview = true
   end
 
   def update
@@ -42,5 +43,6 @@ class AboutMeContentsController < ApplicationController
       return
     end
   end
+
 
 end
