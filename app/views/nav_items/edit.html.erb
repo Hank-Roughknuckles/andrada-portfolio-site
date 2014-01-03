@@ -9,5 +9,7 @@
   <%= f.text_field :link_4_name, placeholder: "4th Navbar Link", id: "nav_4_edit"  %>
   <%= f.text_field :link_5_name, placeholder: "5th Navbar Link", id: "nav_5_edit"  %>
 
-  <%= f.submit "Save" %>
+  <div class="save_button">
+    <%= f.submit "Save", class: "btn" %>
+  </div>
 <% end %>
