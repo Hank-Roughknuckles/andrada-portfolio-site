@@ -2,8 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-# attachHandlers = -> //uncomment when turbolinks is re-enabled
-
 $ ->
   originalHeader = $('#header_form').val()
   originalDescription = $('#description_form').val()
@@ -71,5 +69,3 @@ $ ->
 
   $("#button_title_form").blur ->
     $("#button_title_description_helper").fadeOut(200)
-
-# $(document).on "page:load", attachHandlers //uncomment when turbolinks is re-enabled

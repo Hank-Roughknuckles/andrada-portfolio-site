@@ -1,5 +1,3 @@
-// var slider; //uncomment when turbolinks is re-enabled
-// slider = function(){ //uncomment when turbolinks is re-enabled
 $(function(){
 
   var slides = $(".slide");
@@ -49,7 +47,3 @@ $(function(){
   });
 
 });
-// }; //uncomment when turbolinks is re-enabled
-
-//un-comment this when you re-enable turbolinks
-// $(document).on("page:load", slider);
