@@ -1,5 +1,7 @@
 <% provide( :title, "About Me - Edit" ) %>
 
+<div class="save_reminder"></div>
+
 <%= render "slides" %>
 
 <%= form_for @content, :html => {:multipart => true} do |f| %>
@@ -34,3 +36,5 @@
     </div>
   </div>
 <% end %>
+
+<div class="save_reminder"></div>

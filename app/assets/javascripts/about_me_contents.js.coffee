@@ -47,14 +47,14 @@ $ ->
 
   #Save reminder stuff
   showSaveReminder = ->
-    if $("#save_reminder").length == 0
-      $(".edit_navbar").after("<div id=\"save_reminder\">You have changed
-        a value. Please remember to press the save button.</div>");
+    if $(".save_reminder").text() == ""
+      $(".save_reminder").text("You have changed a value. Please remember
+      to press the save button.")
 
 
   hideSaveReminder = ->
     if $("#header_form").val() == originalHeader && $('#description_form').val() == originalDescription && $('#button_title_form').val() == originalButtonTitle
-      $("#save_reminder").remove()
+      $(".save_reminder").text("")
 
 
   #Button title edit stuff
