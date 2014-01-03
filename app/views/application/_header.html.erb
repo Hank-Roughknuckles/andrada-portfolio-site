@@ -7,11 +7,10 @@
   <ul class="navbar">
     <li id="nav_item_1"><%= link_to nav.link_1_name, 
       {
-        :controller => 
-          request.path =~ /\/admin\// ? 'admin' : 'guest', 
-        :action => 'about_me'
+        :controller => 'about_me_contents',
+        :action => 'index'
       }, 
-      { :class => ('selected' if request.path =~ /about_me/) } 
+      { :class => ('selected' if request.path =~ /about_me_contents#index/ || request.path == "/") } 
       %>
     </li>
     <li id="nav_item_2"><%= link_to nav.link_2_name, 
