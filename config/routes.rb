@@ -2,9 +2,10 @@ AndradaPortfolioSite::Application.routes.draw do
   devise_for :users
   root to: 'about_me_contents#index'
 
+  resource :sessions
   resources :nav_items
   resources :about_me_contents, path: "about_me"
-  resource :sessions
+  resources :showreel
 
   get '/login' => 'sessions#new'
   get '/logout' =>  'sessions#destroy'
