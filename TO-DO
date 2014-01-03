@@ -12,6 +12,8 @@ install ack and ack-vim
 
 Make slide preview in edit form scaled down so everything fits in one page.  In other words, make the preview be a smaller version of the slide
 
+Change color of save button when an element is edited, prompting the user to save
+
 
 REFACTOR
 ========
