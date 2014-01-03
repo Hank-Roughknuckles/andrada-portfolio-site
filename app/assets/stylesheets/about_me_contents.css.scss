@@ -222,18 +222,12 @@
 }
 
 
-//Fix formatting when the slide is a preview
-.slide_preview
+//miscellaneous
+.save_reminder
 {
-  .right_direction_button
-  {
-    margin-top: 373px;
-  }
-
-  .right_frame_button
-  {
-    margin-top: -10px;
-  }
+  margin-top: 40px;
+  height: 1px;
+  color: $selected_blue;
 }
 
 .spacer

@@ -1,8 +1,6 @@
 TO-DO
 =====
 
-make save helper always have a height to give spacing between navbar and content area.  change js to check if it's empty or not (rather than to see if it exists)
-
 Make the nav-bar auto adjust spacing based on size of elements so that the navbar always ONLY takes up one line
 
 center navbar within the home screen
