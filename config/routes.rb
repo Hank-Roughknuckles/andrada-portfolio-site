@@ -9,15 +9,6 @@ AndradaPortfolioSite::Application.routes.draw do
   get '/login' => 'sessions#new'
   get '/logout' =>  'sessions#destroy'
 
-  get '/about_me' => 'guest#about_me'
-  get '/showreel' => 'guest#showreel'
-  get '/works' => 'guest#works'
-  get '/current_projects' => 'guest#current_projects'
-  get '/contact' => 'guest#contact'
-
-  #useful for linking to the admin/[page_name] pages
-  get ':controller/:action'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
