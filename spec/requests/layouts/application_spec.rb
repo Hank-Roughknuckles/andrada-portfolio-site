@@ -33,13 +33,13 @@ describe "ApplicationLayout" do
     end
 
     describe "Sign-out button" do
-        before do
-          login_as user
-          visit root_path 
-          click_link "Sign Out"
-        end
+      before do
+        login_as user
+        visit root_path 
+        click_link "Sign Out"
+      end
 
-        it { should have_content "Sign In" }
+      it { should have_content "Sign In" }
     end
   end
 
