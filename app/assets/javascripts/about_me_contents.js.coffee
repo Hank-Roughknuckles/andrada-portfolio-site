@@ -50,11 +50,13 @@ $ ->
     if $(".save_reminder").text() == ""
       $(".save_reminder").text("You have changed a value. Please remember
       to press the save button.")
+      $(".save").addClass("btn-danger");
 
 
   hideSaveReminder = ->
     if $("#header_form").val() == originalHeader && $('#description_form').val() == originalDescription && $('#button_title_form').val() == originalButtonTitle
       $(".save_reminder").text("")
+      $(".save").removeClass("btn-danger");
 
 
   #Button title edit stuff

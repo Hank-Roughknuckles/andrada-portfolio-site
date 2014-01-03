@@ -55,7 +55,9 @@ $ ->
     if $("#save_reminder").text() == ""
       $("#save_reminder").text("You have changed a value. Please remember
       to press the save button.")
+      $(".save").addClass("btn-danger");
 
   hideSaveReminder = ->
     if $("#nav_1_edit").val() == originalNavItem1 && $("#nav_2_edit").val() == originalNavItem2 && $("#nav_3_edit").val() == originalNavItem3 && $("#nav_4_edit").val() == originalNavItem4 && $("#nav_5_edit").val() == originalNavItem5
       $("#save_reminder").text("")
+      $(".save").removeClass("btn-danger");
