@@ -1,3 +1,7 @@
+<% provide( :title, "Navbar - Edit" ) %>
+
+<div id="save_reminder"></div>
+
 <%= form_for @navItem do |f| %>
   <%= f.text_field :link_1_name, placeholder: "1st Navbar Link", id: "nav_1_edit" %>
   <%= f.text_field :link_2_name, placeholder: "2nd Navbar Link", id: "nav_2_edit"  %>
