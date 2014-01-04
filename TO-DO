@@ -1,6 +1,8 @@
 TO-DO
 =====
 
+Fix the application spec about the showreel button. Clicking the link doesn't do anything
+
 Make the nav-bar auto adjust spacing based on size of elements so that the navbar always ONLY takes up one line
 
 center navbar within the home screen
