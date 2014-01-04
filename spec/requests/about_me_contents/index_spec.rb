@@ -30,6 +30,5 @@ describe "AboutMePages" do
 
     it { should have_title "About Me" }
     it { should have_content "Edit" }
-
   end
 end
