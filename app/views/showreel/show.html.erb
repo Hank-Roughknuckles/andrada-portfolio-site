@@ -3,3 +3,9 @@
 <%= @content.id %>
 <%= @content.video_link %>
 <%= @content.header %>
+
+<% if user_signed_in? %>
+  <span class="edit_content">
+    <%= link_to "Edit Content", edit_showreel_path(@content) %>
+  </span>
+<% end %>

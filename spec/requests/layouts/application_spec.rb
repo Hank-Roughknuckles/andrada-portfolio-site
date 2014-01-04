@@ -2,8 +2,9 @@ require 'spec_helper'
 
 describe "ApplicationLayout" do
 
-  subject{ page }
   let(:user) { FactoryGirl.create :user }
+  let(:showreel) { FactoryGirl.create :showreel }
+  subject{ page }
 
   describe "Title on page" do
     before do
@@ -12,7 +13,7 @@ describe "ApplicationLayout" do
 
     it { should have_title 'Andrada' }
   end
-  
+
   describe "Navbar" do
     before do
       login_as user
@@ -42,6 +43,4 @@ describe "ApplicationLayout" do
       it { should have_content "Sign In" }
     end
   end
-
 end
-
