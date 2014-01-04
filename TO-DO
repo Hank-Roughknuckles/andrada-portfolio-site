@@ -1,6 +1,8 @@
 TO-DO
 =====
 
+write tests for edit page - showreel
+
 Fix the application spec about the showreel button. Clicking the link doesn't do anything
 
 Make the nav-bar auto adjust spacing based on size of elements so that the navbar always ONLY takes up one line
