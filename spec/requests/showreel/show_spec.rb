@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe "ShowreelPages" do
+  let(:showreel) { FactoryGirl.create :showreel }
   subject { page }
 
   describe "show page contents" do
     before do
-      visit root_path
-      click_link "Showreel"
+      visit showreel_path showreel.id
     end
 
     it { should have_title "Showreel" }
