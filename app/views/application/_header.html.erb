@@ -13,10 +13,12 @@
       { :class => ('selected' if request.path =~ /about_me_contents#index/ || request.path == "/") } 
       %>
     </li>
+
     <li id="nav_item_2"><%= link_to nav.link_2_name, Showreel.first,
       { :class => ('selected' if request.path =~ /showreel/) } 
       %>
     </li>
+
     <li id="nav_item_3"><%= link_to nav.link_3_name, 
       {
         :controller => 
@@ -26,6 +28,7 @@
       { :class => ('selected' if request.path =~ /works/) } 
       %>
     </li>
+
     <li id="nav_item_4"><%= link_to nav.link_4_name, 
       {
         :controller => 
@@ -35,6 +38,7 @@
       { :class => ('selected' if request.path =~ /current_projects/) } 
       %>
     </li>
+
     <li id="nav_item_5"><%= link_to nav.link_5_name, 
       {
         :controller => 
