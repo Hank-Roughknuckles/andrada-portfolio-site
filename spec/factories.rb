@@ -6,15 +6,6 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
-  factory :about_me_content do
-    id "0"
-    header "header"
-    description "my_description"
-    button_title "my_button_title"
-  end
-end
-
-FactoryGirl.define do
   factory :nav_item do
     id "0"
     link_1_name "About Me"
@@ -25,3 +16,19 @@ FactoryGirl.define do
   end
 end
 
+FactoryGirl.define do
+  factory :about_me_content do
+    id "0"
+    header "header"
+    description "my_description"
+    button_title "my_button_title"
+  end
+end
+
+FactoryGirl.define do
+  factory :showreel do
+    id "0"
+    video_link "http://vimeo.com/82123812"
+    header "My Showreel"
+  end
+end
