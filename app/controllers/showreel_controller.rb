@@ -14,16 +14,17 @@ class ShowreelController < ApplicationController
     #if link isn't vimeo, throw an error
 
     @content = Showreel.find(params[:id])
-    if @content.update_attributes! content_params
+    if @content.update_attributes showreel_params
       # @content = Showreel.all
       redirect_to action: "show"
     else
+      flash[:alert] = "Invalid video link.  Please use a link to a video on Vimeo"
       render 'edit'
     end
 
   end
 
-  def content_params
+  def showreel_params
     params.require(:showreel).permit(:header, :description, :video_link)
   end
 
