@@ -25,5 +25,18 @@ describe "ShowreelEditPage" do
       it { should have_content "Description" }
       it { should have_content "Video link" }
     end
+
+    describe "The Edit process" do
+      describe "Editing the header and description" do
+        before do
+          fill_in "Header", with: "test Header"
+          fill_in "Description", with: "test Description"
+          click_button "Save"
+        end
+
+        it { should have_content "test Header" }
+        it { should have_content "test Description" }
+      end
+
   end
 end
