@@ -50,7 +50,7 @@ describe "ShowreelEditPage" do
 
         describe "By adding a proper link" do
           before do
-            fill_in "Video link", with: "https://vimeo.com/63967638"   
+            fill_in "Video link", with: "  https://vimeo.com/63967638  "   
             click_button "Save"
           end
 
