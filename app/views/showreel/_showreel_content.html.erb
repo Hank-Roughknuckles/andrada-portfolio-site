@@ -1,0 +1,10 @@
+<div class="showreel_content">
+  <div class="showreel_video_content">
+    <%= render "embedded_video", :content => @content %>
+  </div>
+
+  <div class="showreel_text_content">
+    <%= @content.header %>
+    <%= @content.description %>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 <%= form_for @content do |f| %>
-  <%= render "embedded_video", :content => @content %>
+  <%= render "showreel_content", :content => @content %>
+
   <%= f.label :video_link %>
   <%= f.text_field :video_link %>
 

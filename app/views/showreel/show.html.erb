@@ -1,9 +1,6 @@
 <% provide( :title, "Showreel" ) %>
 
-<%= render "embedded_video", :content => @content %>
-
-<%= @content.header %>
-<%= @content.description %>
+<%= render "showreel_content", :content => @content %>
 
 <% if user_signed_in? %>
   <div class="edit_showreel_content">
