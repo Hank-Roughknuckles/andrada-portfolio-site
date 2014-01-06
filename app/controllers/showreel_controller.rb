@@ -11,8 +11,6 @@ class ShowreelController < ApplicationController
   end
 
   def update
-    #if link isn't vimeo, throw an error
-
     @content = Showreel.find(params[:id])
     if @content.update_attributes showreel_params
       redirect_to action: "show"
