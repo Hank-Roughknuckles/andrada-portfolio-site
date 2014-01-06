@@ -1,7 +1,9 @@
 <% provide( :title, "About Me" ) %>
 
 <ul class="slider">
-  <%= render "slides" %>
+  <% for content in @contents %>
+    <%= render "slide", :content => content %>
+  <% end %>
 </ul>
 
 <% if user_signed_in? %>

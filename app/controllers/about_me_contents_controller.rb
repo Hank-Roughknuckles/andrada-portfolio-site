@@ -13,7 +13,6 @@ class AboutMeContentsController < ApplicationController
   end
 
   def edit
-    @contents = AboutMeContent.find_all_by_id(params[:id])
     @content = AboutMeContent.find(params[:id])
     @active_content_id = @content.id
     @count = AboutMeContent.count
