@@ -1,6 +1,6 @@
 <% provide( :title, "Showreel" ) %>
 
-<%= embed_video @content.video_link %>
+<%= render "embedded_video", :content => @content %>
 
 <%= @content.header %>
 <%= @content.description %>
