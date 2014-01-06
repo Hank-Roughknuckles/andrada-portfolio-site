@@ -5,7 +5,7 @@
 <%= @content.description %>
 
 <% if user_signed_in? %>
-  <span class="edit_content">
+  <div class="edit_showreel_content">
     <%= link_to "Edit Content", edit_showreel_path(@content) %>
-  </span>
+  </div>
 <% end %>
