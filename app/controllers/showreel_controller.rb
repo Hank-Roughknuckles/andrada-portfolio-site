@@ -1,6 +1,6 @@
 class ShowreelController < ApplicationController
   before_filter :authorize, :except => :show
-  helper_method :get_video_id
+  helper_method :embed_video
 
   def show
     @content = Showreel.find params[:id]
@@ -15,7 +15,6 @@ class ShowreelController < ApplicationController
 
     @content = Showreel.find(params[:id])
     if @content.update_attributes showreel_params
-      # @content = Showreel.all
       redirect_to action: "show"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video on Vimeo"
@@ -30,7 +29,8 @@ class ShowreelController < ApplicationController
 
   # given a link to a vimeo video, return the id number for the video to
   # be used in the embed code in the view
-  def get_video_id( link )
-    /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(link)[6]
+  def embed_video( link )
+    vimeo_id = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(link)[6]
+    "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\" width=\"500\" height=\"375\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>".html_safe
   end
 end
