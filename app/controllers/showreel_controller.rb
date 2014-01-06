@@ -31,6 +31,8 @@ class ShowreelController < ApplicationController
   # be used in the embed code in the view
   def embed_video( link )
     vimeo_id = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(link)[6]
-    "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\" width=\"500\" height=\"375\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>".html_safe
+    return "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\" width=\"500\"
+    height=\"375\" frameborder=\"0\" webkitallowfullscreen
+    mozallowfullscreen allowfullscreen></iframe>".html_safe
   end
 end
