@@ -12,7 +12,6 @@ describe "WorksPages" do
         visit works_path
       end
 
-      it { should_not have_content "Edit Content" }
       it { should have_content "Sign In" }
     end
 
@@ -22,7 +21,6 @@ describe "WorksPages" do
         visit works_path
       end
 
-      it { should have_content "Edit Content" }
       it { should have_content "Sign Out" }
     end
 
