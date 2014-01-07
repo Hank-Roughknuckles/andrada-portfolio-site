@@ -1,1 +1,19 @@
-This is the works_edit_table partial!
+<%# Contains table for displaying all the works to the admin so that
+  he/she can get a quick overview of all of them %>
+
+<table border="1">
+  <tr>
+    <th>Video Thumbnail</th>
+    <th>Video Link</th>
+    <th>Header</th>
+    <th>Description</th>
+  </tr>
+<% for content in @contents %>
+  <tr>
+    <td></td>
+    <td><%= content.video_link %></td>
+    <td><%= content.header %></td>
+    <td><%= content.description %></td>
+</tr>
+<% end %>
+</table>

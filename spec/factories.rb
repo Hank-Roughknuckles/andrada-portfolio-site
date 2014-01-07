@@ -35,10 +35,10 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
-  factory :works do
-    id "0"
-    description "This is my description.  I hope you like it!"
-    video_link "http://vimeo.com/82123812"
-    header "My Showreel"
+  factory :works do |u|
+    u.sequence(:id) {|n|}
+    u.sequence(:description) {|n| "This is my description #{n}."}
+    u.video_link "http://vimeo.com/82123812"
+    u.header "The Header"
   end
 end
