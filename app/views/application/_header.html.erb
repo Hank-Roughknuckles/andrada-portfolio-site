@@ -21,9 +21,8 @@
 
   <li id="nav_item_3"><%= link_to nav.link_3_name, 
     {
-      :controller => 
-        request.path =~ /\/admin\// ? 'admin' : 'guest', 
-      :action => 'works'
+      :controller => 'works',
+      :action => 'index'
     }, 
     { :class => ('selected' if request.path =~ /works/) } 
     %>
