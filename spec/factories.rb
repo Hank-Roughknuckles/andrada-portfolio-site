@@ -33,3 +33,12 @@ FactoryGirl.define do
     header "My Showreel"
   end
 end
+
+FactoryGirl.define do
+  factory :works do
+    id "0"
+    description "This is my description.  I hope you like it!"
+    video_link "http://vimeo.com/82123812"
+    header "My Showreel"
+  end
+end
