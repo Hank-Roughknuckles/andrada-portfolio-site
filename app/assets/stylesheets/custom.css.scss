@@ -78,7 +78,8 @@ body
   //navbar stuff
   .navbar
   {
-    margin-left: 63px;
+    // margin-left: 63px;
+    padding-left: 0px;
 
     li
     {
@@ -93,12 +94,16 @@ body
       display: block;
       margin: 5px auto;
       padding: 0px 41px;
-      max-width: 185px;
+      max-width: 237px;
       &:hover
       {
         color: $selected_blue;
         text-decoration: none;
       }
+    }
+    a#navbar-first
+    {
+      padding-left: 30px;
     }
 
     .selected

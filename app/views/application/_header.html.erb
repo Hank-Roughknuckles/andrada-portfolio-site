@@ -10,7 +10,10 @@
       :controller => 'about_me_contents',
       :action => 'index'
     }, 
-    { :class => ('selected' if request.path =~ /about_me_contents#index/ || request.path == "/") } 
+    { 
+      :class => ('selected' if request.path =~ /about_me_contents#index/ || request.path == "/"),
+      :id => "navbar-first"
+    } 
     %>
   </li>
 
