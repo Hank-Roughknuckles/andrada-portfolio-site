@@ -11,7 +11,7 @@
   </tr>
 <% for content in @contents %>
   <tr>
-    <td></td>
+    <td><%= embed_video content.video_link %></td>
     <td><%= content.video_link %></td>
     <td><%= content.header %></td>
     <td><%= content.description %></td>
