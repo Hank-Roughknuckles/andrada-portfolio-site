@@ -1,7 +1,7 @@
 TO-DO
 =====
 
-Make works/index_spec signed in tests use xpaths to make sure that content displayed is inside a table
+Add ability to add new works to the works page
 
 Fix the application spec about the showreel button. Clicking the link doesn't do anything
 

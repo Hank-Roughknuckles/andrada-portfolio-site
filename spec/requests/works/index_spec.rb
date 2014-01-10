@@ -31,6 +31,7 @@ describe "WorksPages" do
         it { should have_content "Header" }
         it { should have_content "Description" }
 
+        it { should have_link "Add New Work" }
         it { should have_xpath "//table/tr/td[text()=\"#{works1.header}\"]" }
         it { should have_xpath "//table/tr/td[text()=\"#{works1.description}\"]" }
         it { should have_xpath "//table/tr/td[text()=\"#{works1.video_link}\"]" }
