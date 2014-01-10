@@ -17,10 +17,12 @@ class ApplicationController < ActionController::Base
 
   # given a link to a vimeo video, return the id number for the video to
   # be used in the embed code in the view
-  def embed_video( link )
+  def embed_video( link, options = {} )
     vimeo_id = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(link)[6]
-    return "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\" width=\"500\"
-    height=\"375\" frameborder=\"0\" webkitallowfullscreen
+    width = options[:width] || 500
+    height = options[:height] || 375
+    return "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\" width=\"#{width}\"
+    height=\"#{height}\" frameborder=\"0\" webkitallowfullscreen
     mozallowfullscreen allowfullscreen></iframe>".html_safe
   end
 end
