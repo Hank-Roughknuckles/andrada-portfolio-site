@@ -1,9 +1,7 @@
 <% provide( :title, "Works" ) %>
 
 <% for content in @contents  %>
-  <div class="embedded_video">Embedded video goes here</div>
-  <div class="work_header"><%= content.header %></div>
-  <div class="work_description"><%= content.description %></div>
+  <%= render "work_content", :content => content %>
 <% end %>
 
 <% if user_signed_in? %>
