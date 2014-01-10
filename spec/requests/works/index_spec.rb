@@ -37,7 +37,7 @@ describe "WorksPages" do
         it { should have_xpath "//table/tr/td[text()=\"#{works2.header}\"]" }
         it { should have_xpath "//table/tr/td[text()=\"#{works2.description}\"]" }
         it { should have_xpath "//table/tr/td[text()=\"#{works2.video_link}\"]" }
-        it { should have_link "Edit" }
+        it { should have_xpath "//table/tr/td/a[text()=\"Edit\"]" }
       end
     end
   end

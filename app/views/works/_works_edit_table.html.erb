@@ -7,6 +7,7 @@
     <th>Video Link</th>
     <th>Header</th>
     <th>Description</th>
+    <th></th>
   </tr>
 <% for content in @contents %>
   <tr>
@@ -14,6 +15,7 @@
     <td><%= content.video_link %></td>
     <td><%= content.header %></td>
     <td><%= content.description %></td>
+    <td><%= link_to "Edit", edit_work_path( content ) %></td>
 </tr>
 <% end %>
 </table>
