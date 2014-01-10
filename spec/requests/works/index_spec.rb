@@ -31,14 +31,12 @@ describe "WorksPages" do
         it { should have_content "Header" }
         it { should have_content "Description" }
 
-        #TODO: the following should be xpaths to show that they're in
-        #a table
-        it { should have_content works1.header }
-        it { should have_content works1.description }
-        it { should have_content works1.video_link }
-        it { should have_content works2.header }
-        it { should have_content works2.description }
-        it { should have_content works2.video_link }
+        it { should have_xpath "//table/tr/td[text()=\"#{works1.header}\"]" }
+        it { should have_xpath "//table/tr/td[text()=\"#{works1.description}\"]" }
+        it { should have_xpath "//table/tr/td[text()=\"#{works1.video_link}\"]" }
+        it { should have_xpath "//table/tr/td[text()=\"#{works2.header}\"]" }
+        it { should have_xpath "//table/tr/td[text()=\"#{works2.description}\"]" }
+        it { should have_xpath "//table/tr/td[text()=\"#{works2.video_link}\"]" }
         it { should have_link "Edit" }
       end
     end
