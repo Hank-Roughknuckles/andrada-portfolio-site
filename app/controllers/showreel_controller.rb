@@ -15,7 +15,8 @@ class ShowreelController < ApplicationController
     if @content.update_attributes showreel_params
       redirect_to action: "show"
     else
-      flash[:alert] = "Invalid video link.  Please use a link to a video on Vimeo"
+      flash[:alert] = "Invalid video link.  Please use a link to a video
+        on Vimeo"
       render 'edit'
     end
   end
