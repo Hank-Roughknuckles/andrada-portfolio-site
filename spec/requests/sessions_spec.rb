@@ -6,7 +6,7 @@ describe "SignInPages" do
   subject {page}
   let(:user) { FactoryGirl.create :user }
 
-  describe "the sign-in page" do
+  describe "the sign-in page contents" do
     it { should have_title "Sign in" }
     it { should have_content "Email" }
     it { should have_content "Password" }
@@ -35,4 +35,15 @@ describe "SignInPages" do
     end
   end
   
+  describe "The sign-out process" do
+    subject { page }
+    let(:user) { FactoryGirl.create :user }
+
+    before do
+      login_as user
+      visit root_path
+      click_link "Sign Out"
+    end
+    it { should have_content "Signed out" }
+  end
 end
