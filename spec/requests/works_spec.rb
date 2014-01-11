@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe "WorksPages" do
   let!(:user) { FactoryGirl.create :user }
-  let!(:works1) { FactoryGirl.create :works }
-  let!(:works2) { FactoryGirl.create :works }
+  let!(:works1) { FactoryGirl.create :work }
+  let!(:works2) { FactoryGirl.create :work }
 
   subject { page }
 
@@ -32,7 +32,7 @@ describe "WorksPages" do
           it { should have_content "Header" }
           it { should have_content "Description" }
 
-          it { should have_link "Add New Work" }
+          it { should have_link "Add New Item" }
           it { should have_xpath "//table/tr/td[text()=\"#{works1.header}\"]" }
           it { should have_xpath "//table/tr/td[text()=\"#{works1.description}\"]" }
           it { should have_xpath "//table/tr/td[text()=\"#{works1.video_link}\"]" }
@@ -86,5 +86,46 @@ describe "WorksPages" do
         it { should have_xpath "//iframe" }
       end
     end
+  end
+
+  describe "The New Page" do
+    before do
+      login_as user
+      visit works_path
+      click_link "Add New Item"
+    end
+    
+    it { should have_content "Add New Work" }
+    it { should have_title "New Work" }
+    it { should have_field "Video link" }
+    it { should have_field "Header" }
+    it { should have_field "Description" }
+    it { should have_xpath "//iframe" }
+
+    describe "Adding a new work" do
+      describe "with an invalid video link" do
+        before do
+          fill_in "Video link", with: "www.google.com"
+          click_button "Save"
+        end
+
+        it { should have_content "Invalid video link" }
+      end
+
+      describe "with a valid video link" do
+        before do
+          fill_in "Video link", with: "https://vimeo.com/83571847"
+          fill_in "Header", with: "Test Header"
+          fill_in "Description", with: "Test Description"
+          click_button "Save"
+        end
+
+        it { should have_content "Test Header" }
+        it { should have_content "Test Description" }
+        it { should have_content "New Work Added" }
+        it { should have_xpath "//iframe" }
+      end
+    end
+
   end
 end

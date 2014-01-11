@@ -9,6 +9,22 @@ class WorksController < ApplicationController
     @content = Work.find params[:id]
   end
 
+  def new
+    @work = Work.new( video_link: "https://vimeo.com/14470340" )
+  end
+
+  def create
+    @work = Work.new(works_params)
+
+    if @work.save
+      flash[:notice] = "New Work Added"
+      redirect_to action: "index"
+    else
+      flash[:alert] = "Invalid video link.  Please use a link to a video
+      on Vimeo"
+      render 'new'
+    end
+
   end
 
   def update

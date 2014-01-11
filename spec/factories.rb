@@ -35,7 +35,7 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
-  factory :works do |u|
+  factory :work do |u|
     u.sequence(:id) {|n|}
     u.sequence(:description) {|n| "This is my description #{n}."}
     u.video_link "http://vimeo.com/82123812"
