@@ -2,24 +2,27 @@ class WorksController < ApplicationController
   before_filter :authorize, :except => :index
 
   def index
-    @contents = Works.all
+    @contents = Work.all
   end
 
   def edit
-    @content = Works.find params[:id]
+    @content = Work.find params[:id]
+  end
+
   end
 
   def update
-    @content = Works.find(params[:id])
+    @content = Work.find(params[:id])
     if @content.update_attributes works_params
       redirect_to action: "index"
     else
-      flash[:alert] = "Invalid video link.  Please use a link to a video on Vimeo"
+      flash[:alert] = "Invalid video link.  Please use a link to a video
+      on Vimeo"
       render 'edit'
     end
   end
 
   def works_params
-    params.require(:works).permit(:header, :description, :video_link)
+    params.require(:work).permit(:header, :description, :video_link)
   end
 end

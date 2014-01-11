@@ -1,4 +1,4 @@
-class Works < ActiveRecord::Base
+class Work < ActiveRecord::Base
   VideoLinkRegex = /[a-zA-Z:\/]+vimeo.com\/[0-9]+/i
 
   validates_presence_of :description, :video_link
