@@ -1,0 +1,22 @@
+<%# Contains table for displaying all the works to the admin so that
+  he/she can get a quick overview of all of them %>
+
+<table border="1">
+  <tr>
+    <th>Video Thumbnail</th>
+    <th>Video Link</th>
+    <th>Header</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+<% for content in @contents %>
+  <tr>
+    <td><%= embed_video( content.video_link, :width => "200", :height => "100" ) %></td>
+    <td><%= content.video_link %></td>
+    <td><%= content.header %></td>
+    <td><%= content.description %></td>
+    <td><%= link_to "Edit", edit_work_path( content ), id: "edit_work_#{content.id}" %></td>
+    <td><%= button_to "Delete", content, method: "delete", id: "delete_work_#{content.id}" %></td>
+  </tr>
+<% end %>
+</table>

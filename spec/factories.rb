@@ -33,3 +33,12 @@ FactoryGirl.define do
     header "My Showreel"
   end
 end
+
+FactoryGirl.define do
+  factory :work do |u|
+    u.sequence(:id) {|n|}
+    u.sequence(:description) {|n| "This is my description #{n}."}
+    u.video_link "http://vimeo.com/82123812"
+    u.sequence(:header) {|n| "Header #{n}"}
+  end
+end

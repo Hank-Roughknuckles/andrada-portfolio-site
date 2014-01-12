@@ -1,0 +1,18 @@
+<% provide( :title, "New Work" ) %>
+
+<h1>Add New Work</h1>
+
+<%= render "work_content", :content => @work  %>
+
+<%= form_for @work do |f| %>
+  <%= f.label :video_link %>
+  <%= f.text_field :video_link %>
+
+  <%= f.label :header %>
+  <%= f.text_field :header %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.submit "Save" %>
+<% end %>

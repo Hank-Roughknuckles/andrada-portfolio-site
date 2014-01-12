@@ -43,4 +43,13 @@ describe "ApplicationLayout" do
       it { should have_content "Sign In" }
     end
   end
+
+  describe "The Works Page" do
+    before do
+      visit root_path
+      click_link "Works"
+    end
+
+    it { should have_title "Works" }
+  end
 end
