@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Works do
+describe Work do
 end
