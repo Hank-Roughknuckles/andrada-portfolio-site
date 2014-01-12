@@ -44,7 +44,8 @@ class WorksController < ApplicationController
       redirect_to action: "index"
       flash[:notice] = "Work Was Deleted Successfully"
     else
-      flash[:error] = "An error occurred, please contact the web-programmer"
+      flash[:error] = "An error occurred, please contact the
+      web-programmer"
     end
   end
 
