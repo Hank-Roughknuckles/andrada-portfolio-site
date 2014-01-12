@@ -16,6 +16,7 @@
     <td><%= content.header %></td>
     <td><%= content.description %></td>
     <td><%= link_to "Edit", edit_work_path( content ), id: "edit_work_#{content.id}" %></td>
+    <td><%= button_to "Delete", content, method: "delete", id: "delete_work_#{content.id}" %></td>
   </tr>
 <% end %>
 </table>

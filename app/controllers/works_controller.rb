@@ -38,6 +38,16 @@ class WorksController < ApplicationController
     end
   end
 
+  def destroy
+    if @content = Work.find(params[:id])
+      @content.destroy
+      redirect_to action: "index"
+      flash[:notice] = "Work Was Deleted Successfully"
+    else
+      flash[:error] = "An error occurred, please contact the web-programmer"
+    end
+  end
+
   def works_params
     params.require(:work).permit(:header, :description, :video_link)
   end

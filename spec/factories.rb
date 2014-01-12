@@ -39,6 +39,6 @@ FactoryGirl.define do
     u.sequence(:id) {|n|}
     u.sequence(:description) {|n| "This is my description #{n}."}
     u.video_link "http://vimeo.com/82123812"
-    u.header "The Header"
+    u.sequence(:header) {|n| "Header #{n}"}
   end
 end

@@ -126,6 +126,17 @@ describe "WorksPages" do
         it { should have_xpath "//iframe" }
       end
     end
+  end
 
+  describe "The Destroy Process" do
+    before do
+      login_as user
+      visit works_path
+      click_button "delete_work_#{works1.id}"
+    end
+
+    it { should have_content "Deleted Successfully" }
+    it { should_not have_content works1.header }
+    it { should_not have_content works1.description }
   end
 end
