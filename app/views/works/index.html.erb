@@ -6,5 +6,5 @@
 
 <% if user_signed_in? %>
   <%= link_to 'Add New Item', new_work_path %>
-<%= render "works_edit_table", contents: @contents %>
+  <%= render "works_edit_table", contents: @contents %>
 <% end %>
