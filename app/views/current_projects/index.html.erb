@@ -1,0 +1,6 @@
+<% provide( :title, "Current Projects" ) %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Add Project', new_work_path %>
+  <%= render "current_projects_edit_table", projects: @projects %>
+<% end %>

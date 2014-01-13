@@ -7,6 +7,7 @@ AndradaPortfolioSite::Application.routes.draw do
   resources :about_me_contents, path: "about_me"
   resources :showreel
   resources :works
+  resources :current_projects
 
   get '/login' => 'sessions#new'
   get '/logout' =>  'sessions#destroy'

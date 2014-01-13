@@ -42,3 +42,13 @@ FactoryGirl.define do
     u.sequence(:header) {|n| "Header #{n}"}
   end
 end
+
+FactoryGirl.define do
+  factory :current_project do |u|
+    u.sequence(:id) {|n|}
+    u.sequence(:header) {|n| "Header #{n}"}
+    u.sequence(:description) {|n| "This is my description #{n}."}
+    u.progress 65
+    u.media_link "http://vimeo.com/82123812"
+  end
+end

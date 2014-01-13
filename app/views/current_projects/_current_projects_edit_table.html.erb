@@ -1,0 +1,25 @@
+<%# Contains table for displaying all the works to the admin so that
+  he/she can get a quick overview of all of them %>
+
+<table border="1">
+  <tr>
+    <th></th>
+    <th>Media Link</th>
+    <th>Header</th>
+    <th>Description</th>
+    <th>Progress</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% for project in @projects %>
+  <tr>
+    <td><%= embed_video( project.media_link, :width => "200", :height => "100" ) %></td>
+    <td><%= project.media_link %></td>
+    <td><%= project.header %></td>
+    <td><%= project.description %></td>
+    <td><%= project.progress %></td>
+    <td><%= link_to "Edit", edit_current_project_path(project), id: "edit_current_project_#{project.id}" %></td>
+    <td><%= button_to "Delete", project, method: "delete", id: "delete_work_#{project.id}" %></td>
+  </tr>
+<% end %>
+</table>
