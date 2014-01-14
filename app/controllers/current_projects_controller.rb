@@ -20,6 +20,17 @@ class CurrentProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    if (@project = CurrentProject.find params[:id])
+      @project.destroy
+      redirect_to action: "index"
+      flash[:notice] = "Project successfully deleted"
+    else
+      flash[:error] = "An error occurred, please contact the
+      web-programmer"
+    end
+  end
+
   def current_project_params
     params.require(:current_project).permit(:header, :description, :media_link, :progress)
   end

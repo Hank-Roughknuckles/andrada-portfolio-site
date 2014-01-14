@@ -49,6 +49,16 @@ describe "CurrentProjectsPages" do
           it { should have_content "saved successfully" }
         end
       end
+
+      describe "The Delete Process" do
+        before do
+          click_button "delete_work_#{current_project_1.id}"
+        end
+
+        it { should_not have_content current_project_1.header }
+        it { should_not have_content current_project_1.description }
+        it { should have_content "successfully deleted" }
+      end
     end
   end
 end
