@@ -22,10 +22,33 @@ describe "CurrentProjectsPages" do
       before do
         login_as user
         visit current_projects_path
-        print page.html
       end
       it { should have_xpath "//table//td/a[text()=\"Edit\"]" }
       it { should have_content "Add Project" }
+      it { should have_button "Delete" }
+
+      describe "The Add Page" do
+        before do
+          click_link "Add Project"
+        end
+
+        it { should have_field "Header" }
+        it { should have_field "Description" }
+        it { should have_field "Media link" }
+        it { should have_field "Progress" }
+
+        describe "The add process" do
+          before do
+            fill_in "Header", with: "test Header 1"
+            fill_in "Description", with: "test Description 1"
+            fill_in "Media link", with: "test Media link 1"
+            fill_in "Progress", with: 35
+            click_button "Save"
+          end
+          
+          it { should have_content "saved successfully" }
+        end
+      end
     end
   end
 end

@@ -19,13 +19,15 @@ class ApplicationController < ActionController::Base
   # be used in the embed code in the view
   def embed_video( link, options = {} )
     vimeo_id = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(link)
+    width = options[:width] || 500
+    height = options[:height] || 375
+
     if vimeo_id
       vimeo_id = vimeo_id[6]
     else
-      return "Bad Video Link"
+      return "<img src=\"/assets/placeholder.png\" alt=\"No image added yet\" width=\"#{width}\" height=\"#{height}\">".html_safe
     end
-    width = options[:width] || 500
-    height = options[:height] || 375
+
     return "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\" width=\"#{width}\"
     height=\"#{height}\" frameborder=\"0\" webkitallowfullscreen
     mozallowfullscreen allowfullscreen></iframe>".html_safe
