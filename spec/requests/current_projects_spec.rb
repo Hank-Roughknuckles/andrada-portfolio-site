@@ -36,6 +36,8 @@ describe "CurrentProjectsPages" do
         it { should have_field "Description" }
         it { should have_field "Media link" }
         it { should have_field "media_image_upload" }
+        it { should have_field "current_project_media_choice_link" }
+        it { should have_field "current_project_media_choice_upload" }
         it { should have_field "Progress" }
 
         describe "the Edit Process" do
@@ -44,7 +46,6 @@ describe "CurrentProjectsPages" do
             fill_in "Description", with: "test Description 1"
             fill_in "Media link", with: "test Media link 1"
             fill_in "Progress", with: 35
-            print page.html
             click_button "Save"
           end
 

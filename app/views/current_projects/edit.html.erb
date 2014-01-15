@@ -9,9 +9,13 @@
   <%= f.label :description %>
   <%= f.text_field :description %>
 
+  <%= f.radio_button :media_choice, "link" %>
+  <%= f.label :media_choice_link, "Use Hosted Link" %>
   <%= f.label :media_link %>
   <%= f.text_field :media_link %>
 
+  <%= f.radio_button :media_choice, "upload" %>
+  <%= f.label :media_choice_upload, "Use File Upload" %>
   <%= f.label :media_image %>
   <%= f.file_field :media_image, id: "media_image_upload" %>
 
