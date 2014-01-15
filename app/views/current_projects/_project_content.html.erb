@@ -1,7 +1,7 @@
 <% if project.media_choice == "link" %>
-  <div class="project_media_preview"><%= embed_video(link: project.media_link) %></div>
+  <div class="project_media_preview"><%= embed_media(link: project.media_link) %></div>
 <% else %>
-  <div class="project_media_preview"><%= embed_video(uploaded_image_url: project.media_image.url) %></div>
+  <div class="project_media_preview"><%= embed_media(uploaded_image_url: project.media_image.url) %></div>
 <% end %>
 <div class="project_header"><%= project.header %></div>
 <div class="project_description"><%= project.description %></div>

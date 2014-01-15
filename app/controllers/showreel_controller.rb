@@ -1,6 +1,5 @@
 class ShowreelController < ApplicationController
   before_filter :authorize, :except => :show
-  helper_method :embed_video
 
   def show
     @content = Showreel.find params[:id]

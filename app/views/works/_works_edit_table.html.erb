@@ -11,7 +11,7 @@
   </tr>
 <% for content in @contents %>
   <tr>
-    <td><%= embed_video( content.video_link, :width => "200", :height => "100" ) %></td>
+    <td><%= embed_media( link: content.video_link, :width => "200", :height => "100" ) %></td>
     <td><%= content.video_link %></td>
     <td><%= content.header %></td>
     <td><%= content.description %></td>

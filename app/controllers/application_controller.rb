@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :admin?, :embed_video
+  helper_method :admin?, :embed_media
 
   protected
 
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   # given a link to a vimeo video, return the id number for the video to
   # be used in the embed code in the view
-  def embed_video( options = {} )
+  def embed_media( options = {} )
     width = options[:width] || 500
     height = options[:height] || 375
 
