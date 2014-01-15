@@ -13,7 +13,11 @@
   </tr>
 <% for project in @projects %>
   <tr>
-    <td><%= embed_video( project.media_link, :width => "200", :height => "100" ) %></td>
+    <% if project.media_choice == "link" %>
+      <td><%= embed_video( link: project.media_link, width: "200", height: "100" ) %></td>
+    <% else %>
+      <td><%= embed_video( uploaded_image_url: project.media_image.url, width: "200", height: "100" ) %></td>
+    <% end %>
     <td><%= project.media_link %></td>
     <td><%= project.header %></td>
     <td><%= project.description %></td>
