@@ -46,16 +46,30 @@ class ApplicationController < ActionController::Base
   end
 
   def embed_video( options = {} )
-    vimeo_id = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(options[:link])
-    if vimeo_id
-      vimeo_id = vimeo_id[6]
+    link = options[:link]
+
+    if link != ""
+      # if youtube
+      if link =~ /youtube\.com/
+        youtube_id = link.match(/v=([^&]*)/)[1]
+
+        return "<iframe width=\"#{options[:width]}\"
+        height=\"#{options[:height]}\"
+        src=\"//www.youtube.com/embed/TBvPaqMZyo8\" frameborder=\"0\"
+        allowfullscreen></iframe>".html_safe
+
+      # if vimeo
+      elsif link =~ /vimeo\.com/
+        vimeo_id = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(link)[6]
+
+        return "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\"
+        width=\"#{options[:width]}\" height=\"#{options[:height]}\"
+        frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
+        allowfullscreen></iframe>".html_safe
+      end
+
     else
       return broken_image_tag options[:height], options[:width]
     end
-
-    return "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\"
-    width=\"#{options[:width]}\" height=\"#{options[:height]}\"
-    frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
-    allowfullscreen></iframe>".html_safe
   end
 end
