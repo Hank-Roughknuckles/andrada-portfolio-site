@@ -9,7 +9,8 @@ describe "CurrentProjectsPages" do
 
   describe "Index page" do
     before do
-      visit current_projects_path
+      visit root_path
+      click_link "Current Projects"
     end
 
     it { should have_title "Current Projects" }
