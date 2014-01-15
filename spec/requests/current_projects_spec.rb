@@ -45,6 +45,7 @@ describe "CurrentProjectsPages" do
             fill_in "Header", with: "test Header 1"
             fill_in "Description", with: "test Description 1"
             fill_in "Media link", with: "test Media link 1"
+            choose "Use Hosted Link"
             fill_in "Progress", with: 35
             click_button "Save"
           end

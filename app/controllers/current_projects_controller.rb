@@ -4,7 +4,7 @@ class CurrentProjectsController < ApplicationController
   end
 
   def new
-    @project = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50 )
+    @project = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50, media_choice: "link" )
   end
 
   def create
