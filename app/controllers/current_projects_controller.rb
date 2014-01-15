@@ -12,7 +12,23 @@ class CurrentProjectsController < ApplicationController
 
     if @project.update_attributes current_project_params
       redirect_to action: "index"
-      flash[:notice] = "Project saved successfully."
+      flash[:notice] = "Project saved successfully"
+    else
+      flash[:alert] = "Invalid video link.  Please use a link to a video
+      on Vimeo"
+      render 'edit'
+    end
+  end
+
+  def edit
+    @project = CurrentProject.find params[:id]
+  end
+
+  def update
+    @project = CurrentProject.find(params[:id])
+    if @project.update_attributes current_project_params
+      flash[:notice] = "Project updated successfully"
+      redirect_to action: "index"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
       on Vimeo"

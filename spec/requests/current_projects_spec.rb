@@ -27,6 +27,30 @@ describe "CurrentProjectsPages" do
       it { should have_content "Add Project" }
       it { should have_button "Delete" }
 
+      describe "The Edit Page" do
+        before do
+          click_link "edit_current_project_#{current_project_1.id}"
+        end
+
+        it { should have_field "Header" }
+        it { should have_field "Description" }
+        it { should have_field "Media link" }
+        it { should have_field "Progress" }
+
+        describe "the Edit Process" do
+          before do
+            fill_in "Header", with: "test Header 1"
+            fill_in "Description", with: "test Description 1"
+            fill_in "Media link", with: "test Media link 1"
+            fill_in "Progress", with: 35
+            click_button "Save"
+            print page.html
+          end
+
+          it { should have_content "updated successfully" }
+        end
+      end
+
       describe "The Add Page" do
         before do
           click_link "Add Project"

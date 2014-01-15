@@ -1,0 +1,19 @@
+<% provide( :title, "Edit Project" ) %>
+
+<%= render "project_content", :project => @project %>
+
+<%= form_for @project do |f| %>
+  <%= f.label :header %>
+  <%= f.text_field :header %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :media_link %>
+  <%= f.text_field :media_link %>
+
+  <%= f.label :progress, "Progress (%)" %>
+  <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
+
+  <%= f.submit "Save" %>
+<% end %>
