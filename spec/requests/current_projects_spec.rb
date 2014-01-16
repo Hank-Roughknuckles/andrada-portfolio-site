@@ -42,16 +42,28 @@ describe "CurrentProjectsPages" do
         it { should have_field "Progress" }
 
         describe "the Edit Process" do
-          before do
-            fill_in "Header", with: "test Header 1"
-            fill_in "Description", with: "test Description 1"
-            fill_in "Media link", with: "test Media link 1"
-            choose "Use Hosted Link"
-            fill_in "Progress", with: 35
-            click_button "Save"
+          describe "With invalid information" do
+            before do
+              fill_in "Media link", with: "youtube.com"
+              choose "Use Hosted Link"
+              click_button "Save"
+            end
+
+            it { should have_content "Invalid video link" }
           end
 
-          it { should have_content "updated successfully" }
+          describe "With valid information" do
+            before do
+              fill_in "Header", with: "test Header 1"
+              fill_in "Description", with: "test Description 1"
+              fill_in "Media link", with: "http://www.youtube.com/watch?annotation_id=annotation_644039&feature=iv&src_vid=TJSGda3b3wA&v=eiMGJBxRtBw"
+              choose "Use Hosted Link"
+              fill_in "Progress", with: 35
+              click_button "Save"
+            end
+
+            it { should have_content "updated successfully" }
+          end
         end
       end
 
@@ -69,7 +81,7 @@ describe "CurrentProjectsPages" do
           before do
             fill_in "Header", with: "test Header 1"
             fill_in "Description", with: "test Description 1"
-            fill_in "Media link", with: "test Media link 1"
+            fill_in "Media link", with: "http://www.youtube.com/watch?annotation_id=annotation_644039&feature=iv&src_vid=TJSGda3b3wA&v=eiMGJBxRtBw"
             fill_in "Progress", with: 35
             click_button "Save"
           end

@@ -83,7 +83,6 @@ describe "ShowreelPages" do
             before do
               fill_in "Video link", with: "www.google.com/1234"   
               click_button "Save"
-              print page.html
             end
 
             it { should have_content "Invalid video link" }
