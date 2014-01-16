@@ -63,7 +63,7 @@ describe "ShowreelPages" do
       describe "Edit page contents" do
         it { should have_content "Header" }
         it { should have_content "Description" }
-        it { should have_content "Video link" }
+        it { should have_content "Media link" }
       end
 
       describe "The Edit process" do
@@ -81,7 +81,7 @@ describe "ShowreelPages" do
         describe "Changing the video" do
           describe "By adding an improper link" do
             before do
-              fill_in "Video link", with: "www.google.com/1234"   
+              fill_in "Media link", with: "www.google.com/1234"   
               click_button "Save"
             end
 
@@ -90,7 +90,7 @@ describe "ShowreelPages" do
 
           describe "By adding a proper link" do
             before do
-              fill_in "Video link", with: "  https://vimeo.com/63967638  "   
+              fill_in "Media link", with: "  https://vimeo.com/63967638  "   
               click_button "Save"
             end
 

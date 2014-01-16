@@ -29,7 +29,8 @@ FactoryGirl.define do
   factory :showreel do
     id "0"
     description "This is my description.  I hope you like it!"
-    video_link "http://vimeo.com/82123812"
+    media_link "http://vimeo.com/82123812"
+    media_choice "link"
     header "My Showreel"
   end
 end
@@ -38,7 +39,8 @@ FactoryGirl.define do
   factory :work do |u|
     u.sequence(:id) {|n|}
     u.sequence(:description) {|n| "This is my description #{n}."}
-    u.video_link "http://vimeo.com/82123812"
+    u.media_link "http://vimeo.com/82123812"
+    u.media_choice "link"
     u.sequence(:header) {|n| "Header #{n}"}
   end
 end
