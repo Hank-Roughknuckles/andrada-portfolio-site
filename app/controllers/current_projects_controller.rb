@@ -15,7 +15,7 @@ class CurrentProjectsController < ApplicationController
       flash[:notice] = "Project saved successfully"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
-      on Vimeo"
+      on Vimeo or Youtube"
       render 'edit'
     end
   end
@@ -31,7 +31,7 @@ class CurrentProjectsController < ApplicationController
       redirect_to action: "index"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
-      on Vimeo"
+      on Vimeo or Youtube"
       render 'edit'
     end
   end
