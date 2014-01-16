@@ -1,7 +1,13 @@
 <% provide( :title, "Works" ) %>
 
 <% for content in @contents  %>
-  <%= render "work_content", :content => content %>
+  <%# <%= render "work_content", :content => content %>
+
+  <% if content.media_choice == "link" %>
+    <div class="work_media_preview"><%= embed_media(link: content.media_link) %></div>
+  <% else %>
+    <div class="work_media_preview"><%= embed_media(uploaded_image_url: content.media_image.url) %></div>
+  <% end %>
 <% end %>
 
 <% if user_signed_in? %>

@@ -1,3 +1,7 @@
-<div class="embedded_video"><%= embed_media(link: content.media_link) %></div>
+<% if content.media_choice == "link" %>
+  <div class="work_media_preview"><%= embed_media(link: content.media_link) %></div>
+<% else %>
+  <div class="work_media_preview"><%= embed_media(uploaded_image_url: content.media_image.url) %></div>
+<% end %>
 <div class="work_header"><%= content.header %></div>
 <div class="work_description"><%= content.description %></div>
