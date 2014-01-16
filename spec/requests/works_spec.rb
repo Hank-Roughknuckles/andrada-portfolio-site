@@ -35,11 +35,11 @@ describe "WorksPages" do
           it { should have_link "Add New Item" }
           it { should have_xpath "//table/tr/td[text()=\"#{works1.header}\"]" }
           it { should have_xpath "//table/tr/td[text()=\"#{works1.description}\"]" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works1.video_link}\"]" }
+          it { should have_xpath "//table/tr/td[text()=\"#{works1.media_link}\"]" }
           it { should have_xpath "//table/tr/td/iframe" }
           it { should have_xpath "//table/tr/td[text()=\"#{works2.header}\"]" }
           it { should have_xpath "//table/tr/td[text()=\"#{works2.description}\"]" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works2.video_link}\"]" }
+          it { should have_xpath "//table/tr/td[text()=\"#{works2.media_link}\"]" }
           it { should have_xpath "//table/tr/td/a[text()=\"Edit\"]" }
         end
       end
@@ -58,7 +58,7 @@ describe "WorksPages" do
       it { should have_content works1.description }
       it { should have_xpath "//iframe" }
 
-      it { should have_field "Video link" }
+      it { should have_field "Media link" }
       it { should have_field "Header" }
       it { should have_field "Description" }
     end
@@ -66,7 +66,7 @@ describe "WorksPages" do
     describe "The Editing Process" do
       describe "With an invalid video link" do
         before do
-          fill_in "Video link", with: "www.google.com"
+          fill_in "Media link", with: "www.google.com"
           click_button "Save"
         end
 
@@ -75,7 +75,7 @@ describe "WorksPages" do
 
       describe "With a valid video link" do
         before do
-          fill_in "Video link", with: "https://vimeo.com/83571847"
+          fill_in "Media link", with: "https://vimeo.com/83571847"
           fill_in "Header", with: "Test Header"
           fill_in "Description", with: "Test Description"
           click_button "Save"
@@ -97,7 +97,7 @@ describe "WorksPages" do
     
     it { should have_content "Add New Work" }
     it { should have_title "New Work" }
-    it { should have_field "Video link" }
+    it { should have_field "Media link" }
     it { should have_field "Header" }
     it { should have_field "Description" }
     it { should have_xpath "//iframe" }
@@ -105,7 +105,7 @@ describe "WorksPages" do
     describe "Adding a new work" do
       describe "with an invalid video link" do
         before do
-          fill_in "Video link", with: "www.google.com"
+          fill_in "Media link", with: "www.google.com"
           click_button "Save"
         end
 
@@ -114,10 +114,11 @@ describe "WorksPages" do
 
       describe "with a valid video link" do
         before do
-          fill_in "Video link", with: "https://vimeo.com/83571847"
+          fill_in "Media link", with: "https://vimeo.com/83571847"
           fill_in "Header", with: "Test Header"
           fill_in "Description", with: "Test Description"
           click_button "Save"
+          print page.html
         end
 
         it { should have_content "Test Header" }

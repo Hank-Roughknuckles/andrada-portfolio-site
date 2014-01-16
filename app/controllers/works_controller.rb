@@ -10,7 +10,7 @@ class WorksController < ApplicationController
   end
 
   def new
-    @work = Work.new( video_link: "https://vimeo.com/14470340" )
+    @work = Work.new( media_link: "https://vimeo.com/14470340" )
   end
 
   def create
@@ -21,7 +21,7 @@ class WorksController < ApplicationController
       redirect_to action: "index"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
-      on Vimeo"
+      on Vimeo or Youtube"
       render 'new'
     end
 
@@ -33,7 +33,7 @@ class WorksController < ApplicationController
       redirect_to action: "index"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
-      on Vimeo"
+      on Vimeo or Youtube"
       render 'edit'
     end
   end
@@ -50,6 +50,6 @@ class WorksController < ApplicationController
   end
 
   def works_params
-    params.require(:work).permit(:header, :description, :video_link)
+    params.require(:work).permit(:header, :description, :media_link, :media_choice)
   end
 end
