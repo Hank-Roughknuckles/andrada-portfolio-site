@@ -10,7 +10,7 @@ class WorksController < ApplicationController
   end
 
   def new
-    @work = Work.new( media_link: "https://vimeo.com/14470340" )
+    @work = Work.new( media_link: "https://vimeo.com/14470340", media_choice: "link" )
   end
 
   def create

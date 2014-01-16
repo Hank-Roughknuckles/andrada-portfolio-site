@@ -61,9 +61,11 @@ describe "ShowreelPages" do
       end
 
       describe "Edit page contents" do
-        it { should have_content "Header" }
-        it { should have_content "Description" }
-        it { should have_content "Media link" }
+        it { should have_field "Header" }
+        it { should have_field "Description" }
+        it { should have_field "Media link" }
+        it { should have_field "showreel_media_choice_link" }
+        it { should have_field "showreel_media_choice_upload" }
       end
 
       describe "The Edit process" do

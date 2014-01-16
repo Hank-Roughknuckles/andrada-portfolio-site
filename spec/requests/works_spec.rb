@@ -98,6 +98,8 @@ describe "WorksPages" do
     it { should have_content "Add New Work" }
     it { should have_title "New Work" }
     it { should have_field "Media link" }
+    it { should have_field "work_media_choice_link" }
+    it { should have_field "work_media_choice_upload" }
     it { should have_field "Header" }
     it { should have_field "Description" }
     it { should have_xpath "//iframe" }
@@ -118,7 +120,6 @@ describe "WorksPages" do
           fill_in "Header", with: "Test Header"
           fill_in "Description", with: "Test Description"
           click_button "Save"
-          print page.html
         end
 
         it { should have_content "Test Header" }
