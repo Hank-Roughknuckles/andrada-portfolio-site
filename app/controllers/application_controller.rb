@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
 
     if link != ""
       # if youtube
-      if link =~ /youtube\.com/
+      if link =~ /youtube\.com\/.+/
         youtube_id = link.match(/v=([^&]*)/)[1]
 
         return "<iframe width=\"#{options[:width]}\"
