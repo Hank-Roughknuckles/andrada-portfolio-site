@@ -25,13 +25,37 @@ describe "Contact Page" do
         visit root_path
         click_link "Contact"
       end
-      it { should have_content "Edit Contact Info" }
+      it { should have_link "Edit Contact Info" }
       it { should_not have_content "Sign In" }
       it { should have_content "Sign Out" }
 
       describe "Contact Edit Page" do
         before do
           click_link "Edit Contact Info"
+        end
+
+        it { should have_field "Email"  }
+        it { should have_field "Vimeo ID"  }
+
+        describe "The Edit process" do
+          describe "With invalid information" do
+            before do
+              fill_in "Email", with: "asdfasdfasdf"
+              click_button "Save"
+            end
+
+            it { should_not have_content "successfully" }
+          end
+
+
+          describe "With valid information" do
+            before do
+              fill_in "Email", with: "asdf@asdfasdf.com"
+              click_button "Save"
+            end
+            
+            it { should have_content "successfully" }
+          end
         end
       end
     end
