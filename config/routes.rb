@@ -8,6 +8,7 @@ AndradaPortfolioSite::Application.routes.draw do
   resources :showreel
   resources :works
   resources :current_projects
+  resources :contact
 
   get '/login' => 'sessions#new'
   get '/logout' =>  'sessions#destroy'

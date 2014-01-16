@@ -55,3 +55,11 @@ FactoryGirl.define do
     u.media_link "http://vimeo.com/82123812"
   end
 end
+
+FactoryGirl.define do
+  factory :contact do |u|
+    id "0"
+    email "asdf@adsf.com"
+    vimeo_id "asdfasdf"
+  end
+end

@@ -40,12 +40,7 @@
     %>
   </li>
 
-  <li id="nav_item_5"><%= link_to nav.link_5_name, 
-    {
-      :controller => 
-        request.path =~ /\/admin\// ? 'admin' : 'guest', 
-      :action => 'contact'
-    }, 
+  <li id="nav_item_5"><%= link_to nav.link_5_name, Contact.first,
     { :class => ('selected' if request.path =~ /contact/) } 
     %>
   </li>

@@ -1,0 +1,8 @@
+<% provide( :title, "Contact" ) %>
+
+<a href="#">Email</a>
+<a href="#">Vimeo</a>
+
+<% if user_signed_in? %>
+  <%= link_to 'Edit Contact Info', edit_contact_path(@contact_info) %>
+<% end %>

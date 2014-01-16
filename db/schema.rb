@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116070359) do
+ActiveRecord::Schema.define(version: 20140116123039) do
 
   create_table "about_me_contents", force: true do |t|
     t.string   "header"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20140116070359) do
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
+  end
+
+  create_table "contacts", force: true do |t|
+    t.string   "email"
+    t.string   "vimeo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "current_projects", force: true do |t|
