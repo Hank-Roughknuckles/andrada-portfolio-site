@@ -73,8 +73,9 @@
 .slide
 {
   position: absolute;
-  margin-left: 0px;
-  left: 12.75%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 17.5%;
 }
 
 .slide_preview
@@ -88,7 +89,7 @@
   border: black 1px solid;
   margin-top: -11px;
   height: 452px;
-  width: 1090px;
+  width: 943px;
 
   .frame
   {
