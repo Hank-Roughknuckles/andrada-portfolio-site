@@ -1,6 +1,8 @@
 TO-DO
 =====
-Make regex in contact info to only allow email addresses
+Write model/contact_spec to test cases of email addresses and blanks
+before/after email
+
 Make the nav-bar auto adjust spacing based on size of elements so that the navbar always ONLY takes up one line
 
 center navbar within the home screen
