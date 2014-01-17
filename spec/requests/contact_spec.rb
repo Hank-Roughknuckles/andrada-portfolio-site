@@ -50,7 +50,7 @@ describe "Contact Page" do
 
           describe "With valid information" do
             before do
-              fill_in "Email", with: "asdf@asdfasdf.com"
+              fill_in "Email", with: "a_sdf@asdfasdf.org"
               click_button "Save"
             end
             
