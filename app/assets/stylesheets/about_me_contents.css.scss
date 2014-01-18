@@ -175,7 +175,7 @@
     margin-right: 10px;
     float: left;
     height: 50px;
-    width: 235px;
+    width: 203px;
     border-radius: 5px;
   }
 
@@ -183,7 +183,7 @@
   .left_button_text, .right_button_text, .left_arrow, .right_arrow
   {
     float: left;
-    padding-top: 13px;
+    padding-top: 7px;
   }
 
   //stuff only pertaining to the arrows inside the buttons
@@ -197,6 +197,8 @@
   .left_button_text, .right_button_text
   {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     width: 165px;
   }
 
@@ -211,15 +213,15 @@
     margin-left: 5px;
   }
 
-  .left_button_text
-  {
-    margin-right: 10px;
-  }
+  // .left_button_text
+  // {
+  //   margin-right: 10px;
+  // }
 
-  .right_button_text
-  {
-    margin-left: 30px;
-  }
+  // .right_button_text
+  // {
+  //   margin-left: 30px;
+  // }
 }
 
 
