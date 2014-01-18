@@ -16,6 +16,12 @@ body
   color: $charcoal_grey;
   font-family: 'fauna-one';
 
+  .secondary_container
+  {
+    margin-left: 105px;
+    width: 943px;
+  }
+
   #save_reminder
   {
     margin-bottom: 10px;
@@ -27,7 +33,7 @@ body
     position: relative;
     z-index:99;
     top: 210px;
-    left: -89px;
+    left: -200px;
     height: 10px;
     margin-bottom: -10px;
     float: left;
@@ -38,7 +44,6 @@ body
     background-color: $background_tan;
     float:left;
     border: 0;
-    margin-left: 106px;
   }
 
   .container
@@ -65,14 +70,13 @@ body
     background: url("Andrada_Popan_Dorca_titlebar.png");
     width: 655px;
     height: 118px;
-    margin-left: 100px;
   }
 
   //navbar stuff
   .navbar
   {
     padding-left: 0px;
-    margin-left: 153px;
+    margin-left: 53px;
 
     li
     {
@@ -113,7 +117,6 @@ body
   {
     float: right;
     margin-bottom: 10px;
-    margin-right: 91px;
   }
 
   // Edit table
