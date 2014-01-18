@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116123039) do
+ActiveRecord::Schema.define(version: 20140118191134) do
 
   create_table "about_me_contents", force: true do |t|
     t.string   "header"
@@ -44,16 +44,6 @@ ActiveRecord::Schema.define(version: 20140116123039) do
     t.integer  "media_image_file_size"
     t.datetime "media_image_updated_at"
     t.string   "media_choice"
-  end
-
-  create_table "nav_items", force: true do |t|
-    t.string   "link_1_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "link_2_name"
-    t.string   "link_3_name"
-    t.string   "link_4_name"
-    t.string   "link_5_name"
   end
 
   create_table "showreels", force: true do |t|

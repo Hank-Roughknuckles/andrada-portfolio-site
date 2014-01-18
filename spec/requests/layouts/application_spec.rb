@@ -16,11 +16,14 @@ describe "ApplicationLayout" do
 
   describe "Navbar" do
     before do
-      login_as user
       visit root_path 
     end
 
-    it { should have_content "Edit Navigation Bar" }
+    it { should have_link "About Me" }
+    it { should have_link "Showreel" }
+    it { should have_link "Works" }
+    it { should have_link "Current Projects" }
+    it { should have_link "Contact" }
   end
 
   describe "Sign-in and Sign-out buttons" do

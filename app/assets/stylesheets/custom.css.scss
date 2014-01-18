@@ -79,7 +79,6 @@ body
   //navbar stuff
   .navbar
   {
-    // margin-left: 63px;
     padding-left: 0px;
     margin-left: 153px;
 
@@ -94,9 +93,13 @@ body
       font-size: 133%;
       color: #464646;
       display: block;
-      margin: 5px auto;
+      // margin: 5px auto;
+      margin-left:auto;
+      margin-right:auto;
       padding: 0px 41px;
-      max-width: 237px;
+      max-width: 227px;
+      width: 171px;
+
       &:hover
       {
         color: $selected_blue;

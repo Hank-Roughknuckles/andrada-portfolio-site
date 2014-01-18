@@ -1,8 +1,6 @@
 TO-DO
 =====
 
-make navbar link names static (unable to be changed)
-
 Write model/contact_spec to test cases of email addresses and blanks
 before/after email
 
