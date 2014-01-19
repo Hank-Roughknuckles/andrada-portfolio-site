@@ -7,7 +7,7 @@ def add_content
   fill_in "Description", with: "Test Description"
   fill_in "Button Title", with: "Test Button Title"
 
-  click_button "Save"
+  click_button "save_button_top"
 end
 
 describe "AboutMePages" do
@@ -54,7 +54,7 @@ describe "AboutMePages" do
         fill_in "Description", with: "Test Description"
         fill_in "Button Title", with: "Test Button Title"
 
-        click_button "Save"
+        click_button "save_button_top"
       end
 
       it { should have_content "Test Header" }
