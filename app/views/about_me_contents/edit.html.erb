@@ -2,7 +2,7 @@
 
 <%= form_for @content, :html => {:multipart => true} do |f| %>
   <div class="save_group save_top">
-    <div class="save_button"><%= f.submit "Save", class: "btn save" %></div>
+    <div class="save_button"><%= f.submit "Save", class: "btn save", id: "save_button_top" %></div>
     <div class="save_reminder"></div>
   </div>
 
@@ -39,7 +39,7 @@
     </p>
 
     <div class="save_group save_bottom">
-      <div class="save_button"><%= f.submit "Save", class: "btn save" %></div>
+      <div class="save_button"><%= f.submit "Save", class: "btn save", id: "save_button_bottom" %></div>
       <div class="save_reminder"></div>
     </div>
   </div>
