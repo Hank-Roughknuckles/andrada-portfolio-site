@@ -21,11 +21,6 @@
 {
   float: left;
   margin-left: 10px;
-
-  submit
-  {
-    margin-top: 10px;
-  }
 }
 
 .slide_edit
@@ -57,10 +52,35 @@
   width: 175px;
 }
 
-#save_button
+//Save stuff
+.save_group
 {
-  margin-top: 25px;
-  margin-left: 20px;
+  height: 35px;
+  color: $selected_blue;
+}
+
+.save_top
+{
+
+}
+
+.save_bottom
+{
+  margin-top: 226px;
+  height: 35px;
+}
+
+.save_button
+{
+  float: left;
+  // margin-top: 25px;
+  // margin-left: 20px;
+}
+
+.save_reminder
+{
+  float:left;
+  padding: 7px 20px;
 }
 
 
@@ -79,6 +99,7 @@
 .slide_preview
 {
   position: relative;
+  margin-top: 40px;
 }
 
 .slide, .slide_preview
@@ -211,13 +232,4 @@
     padding-left: 5px;
     margin-left: 5px;
   }
-}
-
-
-//miscellaneous
-.save_reminder
-{
-  margin-top: 40px;
-  height: 1px;
-  color: $selected_blue;
 }

@@ -1,10 +1,13 @@
 <% provide( :title, "About Me - Edit" ) %>
 
-<div class="save_reminder"></div>
-
-<%= render "slide", :content => @content %>
-
 <%= form_for @content, :html => {:multipart => true} do |f| %>
+  <div class="save_group save_top">
+    <div class="save_button"><%= f.submit "Save", class: "btn save" %></div>
+    <div class="save_reminder"></div>
+  </div>
+
+  <%= render "slide", :content => @content %>
+
   <div class="slide_edit">
     <p style="margin-bottom: 20px">
     <div class="header_group">
@@ -35,10 +38,10 @@
     </div>
     </p>
 
-    <div class="header_group">
-      <div id="save_button"><%= f.submit "Save", class: "btn save" %></div>
+    <div class="save_group save_bottom">
+      <div class="save_button"><%= f.submit "Save", class: "btn save" %></div>
+      <div class="save_reminder"></div>
     </div>
   </div>
 <% end %>
 
-<div class="save_reminder"></div>
