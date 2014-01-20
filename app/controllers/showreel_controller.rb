@@ -21,6 +21,6 @@ class ShowreelController < ApplicationController
   end
 
   def showreel_params
-    params.require(:showreel).permit(:header, :description, :media_link, :media_choice, :media_image)
+    params.require(:showreel).permit(:header, :description, :media_link, :media_choice, :media_image, :background_image)
   end
 end
