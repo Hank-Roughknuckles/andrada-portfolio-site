@@ -32,16 +32,4 @@ class AboutMeContentsController < ApplicationController
   def content_params
     params.require(:about_me_content).permit(:background_image, :header, :description, :button_title)
   end
-
-  def get_slide_background_css(slide_id)
-    image = AboutMeContent.find(slide_id).background_image;
-
-    if image != nil
-      "background: url(#{AboutMeContent.find(slide_id).background_image})"
-    else
-      return
-    end
-  end
-
-
 end
