@@ -4,7 +4,8 @@ class Work < ActiveRecord::Base
   validates_presence_of :media_choice
   validates_format_of :media_link, :with => VideoLinkRegex
   before_validation :strip_whitespace
-  has_attached_file :media_image, :background_image
+  has_attached_file :media_image
+  has_attached_file :background_image
 
   private
   def strip_whitespace
