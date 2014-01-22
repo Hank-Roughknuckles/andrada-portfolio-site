@@ -22,11 +22,43 @@ body
     width: 943px;
   }
 
-  #save_reminder
+  .envelope
   {
-    margin-bottom: 10px;
-    color: $selected_blue;
+    max-width: 943px;
+    width: 943px;
+    max-height: 454px;
+    height: 454px;
+    border: 1px solid black;
   }
+
+  .description_box
+  {
+    margin-top: 24px;
+    margin-left: 17px;
+    margin-right: 81px;
+    width: 271px;
+    height: 410px;
+    overflow:auto;
+    float: left;
+  }
+
+  .content_header
+  {
+    font-size: 25px;
+    margin-left: 14px;
+    margin-top: 27px;
+  }
+
+  .content_description
+  {
+    margin-top: 8px;
+    margin-left: 31px;
+    margin-right: 12px;
+    max-width: 220px;
+    width: 220px;
+  }
+
+
 
   .edit_content
   {
@@ -134,5 +166,25 @@ body
     {
       max-width: 300px;
     }
+  }
+
+  //Save reminders
+  #save_reminder
+  {
+    margin-bottom: 10px;
+    color: $selected_blue;
+  }
+
+  //envelope items
+  .description_box, .direction_button
+  {
+    background: rgba(0,0,0,0.55);
+    color: #f2e9d8;
+  }
+
+  .description_box
+  {
+    border-radius: 15px;
+    float: left;
   }
 }
