@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '3.1'
+gem 'rails', '4.0.1'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 3.1.7'
+gem 'sass-rails', '~> 3.1.6'
 
 # Twitter bootstrap
 gem 'bootstrap-sass'
@@ -19,13 +19,13 @@ gem 'paperclip', "~> 3.0"
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 3.1.1'
+gem 'coffee-rails'
 
 # Devise for user authentication
 gem "devise", "~> 2.2.8"
 
 #gridster for showing some works
-gem 'gridster-rails'
+gem 'gridster-rails', :git => 'git@github.com:Hank-Roughknuckles/gridster-rails.git'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
