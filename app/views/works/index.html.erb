@@ -1,8 +1,8 @@
 <% provide( :title, "Works" ) %>
 
-<% for content in @contents  %>
-  <%= render "work_content", :content => content %>
-<% end %>
+<div class="envelope">
+  <%= render "works_grid", :contents => @contents %>
+</div>
 
 <% if user_signed_in? %>
   <%= link_to 'Add New Item', new_work_path %>
