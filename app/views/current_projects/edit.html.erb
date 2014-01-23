@@ -6,6 +6,9 @@
 <%= form_for @project do |f| %>
   <%= render "shared/default_record_form", :f => f %>
 
+  <%= f.label :background_image %>
+  <%= f.file_field :background_image, id: "background_image_upload" %>
+
   <%= f.label :progress, "Progress (%)" %>
   <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
 
