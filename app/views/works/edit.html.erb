@@ -1,6 +1,19 @@
-<%= render "work_content", :content => @content %>
+<%= render "works_grid", :content => @content %>
 
 <%= form_for @content do |f| %>
   <%= render "shared/default_record_form", :f => f %>
+
+  <%= f.label :grid_row %>
+  <%= f.number_field :grid_row, min: 0, max: 3, step: 1 %>
+
+  <%= f.label :grid_column %>
+  <%= f.number_field :grid_column, min: 0, max: 3, step: 1 %>
+
+  <%= f.label :grid_sizex, "Tile size (horizontal)" %>
+  <%= f.number_field :grid_sizex, min: 0, max: 3, step: 1 %>
+
+  <%= f.label :grid_sizey, "Tile size (vertical)" %>
+  <%= f.number_field :grid_sizey, min: 0, max: 3, step: 1 %>
+
   <%= f.submit "Save" %>
 <% end %>

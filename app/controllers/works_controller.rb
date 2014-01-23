@@ -6,6 +6,7 @@ class WorksController < ApplicationController
   end
 
   def edit
+    @contents = Work.all
     @content = Work.find params[:id]
   end
 
