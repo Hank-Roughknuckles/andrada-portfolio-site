@@ -1,4 +1,6 @@
-<%= render "works_grid", :content => @content %>
+<div class="envelope">
+  <%= render "works_grid", :content => @content %>
+</div>
 
 <%= form_for @content do |f| %>
   <%= render "shared/default_record_form", :f => f %>
