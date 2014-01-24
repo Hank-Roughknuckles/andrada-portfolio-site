@@ -6,3 +6,11 @@
   display: none;
 }
 
+.gridster
+{
+  li
+  {
+    min-width: 200px;
+    min-height: 200px;
+  }
+}
