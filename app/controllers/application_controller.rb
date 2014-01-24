@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :admin?, :embed_media, :get_background_css
+  helper_method :admin?, :embed_media, :get_background_css,
+    :get_tile_image_css
 
   protected
 
@@ -74,10 +75,20 @@ class ApplicationController < ActionController::Base
   end
 
   def get_background_css(active_record_object, record_id)
-    image = active_record_object.find(record_id).background_image;
+    image = active_record_object.find(record_id).background_image
 
     if image != nil
-      "background: url(#{active_record_object.find(record_id).background_image})"
+      "background: url(#{image})"
+    else
+      return
+    end
+  end
+
+  def get_tile_image_css(active_record_object, record_id)
+    image = active_record_object.find(record_id).grid_tile_image
+
+    if image != nil
+      "background: url(#{image})"
     else
       return
     end
