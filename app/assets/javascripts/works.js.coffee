@@ -20,5 +20,5 @@ $ -> #DOM Ready
     else
       numberRegex = /[0-9]/
       number = @id.match(numberRegex)
-      $(".overlay_#{number}").show()
-    
+      $(".overlay").show()
+      $(".content_#{number}").show()
