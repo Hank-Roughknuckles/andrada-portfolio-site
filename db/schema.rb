@@ -97,10 +97,10 @@ ActiveRecord::Schema.define(version: 20140123123154) do
     t.integer  "grid_column"
     t.integer  "grid_sizex"
     t.integer  "grid_sizey"
-    t.string   "grid_tile_iamge_file_name"
-    t.string   "grid_tile_iamge_content_type"
-    t.integer  "grid_tile_iamge_file_size"
-    t.datetime "grid_tile_iamge_updated_at"
+    t.string   "grid_tile_image_file_name"
+    t.string   "grid_tile_image_content_type"
+    t.integer  "grid_tile_image_file_size"
+    t.datetime "grid_tile_image_updated_at"
   end
 
 end
