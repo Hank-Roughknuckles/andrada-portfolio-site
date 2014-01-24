@@ -2,12 +2,12 @@
   <ul>
   <% for content in @contents  %>
     <li class="grid_tile" 
-      data-row="<%= content.grid_row %>" 
-      data-col="<%= content.grid_column %>" 
-      data-sizex="<%= content.grid_sizex %>" 
-      data-sizey="<%= content.grid_sizey %>" 
-      style="<%= get_tile_image_css Work, content.id %>">
-    </li>
+    id="tile_<%= content.id %>"
+    data-row="<%= content.grid_row %>" 
+    data-col="<%= content.grid_column %>" 
+    data-sizex="<%= content.grid_sizex %>" 
+    data-sizey="<%= content.grid_sizey %>" 
+    style="<%= get_tile_image_css Work, content.id %>"></li>
     <%= render "work_content_overlay", :content => content %>
   <% end %>
   </ul>
