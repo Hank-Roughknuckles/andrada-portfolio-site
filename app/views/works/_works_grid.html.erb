@@ -1,3 +1,5 @@
+<div class="overlay"></div> <!-- used when a tile is clicked -->
+
 <div class="gridster">
   <ul>
   <% for content in @contents  %>
@@ -8,7 +10,7 @@
     data-sizex="<%= content.grid_sizex %>" 
     data-sizey="<%= content.grid_sizey %>" 
     style="<%= get_tile_image_css Work, content.id %>"></li>
-    <%= render "work_content_overlay", :content => content %>
+    <%= render "work_content", :content => content %>
   <% end %>
   </ul>
 </div>
