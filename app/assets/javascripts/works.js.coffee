@@ -4,11 +4,21 @@
 
 $ -> #DOM Ready
 
+  dragged = false
+
   $(".gridster ul").gridster
     widget_margins: [10, 10]
     widget_base_dimensions: [200, 200]
+    draggable: {
+      start: (e, ui, $widget) ->
+        dragged = true;
+    }
 
   $(".gridster ul li").click ->
-    numberRegex = /[0-9]/
-    number = this.id.match(numberRegex)
-    $(".overlay_#{number}").show()
+    if dragged is true
+      dragged = false
+    else
+      numberRegex = /[0-9]/
+      number = @id.match(numberRegex)
+      $(".overlay_#{number}").show()
+    
