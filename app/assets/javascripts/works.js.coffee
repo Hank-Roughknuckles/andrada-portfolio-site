@@ -7,3 +7,8 @@ $ -> #DOM Ready
   $(".gridster ul").gridster
     widget_margins: [10, 10]
     widget_base_dimensions: [200, 200]
+
+  $(".gridster ul li").click ->
+    numberRegex = /[0-9]/
+    number = this.id.match(numberRegex)
+    $(".overlay_#{number}").show()
