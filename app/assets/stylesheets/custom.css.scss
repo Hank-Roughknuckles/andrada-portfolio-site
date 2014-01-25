@@ -223,6 +223,35 @@ body
     display: none;
   }
 
+  .lightbox_main
+  {
+    height: 490px;
+  }
+
+  .lightbox_bottom
+  {
+    height: 60px;
+    background-color: #000000;
+    opacity:0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+
+    .content_header
+    {
+      float: left;
+      font-size: 20px;
+      text-align: center;
+      padding: 0 17px;
+      margin: 0 0;
+      border-right: #444444 1px solid;
+      line-height: 60px;
+    }
+
+    .content_description
+    {
+      float: left;
+    }
+  }
+
 
   //gridster
   .gridster
