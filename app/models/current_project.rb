@@ -5,7 +5,7 @@ class CurrentProject < ActiveRecord::Base
   validates_format_of :media_link, :with => VideoLinkRegex
   before_validation :strip_whitespace
   has_attached_file :media_image
-  has_attached_file :grid_tile
+  has_attached_file :grid_tile_image
 
   private
   def strip_whitespace
