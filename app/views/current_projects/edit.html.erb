@@ -1,5 +1,7 @@
 <% provide( :title, "Edit Project" ) %>
 
-<%= render "project_content", :content => @content %>
+<div class="envelope">
+  <%= render "shared/default_grid", :active_record_object => CurrentProject %>
+</div>
 
 <%= render "current_projects_form", :content => @content %>

@@ -4,10 +4,12 @@ class CurrentProjectsController < ApplicationController
   end
 
   def new
+    @contents = CurrentProject.all
     @content = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50, media_choice: "link" )
   end
 
   def create
+    @contents = CurrentProject.all
     @content = CurrentProject.new( current_project_params )
 
     if @content.update_attributes current_project_params
@@ -21,10 +23,12 @@ class CurrentProjectsController < ApplicationController
   end
 
   def edit
+    @contents = CurrentProject.all
     @content = CurrentProject.find params[:id]
   end
 
   def update
+    @contents = CurrentProject.all
     @content = CurrentProject.find(params[:id])
     if @content.update_attributes current_project_params
       flash[:notice] = "Project updated successfully"
