@@ -1,7 +1,7 @@
 <% provide( :title, "Works" ) %>
 
 <div class="envelope">
-  <%= render "works_grid", :contents => @contents %>
+  <%= render "shared/default_grid", :contents => @contents %>
 </div>
 
 <% if user_signed_in? %>
