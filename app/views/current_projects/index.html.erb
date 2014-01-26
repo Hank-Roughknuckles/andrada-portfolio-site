@@ -1,10 +1,10 @@
 <% provide( :title, "Current Projects" ) %>
 
-<% for project in @projects %>
-  <%= render "project_content", :project => project %>
-<% end %>
+<div class="envelope">
+  <%= render "shared/default_grid", :active_record_object => CurrentProject %>
+</div>
 
 <% if user_signed_in? %>
   <%= link_to 'Add Project', new_current_project_path %>
-  <%= render "current_projects_edit_table", projects: @projects %>
+  <%= render "current_projects_edit_table", projects: @contents %>
 <% end %>
