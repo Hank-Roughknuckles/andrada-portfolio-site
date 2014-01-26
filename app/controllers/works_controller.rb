@@ -11,6 +11,7 @@ class WorksController < ApplicationController
   end
 
   def new
+    @contents = Work.all
     @content = Work.new( media_link: "https://vimeo.com/14470340", media_choice: "link" )
   end
 
