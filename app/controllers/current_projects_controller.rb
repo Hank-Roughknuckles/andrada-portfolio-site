@@ -52,6 +52,11 @@ class CurrentProjectsController < ApplicationController
   end
 
   def current_project_params
-    params.require(:current_project).permit(:header, :description, :media_link, :progress, :media_choice, :media_image)
+    params.require(:current_project).permit(:header, :description,
+                                            :media_link, :progress,
+                                            :media_choice, :media_image,
+                                            :grid_row, :grid_column,
+                                            :grid_sizex, :grid_sizey,
+                                            :grid_tile_image)
   end
 end

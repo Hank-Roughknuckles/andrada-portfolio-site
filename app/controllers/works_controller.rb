@@ -54,6 +54,10 @@ class WorksController < ApplicationController
   end
 
   def works_params
-    params.require(:work).permit(:header, :description, :media_link, :media_choice, :media_image, :background_image, :grid_tile_image)
+    params.require(:work).permit(:header, :description, :media_link,
+                                 :media_choice, :media_image,
+                                 :background_image, :grid_row,
+                                 :grid_column, :grid_sizex, :grid_sizey,
+                                 :grid_tile_image)
   end
 end
