@@ -1,13 +1,16 @@
 <!-- Header -->
 <%= f.label :header %>
+
 <% if local_assigns.has_key? :header_limit %>
   <%= f.text_field :header, :maxlength => header_limit %>
 <% else %>
   <%= f.text_field :header %>
 <% end %>
 
+
 <!-- Description -->
 <%= f.label :description %>
+
 <% if local_assigns.has_key? :description_limit %>
   <%= f.text_area :description, :maxlength => description_limit %>
 <% else %>
