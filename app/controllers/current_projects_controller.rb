@@ -1,16 +1,16 @@
 class CurrentProjectsController < ApplicationController
   def index
-    @projects = CurrentProject.all
+    @contents = CurrentProject.all
   end
 
   def new
-    @project = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50, media_choice: "link" )
+    @content = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50, media_choice: "link" )
   end
 
   def create
-    @project = CurrentProject.new( current_project_params )
+    @content = CurrentProject.new( current_project_params )
 
-    if @project.update_attributes current_project_params
+    if @content.update_attributes current_project_params
       redirect_to action: "index"
       flash[:notice] = "Project saved successfully"
     else
@@ -21,12 +21,12 @@ class CurrentProjectsController < ApplicationController
   end
 
   def edit
-    @project = CurrentProject.find params[:id]
+    @content = CurrentProject.find params[:id]
   end
 
   def update
-    @project = CurrentProject.find(params[:id])
-    if @project.update_attributes current_project_params
+    @content = CurrentProject.find(params[:id])
+    if @content.update_attributes current_project_params
       flash[:notice] = "Project updated successfully"
       redirect_to action: "index"
     else
@@ -37,8 +37,8 @@ class CurrentProjectsController < ApplicationController
   end
 
   def destroy
-    if (@project = CurrentProject.find params[:id])
-      @project.destroy
+    if (@content = CurrentProject.find params[:id])
+      @content.destroy
       redirect_to action: "index"
       flash[:notice] = "Project successfully deleted"
     else
