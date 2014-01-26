@@ -11,13 +11,13 @@ class WorksController < ApplicationController
   end
 
   def new
-    @work = Work.new( media_link: "https://vimeo.com/14470340", media_choice: "link" )
+    @content = Work.new( media_link: "https://vimeo.com/14470340", media_choice: "link" )
   end
 
   def create
-    @work = Work.new(works_params)
+    @content = Work.new(works_params)
 
-    if @work.save
+    if @content.save
       flash[:notice] = "New Work Added"
       redirect_to action: "index"
     else
