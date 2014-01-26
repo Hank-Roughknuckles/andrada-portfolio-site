@@ -6,7 +6,4 @@
   <%= render "works_grid" %>
 </div>
 
-<%= form_for @work do |f| %>
-  <%= render "shared/default_record_form", :f => f %>
-  <%= f.submit "Save" %>
-<% end %>
+<%= render "works_form", :content => @content %>
