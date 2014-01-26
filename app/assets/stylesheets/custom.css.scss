@@ -195,7 +195,6 @@ body
     position: relative;
     z-index: 10000;
     background-color: #f2e9d8;
-    padding: 50px 0;
     width: 1200px;
     height: 600px;
     text-align: center;
@@ -225,7 +224,13 @@ body
 
   .lightbox_main
   {
-    height: 481px;
+    height: 531px;
+    line-height: 531px;
+    
+    iframe
+    {
+      vertical-align: middle;
+    }
   }
 
   .lightbox_bottom
