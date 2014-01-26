@@ -16,6 +16,7 @@ class WorksController < ApplicationController
   end
 
   def create
+    @contents = Work.all
     @content = Work.new(works_params)
 
     if @content.save
@@ -30,6 +31,7 @@ class WorksController < ApplicationController
   end
 
   def update
+    @contents = Work.all
     @content = Work.find(params[:id])
     if @content.update_attributes works_params
       redirect_to action: "index"
