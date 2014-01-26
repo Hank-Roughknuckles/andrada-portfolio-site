@@ -1,6 +1,9 @@
 TO-DO
 =====
 
+Adding a new item to the grid should automatically generate the proper
+grid co-ordinates so that it does not overlap
+
 Remove "require_tree ." from application.js to make sure that it only
 loads controller specific sheets (see
 http://guides.rubyonrails.org/asset_pipeline.html for more details)
