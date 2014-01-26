@@ -1,6 +1,10 @@
 TO-DO
 =====
 
+Remove "require_tree ." from application.js to make sure that it only
+loads controller specific sheets (see
+http://guides.rubyonrails.org/asset_pipeline.html for more details)
+
 Write model/contact_spec to test cases of email addresses and blanks
 before/after email
 
