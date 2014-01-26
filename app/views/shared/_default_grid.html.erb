@@ -7,8 +7,8 @@
     data-col="<%= content.grid_column %>" 
     data-sizex="<%= content.grid_sizex %>" 
     data-sizey="<%= content.grid_sizey %>" 
-    style="<%= get_tile_image_css Work, content.id %>"></li>
-    <%= render "work_content", :content => content %>
+    style="<%= get_tile_image_css active_record_object, content.id %>"></li>
+    <%= render "shared/content_lightbox", :content => content %>
   <% end %>
   </ul>
 </div>
