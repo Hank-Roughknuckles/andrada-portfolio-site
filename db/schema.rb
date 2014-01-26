@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140123123154) do
+ActiveRecord::Schema.define(version: 20140126135019) do
 
   create_table "about_me_contents", force: true do |t|
     t.string   "header"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 20140123123154) do
     t.integer  "media_image_file_size"
     t.datetime "media_image_updated_at"
     t.string   "media_choice"
+    t.integer  "grid_row"
+    t.integer  "grid_column"
+    t.integer  "grid_sizex"
+    t.integer  "grid_sizey"
+    t.string   "grid_tile_image_file_name"
+    t.string   "grid_tile_image_content_type"
+    t.integer  "grid_tile_image_file_size"
+    t.datetime "grid_tile_image_updated_at"
   end
 
   create_table "showreels", force: true do |t|
