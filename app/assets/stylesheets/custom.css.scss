@@ -225,30 +225,40 @@ body
 
   .lightbox_main
   {
-    height: 490px;
+    height: 481px;
   }
 
   .lightbox_bottom
   {
-    height: 60px;
+    height: 69px;
     background-color: #000000;
     opacity:0.8;
     filter:alpha(opacity=80); /* For IE8 and earlier */
+    color: #AAAAAA;
+    // display: table;
 
     .content_header
     {
-      float: left;
-      font-size: 20px;
+      height: inherit;
+      display: table-cell;
+      vertical-align: middle;
       text-align: center;
+      font-size: 18px;
       padding: 0 17px;
       margin: 0 0;
+      max-width: 300px;
+      width: 300px;
       border-right: #444444 1px solid;
-      line-height: 60px;
     }
 
     .content_description
     {
-      float: left;
+      height: inherit;
+      display: table-cell;
+      vertical-align: middle;
+      // padding: 7px 17px;
+      width: 670px;
+      max-width: 670px;
     }
   }
 
