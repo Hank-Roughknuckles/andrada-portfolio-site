@@ -5,6 +5,7 @@
 $ -> #DOM Ready
 
   dragged = false
+  currentLightbox = -1;
 
   $(".gridster ul").gridster
     widget_margins: [10, 10]
@@ -19,6 +20,11 @@ $ -> #DOM Ready
       dragged = false
     else
       numberRegex = /[0-9]/
-      number = @id.match(numberRegex)
+      currentLightbox = @id.match(numberRegex)
       $(".overlay").show()
-      $(".content_#{number}").show()
+      $(".content_#{currentLightbox}").show()
+
+  $(".close").click ->
+    $(".overlay").hide()
+    $(".content_#{currentLightbox}").hide()
+    currentLightbox = -1;
