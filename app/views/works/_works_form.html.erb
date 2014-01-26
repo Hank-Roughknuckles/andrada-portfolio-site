@@ -1,5 +1,11 @@
+<% header_limit = 50 %>
+<% description_limit = 50 %>
+
 <%= form_for @content do |f| %>
-  <%= render "shared/default_record_form", :f => f %>
+  <%= render "shared/default_record_form", 
+    :f => f, 
+    :header_limit => header_limit, 
+    :description_limit => description_limit %>
 
   <%= f.label :grid_tile_image %>
   <%= f.file_field :grid_tile_image, id: "grid_tile_image" %>
