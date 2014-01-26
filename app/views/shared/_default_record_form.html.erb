@@ -1,9 +1,21 @@
+<!-- Header -->
 <%= f.label :header %>
-<%= f.text_field :header %>
+<% if local_assigns.has_key? :header_limit %>
+  <%= f.text_field :header, :maxlength => header_limit %>
+<% else %>
+  <%= f.text_field :header %>
+<% end %>
 
+<!-- Description -->
 <%= f.label :description %>
-<%= f.text_area :description %>
+<% if local_assigns.has_key? :description_limit %>
+  <%= f.text_area :description, :maxlength => description_limit %>
+<% else %>
+  <%= f.text_area :description %>
+<% end %>
 
+
+<!-- Media (the picture or video that appears with the content) -->
 <%= f.radio_button :media_choice, "link" %>
 <%= f.label :media_choice_link, "Use Hosted Link" %>
 <%= f.label :media_link %>
