@@ -221,6 +221,19 @@ body
     top: -166px;
   }
 
+  .content_preview 
+  {
+    margin-top: 175px;
+    height: 450px;
+
+    .content_detail 
+    {
+      display: block;
+      border: 1px black solid;
+      z-index: 0;
+    }
+  }
+
   .overlay
   {
 	  z-index: 10000;
