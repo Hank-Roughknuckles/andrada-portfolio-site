@@ -327,4 +327,18 @@ body
       list-style-type: none;
     }
   }
+
+  .edit_grid 
+  {
+    li 
+    {
+      opacity: 0.15;
+    }
+
+    li.highlighted
+    {
+      opacity: 1;
+    }
+  }
+  
 }

@@ -1,7 +1,7 @@
-<div class="gridster">
+<div class="gridster <%= "edit_grid" if request.path =~ /.+edit/ %>">
   <ul>
   <% for content in @contents  %>
-    <li class="grid_tile" 
+    <li class="grid_tile <%= "highlighted" if content == @content %>" 
     id="tile_<%= content.id %>"
     data-row="<%= content.grid_row %>" 
     data-col="<%= content.grid_column %>" 
