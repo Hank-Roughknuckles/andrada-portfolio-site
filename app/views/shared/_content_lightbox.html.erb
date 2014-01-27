@@ -20,27 +20,12 @@
 
   <% if local_assigns.has_key? :edit_page %>
     <% if edit_page == true %>
-      <%= form_for @content do |f| %>
-        <div class="lightbox_bottom">
-          <div class="content_header"> 
-              <%= f.text_field :header, cols: 25, rows: 2 %>
-          </div>
-
-          <div class="content_description">
-            <%= f.text_area :description, cols: 80, rows: 3 %>
-          </div>
-        </div>
-      <% end %>
+      <%= render "shared/content_detail_form", :content => content %>
+    <% else %>
+      <%= render "shared/content_detail_display", :content => content %>
     <% end %>
-  <% else %>
-    <div class="lightbox_bottom">
-      <div class="content_header"> 
-          <%= content.header %>
-      </div>
 
-      <div class="content_description">
-          <%= content.description %>
-      </div>
-    </div>
+  <% else %>
+    <%= render "shared/content_detail_display", :content => content %>
   <% end %>
 </div>

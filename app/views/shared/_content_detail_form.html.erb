@@ -1,0 +1,11 @@
+<%= form_for @content do |f| %>
+  <div class="lightbox_bottom">
+    <div class="content_header"> 
+        <%= f.text_field :header, cols: 25, rows: 2 %>
+    </div>
+
+    <div class="content_description">
+      <%= f.text_area :description, cols: 80, rows: 3 %>
+    </div>
+  </div>
+<% end %>
