@@ -1,7 +1,8 @@
+<% provide( :title, "Edit Work" ) %>
 <h3>Edit Work</h3>
 
 <div class="content_preview">
-  <%= render "shared/content_lightbox", :content => @content %>
+  <%= render "shared/content_lightbox", :content => @content, :edit_page => true %>
 </div>
 
 <div class="envelope">

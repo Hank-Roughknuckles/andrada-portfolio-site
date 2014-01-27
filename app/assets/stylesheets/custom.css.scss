@@ -232,6 +232,13 @@ body
       border: 1px black solid;
       z-index: 0;
     }
+
+    input[type="text"], textarea {
+
+      background-color : #000; 
+      color: #AAAAAA;
+
+    }
   }
 
   .overlay

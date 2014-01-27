@@ -18,13 +18,29 @@
   </div>
 
 
-  <div class="lightbox_bottom">
-    <div class="content_header"> 
-      <%= content.header %>
-    </div>
+  <% if local_assigns.has_key? :edit_page %>
+    <% if edit_page == true %>
+      <%= form_for @content do |f| %>
+        <div class="lightbox_bottom">
+          <div class="content_header"> 
+              <%= f.text_field :header, cols: 25, rows: 2 %>
+          </div>
 
-    <div class="content_description">
-      <%= content.description %>
+          <div class="content_description">
+            <%= f.text_area :description, cols: 80, rows: 3 %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <div class="lightbox_bottom">
+      <div class="content_header"> 
+          <%= content.header %>
+      </div>
+
+      <div class="content_description">
+          <%= content.description %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
