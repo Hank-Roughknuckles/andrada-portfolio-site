@@ -25,7 +25,7 @@ describe "CurrentProjectsPages" do
         visit current_projects_path
       end
       it { should have_xpath "//table//td/a[text()=\"Edit\"]" }
-      it { should have_content "Add Project" }
+      it { should have_content "Add" }
       it { should have_button "Delete" }
 
       describe "The Edit Page" do
@@ -69,7 +69,7 @@ describe "CurrentProjectsPages" do
 
       describe "The Add Page" do
         before do
-          click_link "Add Project"
+          click_link "Add"
         end
 
         it { should have_field "Header" }
