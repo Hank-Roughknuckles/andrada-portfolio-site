@@ -5,6 +5,6 @@
 </div>
 
 <% if user_signed_in? %>
-  <%= link_to 'Add Project', new_current_project_path %>
+  <span class="add_new"><%= link_to 'Add New Item', new_current_project_path %></span>
   <%= render "current_projects_edit_table", projects: @contents %>
 <% end %>

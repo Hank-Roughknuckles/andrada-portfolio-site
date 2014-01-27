@@ -5,6 +5,6 @@
 </div>
 
 <% if user_signed_in? %>
-  <%= link_to 'Add New Item', new_work_path %>
+  <span class="add_new"><%= link_to 'Add New Item', new_work_path %></span>
   <%= render "works_edit_table", contents: @contents %>
 <% end %>
