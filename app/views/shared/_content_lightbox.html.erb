@@ -8,7 +8,11 @@
 
     <% if user_signed_in? %>
       <div class="lightbox_edit_link">
-        <%= link_to "Edit Item", edit_work_path(content) %>
+        <% if content.class.table_name == "works" %>
+          <%= link_to "Edit Item", edit_work_path(content) %>
+        <% else %>
+          <%= link_to "Edit Item", edit_current_project_path(content) %>
+        <% end %>
       </div>
     <% end %>
 
