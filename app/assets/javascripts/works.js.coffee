@@ -25,6 +25,9 @@ $ -> #DOM Ready
       $(".content_#{currentLightbox}").show()
 
   $(".close, .overlay").click ->
+    #Close lightbox, but not the one that's inside .content_preview
     $(".overlay").hide()
     $(".content_#{currentLightbox}").hide()
+    $(".content_preview .content_#{currentLightbox}").show()
+
     currentLightbox = -1;
