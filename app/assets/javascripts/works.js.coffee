@@ -24,7 +24,7 @@ $ -> #DOM Ready
       $(".overlay").show()
       $(".content_#{currentLightbox}").show()
 
-  $(".close").click ->
+  $(".close, .overlay").click ->
     $(".overlay").hide()
     $(".content_#{currentLightbox}").hide()
     currentLightbox = -1;
