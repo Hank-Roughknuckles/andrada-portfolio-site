@@ -10,6 +10,12 @@ $selected_blue: #8094a6;
   src: font-url('FaunaOne-Regular.ttf');
 }
 
+@font-face
+{
+  font-family: 'khmer';
+  src: font-url('KhmerUI.ttf');
+}
+
 body
 {
   background-color: $background_tan;
@@ -157,6 +163,12 @@ body
   {
     min-height: 454px;
     width: 943px;
+
+    h3 {
+      font-family: 'khmer';
+      margin-top: -15px;
+      margin-bottom: 10px;
+    }
   }
 
   // Edit table
