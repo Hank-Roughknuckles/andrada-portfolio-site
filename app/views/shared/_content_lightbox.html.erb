@@ -5,6 +5,13 @@
 
   <div class="lightbox_main">
     <%= render "shared/embedded_video", :content => content %>
+
+    <% if user_signed_in? %>
+      <div class="lightbox_edit_link">
+        <%= link_to "Edit Item", edit_work_path(content) %>
+      </div>
+    <% end %>
+
   </div>
 
   <div class="lightbox_bottom">
