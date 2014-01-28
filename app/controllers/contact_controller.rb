@@ -1,4 +1,6 @@
 class ContactController < ApplicationController
+  before_filter :authorize, :except => :show
+
   def show
     @contact_info = Contact.find params[:id] 
   end
