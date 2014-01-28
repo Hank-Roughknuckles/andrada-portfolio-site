@@ -67,7 +67,7 @@ describe "WorksPages" do
       describe "With an invalid video link" do
         before do
           fill_in "Media link", with: "www.google.com"
-          click_button "Save"
+          click_button "save_button_bottom"
         end
 
         it { should have_content "Invalid video link" }
