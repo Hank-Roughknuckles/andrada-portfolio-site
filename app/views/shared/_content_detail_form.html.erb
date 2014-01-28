@@ -1,4 +1,6 @@
 <%= form_for @content do |f| %>
+  <%= f.submit "Save", class: "btn save", id: "save_button_bottom" %>
+
   <div class="lightbox_bottom">
     <div class="content_header"> 
         <%= f.text_field :header, cols: 25, rows: 2 %>

@@ -233,7 +233,15 @@ body
       z-index: 0;
     }
 
-    input[type="text"], textarea {
+    input[type="submit"]
+    {
+      position: absolute;
+      bottom: 79px;
+      left: 20px;
+    }
+
+    input[type="text"], textarea 
+    {
 
       background-color : #000; 
       color: #AAAAAA;
