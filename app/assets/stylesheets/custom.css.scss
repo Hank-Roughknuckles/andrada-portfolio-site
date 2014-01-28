@@ -252,10 +252,14 @@ body
 
     input[type="text"], textarea 
     {
-
       background-color : #000; 
       color: #AAAAAA;
+    }
 
+    input[type="text"] 
+    {
+      max-width: 250px;
+      text-align: center;
     }
   }
 
