@@ -9,9 +9,11 @@
 <% end %>
 
 <div class="content_detail content_<%= content.id %>">
-  <button class="close">
-    <%= image_tag "close_button.png", size: "48" %> 
-  </button>
+  <% if !edit_page %>
+    <button class="close">
+      <%= image_tag "close_button.png", size: "48" %> 
+    </button>
+  <% end %>
 
   <div class="lightbox_main">
     <%= render "shared/embedded_video", :content => content %>
