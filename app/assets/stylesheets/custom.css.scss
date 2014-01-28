@@ -236,8 +236,18 @@ body
     input[type="submit"]
     {
       position: absolute;
-      bottom: 79px;
       left: 20px;
+    }
+
+    #save_button_bottom
+    {
+      bottom: 79px;
+    }
+
+    #save_button_top 
+    {
+      left: 20px;
+      top: 13px;
     }
 
     input[type="text"], textarea 
