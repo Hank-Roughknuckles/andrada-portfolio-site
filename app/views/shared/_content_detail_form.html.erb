@@ -7,12 +7,29 @@
   </div>
 
   <div class="lightbox_bottom">
+
+    <!-- The Header -->
     <div class="content_header"> 
-        <%= f.text_field :header, cols: 25, :maxlength => header_limit %>
+      <%= f.text_field :header, cols: 25, :maxlength => header_limit %>
     </div>
 
+
+    <!-- The Description -->
     <div class="content_description">
-      <%= f.text_area :description, cols: 80, rows: 3, :maxlength => description_limit %>
+      <%= f.text_area :description, 
+        cols: 80, 
+        rows: 3, 
+        :maxlength => description_limit %>
     </div>
+
+
+    <!-- The Progress (if any) -->
+    <% if @content.class.table_name == "current_projects" %>
+    <div class="content_progress">
+      <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
+      % Completed
+    </div>
+    <% end %>
+
   </div>
 <% end %>

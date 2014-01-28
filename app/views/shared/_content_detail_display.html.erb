@@ -1,9 +1,20 @@
 <div class="lightbox_bottom">
+
+  <!-- The Header -->
   <div class="content_header"> 
       <%= content.header %>
   </div>
 
+  <!-- The Description -->
   <div class="content_description">
       <%= content.description %>
   </div>
+
+  <!-- The Progress (if any) -->
+  <% if @content.class.table_name == "current_projects" %>
+  <div class="content_progress">
+    <%= content.progress %>% Completed
+  </div>
+  <% end %>
+
 </div>
