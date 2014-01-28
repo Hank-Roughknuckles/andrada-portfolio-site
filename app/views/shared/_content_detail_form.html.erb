@@ -1,6 +1,10 @@
 <%= form_for @content do |f| %>
-  <%= f.submit "Save", class: "btn save", id: "save_button_top" %>
-  <%= f.submit "Save", class: "btn save", id: "save_button_bottom" %>
+  <div class="save_button">
+    <%= f.submit "Save", class: "btn save", id: "save_button_top" %>
+  </div>
+  <div class="save_button">
+    <%= f.submit "Save", class: "btn save", id: "save_button_bottom" %>
+  </div>
 
   <div class="lightbox_bottom">
     <div class="content_header"> 
