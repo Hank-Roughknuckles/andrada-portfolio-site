@@ -23,19 +23,20 @@ class WorksController < ApplicationController
 
     if @content.save
       flash[:notice] = "New Work Added"
+      save_grid_position( caller: "works" )
       redirect_to action: "index"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
       on Vimeo or Youtube"
       render 'new'
     end
-
   end
 
   def update
     @contents = Work.all
     @content = Work.find(params[:id])
     if @content.update_attributes works_params
+      save_grid_position( caller: "works" )
       redirect_to action: "index"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
