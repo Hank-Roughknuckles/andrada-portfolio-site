@@ -4,6 +4,8 @@
 
 $ -> #DOM Ready
 
+  currentLightbox = -1
+
   $(".close, .overlay").click ->
     $(".overlay").hide()
     $(".content_#{currentLightbox}").hide()
@@ -26,21 +28,16 @@ $ -> #DOM Ready
 
   gridster = $(".gridster ul").gridster().data('gridster');
 
-  $(".gridster ul li").click ->
-    if dragged is true
-      dragged = false
-    else
-      numberRegex = /[0-9]/
-      currentLightbox = @id.match(numberRegex)
-      $(".overlay").show()
-      $(".content_#{currentLightbox}").show()
-
   $(".gridster ul li").mouseup ->
     if dragged is true
       tiles = getPositions()
       $("#serialized_array").val JSON.stringify(tiles)
       $(".edit_grid_position").submit()
-      dragged = false
+    else
+      numberRegex = /[0-9]/
+      currentLightbox = @id.match(numberRegex)
+      $(".overlay").show()
+      $(".content_#{currentLightbox}").show()
 
   getPositions = ->
     tilePositions = []
