@@ -15,4 +15,6 @@
 
 <% if request.path =~ /.+edit/ %>
   <%= render "shared/grid_position_form", :object => @position %>
+<% else %>
+  <span class="invisible" id="drag_disabled"></span>
 <% end %>

@@ -28,6 +28,12 @@ $ -> #DOM Ready
 
   gridster = $(".gridster ul").gridster().data('gridster');
 
+  #if #drag_disabled exists, then don't let the user drag tiles
+  if $("#drag_disabled").length > 0
+    console.log "Drag is disabled"
+    console.log $("#drag_disabled")
+    gridster.disable();
+
   $(".gridster ul li").mouseup ->
     if dragged is true
       setTimeout(savePositions, 200)
