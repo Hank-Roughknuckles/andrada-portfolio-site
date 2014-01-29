@@ -107,11 +107,19 @@ class ApplicationController < ActionController::Base
 
     positions = JSON.parse( positions )
     positions.each do |position|
-      content = model.find( position["databaseID"] )
-      content.update_attributes( grid_row: position["row"],
-                              grid_column: position["column"],
-                              grid_sizex: position["sizex"],
-                              grid_sizey: position["sizey"] )
+      begin
+        error_occurred = false
+        content = model.find( position["databaseID"] )
+      rescue
+        error_occurred = true
+      ensure
+        if !error_occurred
+          content.update_attributes( grid_row: position["row"],
+                                     grid_column: position["column"],
+                                     grid_sizex: position["sizex"],
+                                     grid_sizey: position["sizey"] )
+        end
+      end
     end
   end
 end
