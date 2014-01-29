@@ -9,6 +9,7 @@ AndradaPortfolioSite::Application.routes.draw do
   resources :works
   resources :current_projects
   resources :contact
+  resources :grid_positions
 
   get '/login' => 'sessions#new'
   get '/logout' =>  'sessions#destroy'
