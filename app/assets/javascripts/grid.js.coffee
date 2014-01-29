@@ -1,8 +1,17 @@
 $ -> #DOM Ready
 
+  currentLightbox = -1
+
+  $(".close, .overlay").click ->
+    $(".overlay").hide()
+    $(".content_#{currentLightbox}").hide()
+    $(".content_preview .content_#{currentLightbox}").show()
+
+    currentLightbox = -1;
+
+
   #Gridster stuff
   dragged = false
-  currentLightbox = -1;
 
   $(".gridster ul").gridster
     widget_margins: [5, 5]
