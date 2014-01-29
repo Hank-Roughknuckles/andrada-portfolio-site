@@ -93,4 +93,25 @@ class ApplicationController < ActionController::Base
       return
     end
   end
+
+  
+  def save_grid_position( options = {} )
+    if options[:caller].downcase == "works" 
+      positions = GridPosition.find_by(parent_name: "works").serialized_array
+      model = Work
+
+    elsif options[:caller].downcase == "current_projects"
+      positions = GridPosition.find_by(parent_name: "current_projects").serialized_array
+      model = CurrentProject
+    end
+
+    positions = JSON.parse( positions )
+    positions.each do |position|
+      content = model.find( position["databaseID"] )
+      content.update_attributes( grid_row: position["row"],
+                              grid_column: position["column"],
+                              grid_sizex: position["sizex"],
+                              grid_sizey: position["sizey"] )
+    end
+  end
 end
