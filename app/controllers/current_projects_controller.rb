@@ -8,6 +8,7 @@ class CurrentProjectsController < ApplicationController
   def new
     @contents = CurrentProject.all
     @content = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50, media_choice: "link" )
+    @position = GridPosition.find_by(parent_name: "current_projects")
   end
 
   def create
@@ -15,8 +16,9 @@ class CurrentProjectsController < ApplicationController
     @content = CurrentProject.new( current_project_params )
 
     if @content.update_attributes current_project_params
-      redirect_to action: "index"
+      save_grid_position( caller: "current_projects" )
       flash[:notice] = "Project saved successfully"
+      redirect_to action: "index"
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
       on Vimeo or Youtube"
@@ -27,12 +29,14 @@ class CurrentProjectsController < ApplicationController
   def edit
     @contents = CurrentProject.all
     @content = CurrentProject.find params[:id]
+    @position = GridPosition.find_by(parent_name: "current_projects")
   end
 
   def update
     @contents = CurrentProject.all
     @content = CurrentProject.find(params[:id])
     if @content.update_attributes current_project_params
+      save_grid_position( caller: "current_projects" )
       flash[:notice] = "Project updated successfully"
       redirect_to action: "index"
     else
