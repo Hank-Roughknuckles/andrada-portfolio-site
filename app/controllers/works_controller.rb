@@ -8,11 +8,13 @@ class WorksController < ApplicationController
   def edit
     @contents = Work.all
     @content = Work.find params[:id]
+    @position = GridPosition.find_by(parent_name: "works")
   end
 
   def new
     @contents = Work.all
     @content = Work.new( media_link: "https://vimeo.com/14470340", media_choice: "link" )
+    @position = GridPosition.find_by(parent_name: "works")
   end
 
   def create

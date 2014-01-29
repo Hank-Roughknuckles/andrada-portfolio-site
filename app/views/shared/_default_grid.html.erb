@@ -12,3 +12,7 @@
   <% end %>
   </ul>
 </div>
+
+<% if request.path =~ /.+edit/ %>
+  <%= render "shared/grid_position_form", :object => @position %>
+<% end %>
