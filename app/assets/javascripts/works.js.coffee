@@ -30,14 +30,18 @@ $ -> #DOM Ready
 
   $(".gridster ul li").mouseup ->
     if dragged is true
-      tiles = getPositions()
-      $("#serialized_array").val JSON.stringify(tiles)
-      $(".edit_grid_position").submit()
+      setTimeout(savePositions, 200)
     else
       numberRegex = /[0-9]/
       currentLightbox = @id.match(numberRegex)
       $(".overlay").show()
       $(".content_#{currentLightbox}").show()
+
+  savePositions = ->
+    tiles = getPositions()
+    $("#serialized_array").val JSON.stringify(tiles)
+    console.log tiles
+    $(".edit_grid_position").submit()
 
   getPositions = ->
     tilePositions = []
@@ -45,7 +49,7 @@ $ -> #DOM Ready
       unless !element.id.match(/tile_[0-9]/)
         current = 
           row:          $(element).attr('data-row')
-          col:          $(element).attr('data-col')
+          column:       $(element).attr('data-col')
           sizex:        $(element).attr('data-sizex')
           sizey:        $(element).attr('data-sizey')
           databaseID:   element.id.match(/[0-9]/)[0]
