@@ -19,8 +19,8 @@ $ -> #DOM Ready
   currentLightbox = -1;
 
   $(".gridster ul").gridster
-    widget_margins: [10, 10]
-    widget_base_dimensions: [200, 200]
+    widget_margins: [5, 5]
+    widget_base_dimensions: [138, 138]
     draggable: {
       start: (e, ui, $widget) ->
         dragged = true;
