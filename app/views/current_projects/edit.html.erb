@@ -6,7 +6,7 @@
 </div>
 
 <div class="envelope">
-  <%= render "shared/default_grid", :active_record_object => CurrentProject %>
+  <%= render "shared/default_grid", :edit_mode => true, :active_record_object => CurrentProject %>
 </div>
 
 <%= render "current_projects_form", :content => @content %>

@@ -1,7 +1,7 @@
 <% provide( :title, "Current Projects" ) %>
 
 <div class="envelope">
-  <%= render "shared/default_grid", :active_record_object => CurrentProject %>
+  <%= render "shared/default_grid", :edit_mode => false, :active_record_object => CurrentProject %>
 </div>
 
 <% if user_signed_in? %>

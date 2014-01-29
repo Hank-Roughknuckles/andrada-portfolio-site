@@ -1,4 +1,8 @@
-<div class="gridster <%= "edit_grid" if request.path =~ /.+edit/ %>">
+<% if !local_assigns.has_key? :edit_mode %>
+  edit_mode = false
+<% end %>
+
+<div class="gridster <%= "edit_grid" if edit_mode %>">
   <ul>
   <% for content in @contents  %>
     <li class="grid_tile <%= "highlighted" if content == @content %>" 
@@ -13,7 +17,7 @@
   </ul>
 </div>
 
-<% if request.path =~ /.+edit/ %>
+<% if edit_mode %>
   <%= render "shared/grid_position_form", :object => @position %>
 <% else %>
   <span class="invisible" id="drag_disabled"></span>
