@@ -367,6 +367,13 @@ body
       min-width: 138px;
       min-height: 138px;
       list-style-type: none;
+
+      a.expand_tile
+      {
+        display: block;
+        height: 138px;
+        width: 138px;
+      }
     }
   }
 

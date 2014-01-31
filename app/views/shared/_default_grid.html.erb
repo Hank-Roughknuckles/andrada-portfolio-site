@@ -12,7 +12,14 @@
     data-sizex="<%= content.grid_sizex %>" 
     data-sizey="<%= content.grid_sizey %>" 
     style="<%= get_tile_image_css active_record_object, content.id %>">
-    <%= image_tag "glyphicon_button_delete.png", size: "20x20", class: "tile_delete", id: "tile_delete_#{content.id}" %></li>
+      <a href=# class="expand_tile">
+        <a href=#><%= image_tag "glyphicon_button_delete.png", 
+                                size: "20x20", 
+                                class: "tile_delete", 
+                                id: "tile_delete_#{content.id}" %>
+        </a>
+      </a>
+    </li>
     <%= render "shared/content_lightbox", :content => content %>
   <% end %>
   </ul>
