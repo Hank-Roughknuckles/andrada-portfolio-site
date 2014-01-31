@@ -1,11 +1,11 @@
 $ -> #DOM Ready
 
-  currentLightbox = -1 #has the ID of the lightbox whose details are
-                       #currently being viewed
   tileWidth = 138
   tileHeight = 138
   tileMarginX = 5
   tileMarginY = 5
+  currentLightbox = -1 #has the ID of the lightbox whose details are
+                       #currently being viewed
 
   $(".close, .overlay").click ->
     $(".overlay").hide()
@@ -31,11 +31,10 @@ $ -> #DOM Ready
 
   #if #drag_disabled exists, then don't let the user drag tiles
   if $("#drag_disabled").length > 0
-    console.log "Drag is disabled"
-    console.log $("#drag_disabled")
     gridster.disable();
 
-  $(".gridster ul li").mouseup ->
+
+  $(".expand_tile").mouseup ->
     if dragged is true
       setTimeout(savePositions, 200)
     else
@@ -44,10 +43,22 @@ $ -> #DOM Ready
       $(".overlay").show()
       $(".content_#{currentLightbox}").show()
 
+
+  # Buttons for deleting tiles
+  $(".gridster a img.tile_delete").click ->
+    lightboxID = @id.match(/tile_delete_([0-9]+)/)[1]
+
+    if confirm("Are you sure you want to delete this? This can't be undone")
+      deleteTile lightboxID
+
+
+  deleteTile = (lightboxNumber) ->
+    console.log "Delete the thing here"
+    $("input#delete_work_#{lightboxNumber}").trigger("click")
+
   savePositions = ->
     tiles = getPositions()
     $("#serialized_array").val JSON.stringify(tiles)
-    console.log tiles
     $(".edit_grid_position").submit()
 
   getPositions = ->

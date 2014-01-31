@@ -42,7 +42,6 @@ $ ->
 
     reader.readAsDataURL file
 
-
   #Save reminder stuff
   showSaveReminder = ->
     if $(".save_reminder").text() == ""
