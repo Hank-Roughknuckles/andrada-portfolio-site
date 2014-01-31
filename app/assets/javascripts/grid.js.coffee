@@ -4,17 +4,14 @@ $ -> #DOM Ready
   tileHeight = 138
   tileMarginX = 5
   tileMarginY = 5
-  currentLightbox = -1 #has the ID of the lightbox whose details are
-                       #currently being viewed
+  currentLightbox = null #has the ID of the lightbox whose details are
+                         #currently being viewed
+  uploadedImage = null
 
   $(".close, .overlay").click ->
-    $(".overlay").hide()
-    $(".content_#{currentLightbox}").hide()
-    $(".content_preview .content_#{currentLightbox}").show()
+    closeLightbox()
 
-    currentLightbox = -1;
-
-
+  
   #Gridster stuff
   dragged = false
 
@@ -41,8 +38,7 @@ $ -> #DOM Ready
       numberRegex = /[0-9]+/
       currentLightbox = @id.match(numberRegex)
       console.log "#{@id} - #{currentLightbox}"
-      $(".overlay").show()
-      $(".content_#{currentLightbox}").show()
+      showLightbox $(".content_#{currentLightbox}")
 
 
   # Buttons for deleting tiles
@@ -58,17 +54,35 @@ $ -> #DOM Ready
     $(".edit_tools").toggle()
 
 
-  # Change tile image when upload a new image
+  # Open image edit lightbox when upload a new image
   $(".grid_tile_image_upload").change (event) ->
     currentElement = $.trim($(".current_element_id").text())
     input = $(event.currentTarget)
     file = input[0].files[0]
     reader = new FileReader()
     reader.onload = (e) ->
-      image_base64 = e.target.result
-      $(".grid_tile_#{currentElement}").css({"background": "url(#{image_base64})"})
+      uploadedImage = e.target.result
+      $(".grid_tile_#{currentElement}").css({"background": "url(#{uploadedImage})"})
+      currentLightbox = "crop"
+      showLightbox $(".show_image_lightbox")
       showSaveReminder()
     reader.readAsDataURL file
+
+
+  showLightbox = (lightBox) ->
+    $(".overlay").show()
+    $(".content_#{currentLightbox}").show()
+
+
+  closeLightbox = ->
+    if currentLightbox == "crop"
+      currentLightbox = "crop_image_lightbox"
+
+    $(".overlay").hide()
+    $(".content_#{currentLightbox}").hide()
+    $(".content_preview .content_#{currentLightbox}").show()
+
+    currentLightbox = -1;
 
 
   showSaveReminder = ->
