@@ -56,7 +56,6 @@ $ -> #DOM Ready
   #Toggle edit tools button
   $(".toggle_edit_tools").click ->
     $(".edit_tools").toggle()
-    $(this).html("<a href=#>Hide Edit Options</a>")
 
 
   deleteTile = (lightboxNumber) ->
