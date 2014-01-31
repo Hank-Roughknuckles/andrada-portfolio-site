@@ -10,7 +10,7 @@
 <div class="gridster <%= "edit_grid" if edit_mode %>">
   <ul>
   <% for content in @contents  %>
-    <li class="grid_tile <%= "highlighted" if content == @content %>" 
+    <li class="grid_tile grid_tile_<%= content.id %> <%= "highlighted" if content == @content %>" 
     data-row="<%= content.grid_row %>" 
     data-col="<%= content.grid_column %>" 
     data-sizex="<%= content.grid_sizex %>" 
