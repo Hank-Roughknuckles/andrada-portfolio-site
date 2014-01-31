@@ -1,6 +1,11 @@
 $ -> #DOM Ready
 
-  currentLightbox = -1
+  currentLightbox = -1 #has the ID of the lightbox whose details are
+                       #currently being viewed
+  tileWidth = 138
+  tileHeight = 138
+  tileMarginX = 5
+  tileMarginY = 5
 
   $(".close, .overlay").click ->
     $(".overlay").hide()
@@ -13,9 +18,10 @@ $ -> #DOM Ready
   #Gridster stuff
   dragged = false
 
+  #Turn on gridster
   $(".gridster ul").gridster
-    widget_margins: [5, 5]
-    widget_base_dimensions: [138, 138]
+    widget_margins: [tileMarginX, tileMarginY]
+    widget_base_dimensions: [tileWidth, tileHeight]
     draggable: {
       start: (e, ui, $widget) ->
         dragged = true;
