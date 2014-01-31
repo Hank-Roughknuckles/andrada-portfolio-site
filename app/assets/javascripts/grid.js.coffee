@@ -52,14 +52,22 @@ $ -> #DOM Ready
       deleteTile lightboxID
 
 
+  #Toggle edit tools button
+  $(".toggle_edit_tools").click ->
+    $(".edit_tools").toggle()
+    $(this).html("<a href=#>Hide Edit Options</a>")
+
+
   deleteTile = (lightboxNumber) ->
     console.log "Delete the thing here"
     $("input#delete_work_#{lightboxNumber}").trigger("click")
+
 
   savePositions = ->
     tiles = getPositions()
     $("#serialized_array").val JSON.stringify(tiles)
     $(".edit_grid_position").submit()
+
 
   getPositions = ->
     tilePositions = []

@@ -2,6 +2,9 @@
   edit_mode = false
 <% end %>
 
+<div class="toggle_edit_tools">
+  <a href=#>Edit Content</a>
+</div>
 <div class="gridster <%= "edit_grid" if edit_mode %>">
   <ul>
   <% for content in @contents  %>
@@ -12,7 +15,7 @@
     data-sizey="<%= content.grid_sizey %>" 
     style="<%= get_tile_image_css active_record_object, content.id %>">
       <a href=# class="expand_tile" id="tile_<%= content.id %>">
-        <a href=#>
+        <a href=# class="edit_tools">
           <%= image_tag "glyphicon_button_delete.png", 
                          size: "20x20", 
                          id: "tile_delete_#{content.id}",

@@ -390,6 +390,18 @@ body
     }
   }
 
+  .toggle_edit_tools
+  {
+    position: absolute;
+    left: 50px;
+    top: 420px;
+  }
+
+  .edit_tools
+  {
+    display: none;
+  }
+
   .tile_delete 
   {
     position: absolute;
