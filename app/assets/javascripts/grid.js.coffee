@@ -38,8 +38,9 @@ $ -> #DOM Ready
     if dragged is true
       setTimeout(savePositions, 200)
     else
-      numberRegex = /[0-9]/
+      numberRegex = /[0-9]+/
       currentLightbox = @id.match(numberRegex)
+      console.log "#{@id} - #{currentLightbox}"
       $(".overlay").show()
       $(".content_#{currentLightbox}").show()
 
