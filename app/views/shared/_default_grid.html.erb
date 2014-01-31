@@ -2,9 +2,11 @@
   edit_mode = false
 <% end %>
 
-<div class="toggle_edit_tools">
-  <a href=#>Toggle Edit Mode</a>
-</div>
+<% if edit_mode %>
+  <div class="toggle_edit_tools">
+    <a href=#>Toggle Edit Mode</a>
+  </div>
+<% end %>
 <div class="gridster <%= "edit_grid" if edit_mode %>">
   <ul>
   <% for content in @contents  %>
