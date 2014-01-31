@@ -8,7 +8,7 @@
     :description_limit => description_limit %>
 
   <%= f.label :grid_tile_image %>
-  <%= f.file_field :grid_tile_image, id: "grid_tile_image" %>
+  <%= f.file_field :grid_tile_image, id: "grid_tile_image", class: "grid_tile_image_upload" %>
 
   <%= f.label :grid_row %>
   <%= f.number_field :grid_row, min: 0, max: 3, step: 1 %>
