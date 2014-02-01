@@ -84,7 +84,7 @@ $ -> #DOM Ready
   #
   buildCropPopup = ->
     imageDimensions = getImageDimensions(uploadedImage)
-    imageDimensions = scaleDownImage(imageDimensions, {width: 225, height: 400})
+    imageDimensions = scaleDownImage(imageDimensions, {width: 225, height: 190})
     $(".image_preview").attr
       src: uploadedImage,
       width: imageDimensions.width,
@@ -109,10 +109,10 @@ $ -> #DOM Ready
       return original
 
 
-    if maxDimensions.width <= maxDimensions.height
-      factor = original.width / maxDimensions.width
-    else
+    if original.width <= original.height
       factor = original.height / maxDimensions.height
+    else
+      factor = original.width / maxDimensions.width
 
     if factor >= 1
       original.width = original.width / factor
