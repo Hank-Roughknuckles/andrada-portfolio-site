@@ -84,8 +84,6 @@ $ -> #DOM Ready
     else
       $(".content_#{lightbox}").hide()
       $(".content_preview .content_#{lightbox}").show()
-      
-
 
     currentLightbox = null;
 
