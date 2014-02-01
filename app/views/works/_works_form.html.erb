@@ -22,5 +22,7 @@
   <%= f.label :grid_sizey, "Tile size (vertical)" %>
   <%= f.number_field :grid_sizey, min: 0, max: 3, step: 1 %>
 
+  <%= render "shared/crop_image_popup" %>
+
   <%= f.submit "Save", class: "btn save" %>
 <% end %>
