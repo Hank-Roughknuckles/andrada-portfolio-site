@@ -14,8 +14,8 @@
     data-row="<%= content.grid_row %>" 
     data-col="<%= content.grid_column %>" 
     data-sizex="<%= content.grid_sizex %>" 
-    data-sizey="<%= content.grid_sizey %>" 
-    style="<%= get_tile_image_css active_record_object, content.id %>">
+    data-sizey="<%= content.grid_sizey %>">
+      <img src="<%= content.grid_tile_image %>">
       <a href=# class="expand_tile" id="tile_<%= content.id %>">
         <a href=# class="edit_tools">
           <%= image_tag "glyphicon_button_delete.png", 
