@@ -69,30 +69,26 @@ $ -> #DOM Ready
     reader.onload = (e) ->
       uploadedImage = e.target.result
       $(".grid_tile_#{currentElement}").css({"background": "url(#{uploadedImage})"})
-      currentLightbox = "crop"
-      buildCropLightbox()
-      showLightbox $(".crop_image_lightbox")
+      showCropPopup uploadedImage
       showSaveReminder()
     reader.readAsDataURL file
 
 
+  showCropPopup = (image) ->
+    buildCropPopup()
+    $(".crop_image_popup").show()
+
+
   ##
-  # buildCropLightbox
+  # buildCropPopup
   #
-  buildCropLightbox = ->
+  buildCropPopup = ->
     imageDimensions = getImageDimensions(uploadedImage)
-    imageDimensions = scaleDownImage(imageDimensions, {width: 600, height: 400})
+    imageDimensions = scaleDownImage(imageDimensions, {width: 225, height: 400})
     $(".image_preview").attr
       src: uploadedImage,
       width: imageDimensions.width,
       height: imageDimensions.height
-    $(".gridster-mini ul").gridster
-      widget_margins: [miniTileMarginX, miniTileMarginY]
-      widget_base_dimensions: [miniTileWidth, miniTileHeight]
-      draggable: {
-        start: (e, ui, $widget) ->
-          dragged = true;
-      }
 
 
   ##
