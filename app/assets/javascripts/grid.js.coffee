@@ -28,7 +28,9 @@ $ -> #DOM Ready
         dragged = true;
     }
 
+
   gridster = $(".gridster ul").gridster().data('gridster');
+
 
   #if #drag_disabled exists, then don't let the user drag tiles
   if $("#drag_disabled").length > 0
@@ -74,10 +76,12 @@ $ -> #DOM Ready
     reader.readAsDataURL file
 
 
+  ##
+  # buildCropLightbox
+  #
   buildCropLightbox = ->
     imageDimensions = getImageDimensions(uploadedImage)
     imageDimensions = scaleDownImage(imageDimensions, 600)
-    console.log imageDimensions
     $(".image_preview").attr
       src: uploadedImage,
       width: imageDimensions.width,
@@ -90,24 +94,38 @@ $ -> #DOM Ready
           dragged = true;
       }
 
+
+  ##
+  # getImageDimensions
+  #
   getImageDimensions = (passed_image) ->
     i = new Image()
     i.src = passed_image
     return { width: i.width, height: i.height }
 
 
+  ##
+  # scaleDownImage
+  #
   scaleDownImage = ( original, maxWidth ) ->
     factor = maxWidth / original.width
     original.width = original.width * factor
     original.height = original.height * factor
     return original
 
+
+  ##
+  # showLightbox
+  #
   showLightbox = (lightbox) ->
     $(".overlay").show()
     console.log lightbox
     lightbox.show()
 
 
+  ##
+  # closeLightbox
+  #
   closeLightbox = (lightbox) ->
     $(".overlay").hide()
 
@@ -121,21 +139,33 @@ $ -> #DOM Ready
     currentLightbox = null;
 
 
+  ##
+  # showSaveReminder
+  #
   showSaveReminder = ->
     console.log "NOTE: make showSaveReminder"
 
 
+  ##
+  # deleteTile
+  #
   deleteTile = (lightboxNumber) ->
     console.log "Delete the thing here"
     $("input#delete_work_#{lightboxNumber}").trigger("click")
 
 
+  ##
+  # savePositions
+  #
   savePositions = ->
     tiles = getPositions()
     $("#serialized_array").val JSON.stringify(tiles)
     $(".edit_grid_position").submit()
 
 
+  ##
+  # getPositions
+  #
   getPositions = ->
     tilePositions = []
     $(".gridster ul li").each (i, element) ->
