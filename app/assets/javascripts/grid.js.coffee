@@ -64,10 +64,14 @@ $ -> #DOM Ready
       uploadedImage = e.target.result
       $(".grid_tile_#{currentElement}").css({"background": "url(#{uploadedImage})"})
       currentLightbox = "crop"
+      buildCropLightbox()
       showLightbox $(".crop_image_lightbox")
       showSaveReminder()
     reader.readAsDataURL file
 
+
+  buildCropLightbox = ->
+    $(".image_preview").attr("src", uploadedImage)
 
   showLightbox = (lightbox) ->
     $(".overlay").show()
