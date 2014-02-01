@@ -133,7 +133,6 @@ $ -> #DOM Ready
   #
   showLightbox = (lightbox) ->
     $(".overlay").show()
-    console.log lightbox
     lightbox.show()
 
 
