@@ -64,25 +64,30 @@ $ -> #DOM Ready
       uploadedImage = e.target.result
       $(".grid_tile_#{currentElement}").css({"background": "url(#{uploadedImage})"})
       currentLightbox = "crop"
-      showLightbox $(".show_image_lightbox")
+      showLightbox $(".crop_image_lightbox")
       showSaveReminder()
     reader.readAsDataURL file
 
 
-  showLightbox = (lightBox) ->
+  showLightbox = (lightbox) ->
     $(".overlay").show()
-    $(".content_#{currentLightbox}").show()
+    console.log lightbox
+    lightbox.show()
 
 
   closeLightbox = (lightbox) ->
+    $(".overlay").hide()
+
     if lightbox == "crop"
       lightbox = "crop_image_lightbox"
+      $(".crop_image_lightbox").hide()
+    else
+      $(".content_#{lightbox}").hide()
+      $(".content_preview .content_#{lightbox}").show()
+      
 
-    $(".overlay").hide()
-    $(".content_#{lightbox}").hide()
-    $(".content_preview .content_#{lightbox}").show()
 
-    currentLightbox = -1;
+    currentLightbox = null;
 
 
   showSaveReminder = ->
