@@ -198,7 +198,7 @@ body
   .description_box, .direction_button
   {
     background: rgba(0,0,0,0.55);
-    color: #f2e9d8;
+    color: $background_tan;
   }
 
   .description_box
@@ -208,12 +208,19 @@ body
   }
 
   //overlay stuff
+  button.close
+  {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
   .content_detail
   {
     display: none; //will be activated by clicking grid tiles
     position: relative;
     z-index: 10000;
-    background-color: #f2e9d8;
+    background-color: $background_tan;
     width: 1200px;
     height: 600px;
     text-align: center;
@@ -321,8 +328,20 @@ body
 
   .crop_image_lightbox 
   {
-    z-index: 10000;
+    z-index: 10001;
+    position: relative;
+    text-align: center;
     display: none;
+    background-color: $background_tan;
+    background-color: green;
+    top: -1140px;
+    height: 680px;
+
+    .image_preview
+    {
+      margin-top: 50px;
+      // max-width: 600px;
+    }
   }
 
   .lightbox_bottom
