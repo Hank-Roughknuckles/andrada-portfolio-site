@@ -1,5 +1,9 @@
 $ -> #DOM Ready
 
+  miniTileWidth = 50
+  miniTileHeight = 50
+  miniTileMarginX = 2
+  miniTileMarginY = 2
   tileWidth = 138
   tileHeight = 138
   tileMarginX = 5
@@ -71,7 +75,32 @@ $ -> #DOM Ready
 
 
   buildCropLightbox = ->
-    $(".image_preview").attr("src", uploadedImage)
+    imageDimensions = getImageDimensions(uploadedImage)
+    imageDimensions = scaleDownImage(imageDimensions, 600)
+    console.log imageDimensions
+    $(".image_preview").attr
+      src: uploadedImage,
+      width: imageDimensions.width,
+      height: imageDimensions.height
+    $(".gridster-mini ul").gridster
+      widget_margins: [miniTileMarginX, miniTileMarginY]
+      widget_base_dimensions: [miniTileWidth, miniTileHeight]
+      draggable: {
+        start: (e, ui, $widget) ->
+          dragged = true;
+      }
+
+  getImageDimensions = (passed_image) ->
+    i = new Image()
+    i.src = passed_image
+    return { width: i.width, height: i.height }
+
+
+  scaleDownImage = ( original, maxWidth ) ->
+    factor = maxWidth / original.width
+    original.width = original.width * factor
+    original.height = original.height * factor
+    return original
 
   showLightbox = (lightbox) ->
     $(".overlay").show()
