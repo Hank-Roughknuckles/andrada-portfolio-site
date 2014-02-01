@@ -2,36 +2,23 @@
   edit_mode = false
 <% end %>
 
+
 <% if edit_mode %>
   <div class="toggle_edit_tools">
     <a href=#>Toggle Edit Mode</a>
   </div>
 <% end %>
+
+
 <div class="gridster <%= "edit_grid" if edit_mode %>">
   <ul>
-  <% for content in @contents  %>
-    <li class="grid_tile grid_tile_<%= content.id %> <%= "highlighted" if content == @content %>" 
-    data-row="<%= content.grid_row %>" 
-    data-col="<%= content.grid_column %>" 
-    data-sizex="<%= content.grid_sizex %>" 
-    data-sizey="<%= content.grid_sizey %>">
-      <img src="<%= content.grid_tile_image %>">
-      <a href=# class="expand_tile" id="tile_<%= content.id %>">
-        <a href=# class="edit_tools">
-          <%= image_tag "glyphicon_button_delete.png", 
-                         size: "20x20", 
-                         id: "tile_delete_#{content.id}",
-                         class: "tile_delete" %>
-        </a>
-      </a>
-    </li>
-    <%= render "shared/content_lightbox", :content => content %>
-  <% end %>
+    <%= render "shared/grid_tiles" %>
   </ul>
 </div>
 
+
 <% if edit_mode %>
-  <%= render "shared/crop_image_lightbox" %>
+  <%= render "shared/crop_image_popup" %>
   <%= render "shared/grid_position_form", :object => @position %>
 <% else %>
   <span class="invisible" id="drag_disabled"></span>
