@@ -9,7 +9,7 @@ $ -> #DOM Ready
   uploadedImage = null
 
   $(".close, .overlay").click ->
-    closeLightbox()
+    closeLightbox(currentLightbox)
 
   
   #Gridster stuff
@@ -74,13 +74,13 @@ $ -> #DOM Ready
     $(".content_#{currentLightbox}").show()
 
 
-  closeLightbox = ->
-    if currentLightbox == "crop"
-      currentLightbox = "crop_image_lightbox"
+  closeLightbox = (lightbox) ->
+    if lightbox == "crop"
+      lightbox = "crop_image_lightbox"
 
     $(".overlay").hide()
-    $(".content_#{currentLightbox}").hide()
-    $(".content_preview .content_#{currentLightbox}").show()
+    $(".content_#{lightbox}").hide()
+    $(".content_preview .content_#{lightbox}").show()
 
     currentLightbox = -1;
 
