@@ -81,7 +81,7 @@ $ -> #DOM Ready
   #
   buildCropLightbox = ->
     imageDimensions = getImageDimensions(uploadedImage)
-    imageDimensions = scaleDownImage(imageDimensions, 600)
+    imageDimensions = scaleDownImage(imageDimensions, {width: 600, height: 400})
     $(".image_preview").attr
       src: uploadedImage,
       width: imageDimensions.width,
@@ -107,10 +107,24 @@ $ -> #DOM Ready
   ##
   # scaleDownImage
   #
-  scaleDownImage = ( original, maxWidth ) ->
-    factor = maxWidth / original.width
-    original.width = original.width * factor
-    original.height = original.height * factor
+  scaleDownImage = ( original, maxDimensions ) ->
+    #if original is smaller than max size
+    if original.width <= maxDimensions.width && original.height <= maxDimensions.height
+      return original
+
+
+    if maxDimensions.width <= maxDimensions.height
+      factor = original.width / maxDimensions.width
+    else
+      factor = original.height / maxDimensions.height
+
+    if factor >= 1
+      original.width = original.width / factor
+      original.height = original.height / factor
+    else
+      original.width = original.width * factor
+      original.height = original.height * factor
+
     return original
 
 
