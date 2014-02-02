@@ -1,3 +1,8 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "jquery.Jcrop.min" %>
+  <%= javascript_include_tag "jquery.Jcrop.min" %>
+<% end %>
+
 <div class="crop_image_popup">
   <%= image_tag "close_button.png", size: "25", class: "close" %> 
 
@@ -5,7 +10,7 @@
 
  <!-- The uploaded image -->
   <div class="image_preview_box">
-    <img class="image_preview" src=""/>
+    <img class="image_preview" id="cropbox" src=""/>
   </div>
   
   <%= submit_tag 'Change image', type: 'button', class: "crop_change_image btn btn-success" %>

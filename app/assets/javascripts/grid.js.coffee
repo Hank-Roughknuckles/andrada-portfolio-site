@@ -100,6 +100,7 @@ $ -> #DOM Ready
       src: uploadedImage,
       width: imageDimensions.width,
       height: imageDimensions.height
+    $("#cropbox").Jcrop()
 
 
   ##
