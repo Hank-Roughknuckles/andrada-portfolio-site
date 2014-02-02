@@ -81,6 +81,9 @@ $ -> #DOM Ready
     console.log #{this}
 
 
+  ##
+  # showCropPopup
+  #
   showCropPopup = (image) ->
     buildCropPopup()
     $(".crop_image_popup").show()
