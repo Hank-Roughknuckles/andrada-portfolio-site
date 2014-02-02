@@ -74,6 +74,13 @@ $ -> #DOM Ready
     reader.readAsDataURL file
 
 
+  #Upload different image when "Change image" is clicked in the crop image
+  #popup
+  $(".crop_image_popup .crop_change_image").click ->
+    $("#grid_tile_image").trigger('click');
+    console.log #{this}
+
+
   showCropPopup = (image) ->
     buildCropPopup()
     $(".crop_image_popup").show()
@@ -90,9 +97,6 @@ $ -> #DOM Ready
       src: uploadedImage,
       width: imageDimensions.width,
       height: imageDimensions.height
-    $(".crop_image_popup .crop_change_image").click ->
-      $("#grid_tile_image").trigger('click');
-      console.log #{this}
 
 
   ##
