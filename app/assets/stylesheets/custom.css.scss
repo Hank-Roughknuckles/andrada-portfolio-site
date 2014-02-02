@@ -337,9 +337,27 @@ body
     left: 2px;
     width: 250px;
     height: 60%;
+    overflow-x: hidden;
 
-    .image_preview
+    input 
     {
+      margin-left: 0;
+    }
+
+    .image_preview_box 
+    {
+      height: 185px;
+      margin-bottom: 5px;
+
+      .image_preview
+      {
+        margin-bottom: 5px;
+      }
+    }
+
+    #crop_popup_save 
+    {
+      margin-top: 5px;
     }
   }
 

@@ -77,6 +77,7 @@ $ -> #DOM Ready
   showCropPopup = (image) ->
     buildCropPopup()
     $(".crop_image_popup").show()
+    currentLightbox = "crop"
 
 
   ##
@@ -89,6 +90,9 @@ $ -> #DOM Ready
       src: uploadedImage,
       width: imageDimensions.width,
       height: imageDimensions.height
+    $(".crop_image_popup .crop_change_image").click ->
+      $("#grid_tile_image").trigger('click');
+      console.log #{this}
 
 
   ##
@@ -140,7 +144,7 @@ $ -> #DOM Ready
 
     if lightbox == "crop"
       lightbox = "crop_image_lightbox"
-      $(".crop_image_lightbox").hide()
+      $(".crop_image_popup").hide()
     else
       $(".content_#{lightbox}").hide()
       $(".content_preview .content_#{lightbox}").show()

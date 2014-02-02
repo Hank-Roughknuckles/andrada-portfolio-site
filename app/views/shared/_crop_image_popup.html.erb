@@ -1,11 +1,16 @@
 <div class="crop_image_popup">
-  <button class="close">
-    <%= image_tag "close_button.png", size: "25" %> 
-  </button>
+  <%= image_tag "close_button.png", size: "25", class: "close" %> 
 
   <h5>Crop Tile Image</h5>
 
-  <img class="image_preview" src=""/> <!-- The uploaded image -->
+ <!-- The uploaded image -->
+  <div class="image_preview_box">
+    <img class="image_preview" src=""/>
+  </div>
+  
+  <%= submit_tag 'Change image', type: 'button', class: "crop_change_image btn btn-success" %>
 
-  <!-- button: "upload different image" -->
+  <div class="save_after_cropping">
+    <%= f.submit "Save", class: "btn btn-primary", id: "crop_popup_save" %>
+  </div>
 </div>
