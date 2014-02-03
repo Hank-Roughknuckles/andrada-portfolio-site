@@ -13,9 +13,19 @@
     <img class="image_preview" id="cropbox" src=""/>
   </div>
   
+  <!-- The "Change image" button -->
   <%= submit_tag 'Change image', type: 'button', class: "crop_change_image btn btn-success" %>
 
+  <!-- Hidden form for crop coordinates and the "Save" button -->
   <div class="save_after_cropping">
-    <%= f.submit "Save", class: "btn btn-primary", id: "crop_popup_save" %>
+    <%= form_for @content do |f| %>
+      <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+        <%= f.hidden_field attribute, id: attribute %>
+      <% end %>
+      <%= f.submit "Save", class: "btn btn-primary", 
+                           id: "crop_popup_save" %>
+    <% end %>
+  </div>
+
   </div>
 </div>
