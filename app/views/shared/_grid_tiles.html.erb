@@ -8,16 +8,14 @@
   data-col="<%= content.grid_column %>" 
   data-sizex="<%= content.grid_sizex %>" 
   data-sizey="<%= content.grid_sizey %>">
-  <img src="<%= content.grid_tile_image %>" <%= "class=\"expand_tile\"" if !display_mini %> id="tile_<%= content.id %>" />
+  <%= image_tag content.grid_tile_image.url(:small), class: "expand_tile", id: "tile_#{content.id}" %>
 
-    <% if !display_mini %>
-    <a href=# class="edit_tools">
-      <%= image_tag "glyphicon_button_delete.png", 
-                     size: "20x20", 
-                     id: "tile_delete_#{content.id}",
-                     class: "tile_delete" %>
-    </a>
-    <% end %>
+  <a href=# class="edit_tools">
+    <%= image_tag "glyphicon_button_delete.png", 
+                   size: "20x20", 
+                   id: "tile_delete_#{content.id}",
+                   class: "tile_delete" %>
+  </a>
   </li>
   <%= (render "shared/content_lightbox", :content => content) if !display_mini %>
 <% end %>

@@ -22,9 +22,14 @@ class WorksController < ApplicationController
     @content = Work.new(works_params)
 
     if @content.save
-      flash[:notice] = "New Work Added"
-      save_grid_position( caller: "works" )
-      redirect_to action: "index"
+      @content.reprocess_grid_tile_image if @content.cropping?
+      if params[:work][:grid_tile_image].blank?
+        flash[:notice] = "New Work Added"
+        redirect_to action: "index"
+      else
+        save_grid_position( caller: "works" )
+        render "shared/crop"
+      end
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
       on Vimeo or Youtube"
@@ -36,8 +41,13 @@ class WorksController < ApplicationController
     @contents = Work.all
     @content = Work.find(params[:id])
     if @content.update_attributes works_params
-      save_grid_position( caller: "works" )
-      redirect_to action: "index"
+      @content.reprocess_grid_tile_image if @content.cropping?
+      if params[:work][:grid_tile_image].blank?
+        redirect_to action: "index"
+      else
+        save_grid_position( caller: "works" )
+        render "shared/crop"
+      end
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
       on Vimeo or Youtube"
@@ -61,6 +71,7 @@ class WorksController < ApplicationController
                                  :media_choice, :media_image,
                                  :background_image, :grid_row,
                                  :grid_column, :grid_sizex, :grid_sizey,
-                                 :grid_tile_image)
+                                 :grid_tile_image, :crop_x, :crop_y,
+                                 :crop_h, :crop_w )
   end
 end
