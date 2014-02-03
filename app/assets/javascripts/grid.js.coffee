@@ -68,8 +68,6 @@ $ -> #DOM Ready
     reader = new FileReader()
     reader.onload = (e) ->
       uploadedImage = e.target.result
-      $(".grid_tile_#{currentElement}").css({"background": "url(#{uploadedImage})"})
-      showCropPopup uploadedImage
       showSaveReminder()
     reader.readAsDataURL file
 
@@ -100,7 +98,6 @@ $ -> #DOM Ready
       src: uploadedImage,
       width: imageDimensions.width,
       height: imageDimensions.height
-    $("#cropbox").Jcrop()
 
 
   ##
