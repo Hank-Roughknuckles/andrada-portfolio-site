@@ -1,84 +1,15 @@
 $ -> #DOM Ready
 
-  miniTileWidth = 50
-  miniTileHeight = 50
-  miniTileMarginX = 2
-  miniTileMarginY = 2
   tileWidth = 138
   tileHeight = 138
   tileMarginX = 5
   tileMarginY = 5
-  currentLightbox = null #has the ID of the lightbox whose details are
-                         #currently being viewed
+  currentLightbox = null #id of the currently expanded lightbox
   uploadedImage = null
-
-  $(".close, .overlay").click ->
-    closeLightbox(currentLightbox)
-
-  
-  #Gridster stuff
   dragged = false
+  gridster = null
 
-  #Turn on gridster
-  $(".gridster ul").gridster
-    widget_margins: [tileMarginX, tileMarginY]
-    widget_base_dimensions: [tileWidth, tileHeight]
-    draggable: {
-      start: (e, ui, $widget) ->
-        dragged = true;
-    }
-
-
-  gridster = $(".gridster ul").gridster().data('gridster');
-
-
-  #if #drag_disabled exists, then don't let the user drag tiles
-  if $("#drag_disabled").length > 0
-    gridster.disable();
-
-
-  $(".expand_tile").mouseup ->
-    if dragged is true
-      setTimeout(savePositions, 200)
-    else
-      numberRegex = /[0-9]+/
-      currentLightbox = @id.match(numberRegex)
-      console.log "#{@id} - #{currentLightbox}"
-      showLightbox $(".content_#{currentLightbox}")
-
-
-  # Buttons for deleting tiles
-  $(".gridster a img.tile_delete").click ->
-    lightboxID = @id.match(/tile_delete_([0-9]+)/)[1]
-
-    if confirm("Are you sure you want to delete this? This can't be undone")
-      deleteTile lightboxID
-
-
-  #Toggle edit tools button
-  $(".toggle_edit_tools").click ->
-    $(".edit_tools").toggle()
-
-
-  # Open image edit lightbox when upload a new image
-  $(".grid_tile_image_upload").change (event) ->
-    currentElement = $.trim($(".current_element_id").text())
-    input = $(event.currentTarget)
-    file = input[0].files[0]
-    reader = new FileReader()
-    reader.onload = (e) ->
-      uploadedImage = e.target.result
-      showSaveReminder()
-    reader.readAsDataURL file
-
-
-  #Upload different image when "Change image" is clicked in the crop image
-  #popup
-  $(".crop_image_popup .crop_change_image").click ->
-    $("#grid_tile_image").trigger('click');
-    console.log #{this}
-
-
+#####   Functions   #####
   ##
   # showCropPopup
   #
@@ -176,7 +107,10 @@ $ -> #DOM Ready
   # savePositions
   #
   savePositions = ->
+    console.log "Saving grid positions"
     tiles = getPositions()
+    console.log "tile positions = "
+    console.log tiles
     $("#serialized_array").val JSON.stringify(tiles)
     $(".edit_grid_position").submit()
 
@@ -186,16 +120,88 @@ $ -> #DOM Ready
   #
   getPositions = ->
     tilePositions = []
+    console.log "searching gridster elements..."
     $(".gridster ul li").each (i, element) ->
-      unless !element.id.match(/tile_[0-9]/)
+      console.log "current element = "
+      console.log element
+      if $(element).attr('data-row') && $(element).attr('data-col') && $(element).attr('data-sizex') && $(element).attr('data-sizey')
+        console.log "saving position of #{element.id}: row = #{$(element).attr('data-row')}, col = #{$(element).attr('data-col')}, sizex = #{$(element).attr('data-sizex')}, sizey = #{$(element).attr('data-sizey')}, databaseID = #{$(element).attr('data-databaseID')}"
         current = 
           row:          $(element).attr('data-row')
           column:       $(element).attr('data-col')
           sizex:        $(element).attr('data-sizex')
           sizey:        $(element).attr('data-sizey')
-          databaseID:   element.id.match(/[0-9]/)[0]
+          databaseid:   $(element).attr('data-databaseid')
 
         tilePositions.push current
 
     return tilePositions
+
+
+#####   The main functions   #####
+
+  #Turn on gridster
+  $(".gridster ul").gridster
+    widget_margins: [tileMarginX, tileMarginY]
+    widget_base_dimensions: [tileWidth, tileHeight]
+    draggable: {
+      start: (e, ui, $widget) ->
+        console.log "dragging!"
+        dragged = true
+
+      stop: (e, ui, $widget) ->
+        console.log "drag stopped. saving positions..."
+        setTimeout(savePositions, 200)
+        dragged = false
+    }
+  gridster = $(".gridster ul").gridster().data('gridster');
+
+
+  #if #drag_disabled exists, then don't let the user drag tiles
+  if $("#drag_disabled").length > 0
+    gridster.disable();
+
+
+  $(".close, .overlay").click ->
+    closeLightbox(currentLightbox)
+
+
+  $(".expand_tile").mouseup ->
+    console.log "finished clicking on a tile! dragged = #{dragged}"
+    if !dragged
+      numberRegex = /[0-9]+/
+      currentLightbox = @id.match(numberRegex)
+      showLightbox $(".content_#{currentLightbox}")
+
+
+  # Buttons for deleting tiles
+  $(".gridster a img.tile_delete").click ->
+    lightboxID = @id.match(/tile_delete_([0-9]+)/)[1]
+
+    if confirm("Are you sure you want to delete this? This can't be undone")
+      deleteTile lightboxID
+
+
+  #Toggle edit tools button
+  $(".toggle_edit_tools").click ->
+    $(".edit_tools").toggle()
+
+
+  # Open image edit lightbox when upload a new image
+  $(".grid_tile_image_upload").change (event) ->
+    currentElement = $.trim($(".current_element_id").text())
+    input = $(event.currentTarget)
+    file = input[0].files[0]
+    reader = new FileReader()
+    reader.onload = (e) ->
+      uploadedImage = e.target.result
+      showSaveReminder()
+    reader.readAsDataURL file
+
+
+  #Upload different image when "Change image" is clicked in the crop image
+  #popup
+  $(".crop_image_popup .crop_change_image").click ->
+    $("#grid_tile_image").trigger('click');
+
 
