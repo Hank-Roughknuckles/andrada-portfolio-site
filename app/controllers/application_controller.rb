@@ -109,7 +109,7 @@ class ApplicationController < ActionController::Base
     positions.each do |position|
       begin
         error_occurred = false
-        content = model.find( position["databaseID"] )
+        content = model.find( position["databaseid"] )
       rescue
         error_occurred = true
       ensure
