@@ -1,5 +1,5 @@
-<% if !local_assigns.has_key? :display_mini %>
-  <% display_mini = false %>
+<% if !local_assigns.has_key? :surpress_details %>
+  <% surpress_details = false %>
 <% end %>
 
 <% for content in @contents  %>
@@ -7,8 +7,9 @@
   data-row="<%= content.grid_row %>" 
   data-col="<%= content.grid_column %>" 
   data-sizex="<%= content.grid_sizex %>" 
-  data-sizey="<%= content.grid_sizey %>">
-  <%= image_tag content.grid_tile_image.url(:small), class: "expand_tile", id: "tile_#{content.id}" %>
+  data-sizey="<%= content.grid_sizey %>"
+  data-databaseid="<%= content.id %>">
+  <%= image_tag content.grid_tile_image.url(:large), class: "expand_tile", id: "tile_#{content.id}" %>
 
   <a href=# class="edit_tools">
     <%= image_tag "glyphicon_button_delete.png", 
@@ -17,5 +18,5 @@
                    class: "tile_delete" %>
   </a>
   </li>
-  <%= (render "shared/content_lightbox", :content => content) if !display_mini %>
+  <%= (render "shared/content_lightbox", :content => content) unless surpress_details %>
 <% end %>
