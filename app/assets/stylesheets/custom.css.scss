@@ -407,9 +407,10 @@ body
   {
     li
     {
-      // min-width: 138px;
-      // min-height: 138px;
+      // width: 138px;
+      // height: 138px;
       list-style-type: none;
+      position: absolute;
 
       img 
       {
