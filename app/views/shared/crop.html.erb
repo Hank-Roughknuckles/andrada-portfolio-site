@@ -1,11 +1,13 @@
 <% provide(:title, "Crop image") %>
 
-<% preview_w = 200 %>
-<% preview_h = 200 %>
+<% preview_w = 138 %>
+<% preview_h = 138 %>
 
 <% content_for(:head) do %>
   <%= stylesheet_link_tag "jquery.Jcrop.min" %>
   <%= javascript_include_tag "jquery.Jcrop.min" %>
+  <%= javascript_include_tag "jquery.gridster" %>
+  <%= javascript_include_tag "mini_grid" %>
   <script type="text/javascript" charset="utf-8">
     $(function(){
       $("#cropbox").Jcrop({
@@ -51,3 +53,9 @@
   <%= f.submit "Save", class: "btn btn-primary", 
                        id: "crop_popup_save" %>
 <% end %>
+
+<div class="gridster">
+  <ul>
+    <%= render "shared/grid_tiles", :surpress_details => false %>
+  </ul>
+</div>
