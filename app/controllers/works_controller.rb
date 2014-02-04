@@ -25,6 +25,7 @@ class WorksController < ApplicationController
       @content.reprocess_grid_tile_image if @content.cropping?
       if params[:work][:grid_tile_image].blank?
         flash[:notice] = "New Work Added"
+        save_grid_position( caller: "works" )
         redirect_to action: "index"
       else
         save_grid_position( caller: "works" )
@@ -43,6 +44,7 @@ class WorksController < ApplicationController
     if @content.update_attributes works_params
       @content.reprocess_grid_tile_image if @content.cropping?
       if params[:work][:grid_tile_image].blank?
+        save_grid_position( caller: "works" )
         redirect_to action: "index"
       else
         save_grid_position( caller: "works" )
