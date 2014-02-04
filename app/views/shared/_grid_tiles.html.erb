@@ -1,6 +1,9 @@
 <% if !local_assigns.has_key? :surpress_details %>
   <% surpress_details = false %>
 <% end %>
+<% if !local_assigns.has_key? :grid_for_cropping %>
+  <% grid_for_cropping = false %>
+<% end %>
 
 <% for content in @contents  %>
   <li class="grid_tile grid_tile_<%= content.id %> <%= "highlighted" if content == @content %>" 
@@ -9,14 +12,22 @@
   data-sizex="<%= content.grid_sizex %>" 
   data-sizey="<%= content.grid_sizey %>"
   data-databaseid="<%= content.id %>">
-  <%= image_tag content.grid_tile_image.url(:large), class: "expand_tile", id: "tile_#{content.id}" %>
 
+  <% if grid_for_cropping && content == @content %>
+    <p>Cropped image</p>
+  <% else %>
+    <%= image_tag content.grid_tile_image.url(:large), class: "expand_tile", id: "tile_#{content.id}" %>
+  <% end %>
+
+
+  <% unless surpress_details %>
   <a href=# class="edit_tools">
     <%= image_tag "glyphicon_button_delete.png", 
                    size: "20x20", 
                    id: "tile_delete_#{content.id}",
                    class: "tile_delete" %>
   </a>
+  <% end %>
   </li>
   <%= (render "shared/content_lightbox", :content => content) unless surpress_details %>
 <% end %>

@@ -6,8 +6,12 @@
 <% content_for(:head) do %>
   <%= stylesheet_link_tag "jquery.Jcrop.min" %>
   <%= javascript_include_tag "jquery.Jcrop.min" %>
+
   <%= javascript_include_tag "jquery.gridster" %>
+
+  <%= stylesheet_link_tag "mini_grid" %>
   <%= javascript_include_tag "mini_grid" %>
+
   <script type="text/javascript" charset="utf-8">
     $(function(){
       $("#cropbox").Jcrop({
@@ -32,7 +36,7 @@
       $('#crop_x').val(Math.floor(coords.x * ratio));
       $('#crop_y').val(Math.floor(coords.y * ratio));
       $('#crop_w').val(Math.floor(coords.w * ratio));
-      $('#crop_h').val(Math.floor(coords.h * ratio));  
+      $('#crop_h').val(Math.floor(coords.h * ratio));
     }
   </script>
 <% end %>
@@ -48,7 +52,7 @@
 
 <%= form_for @content do |f| %>
   <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
-    <%= f.hidden_field attribute, id: attribute %>
+    <%= f.text_field attribute, id: attribute %>
   <% end %>
   <%= f.submit "Save", class: "btn btn-primary", 
                        id: "crop_popup_save" %>
@@ -56,6 +60,6 @@
 
 <div class="gridster">
   <ul>
-    <%= render "shared/grid_tiles", :surpress_details => false %>
+    <%= render "shared/grid_tiles", :surpress_details => true, :grid_for_cropping => true %>
   </ul>
 </div>
