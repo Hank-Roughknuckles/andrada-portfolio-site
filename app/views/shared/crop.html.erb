@@ -72,11 +72,8 @@
 
 
 <h4>Preview</h4>
-<div id="preview_div" style="width: <%= initial_preview_w %>px; height: <%= initial_preview_h %>px; overflow: hidden;">
-  <%= image_tag @content.grid_tile_image.url(:large), :id => "preview" %>
-</div>
-
 <%= image_tag @content.grid_tile_image.url(:large), id: "cropbox" %>
+
 
 <%= form_for @content do |f| %>
   <!-- Form for cropping attributes -->
@@ -95,6 +92,11 @@
   <%= f.submit "Save", class: "btn btn-primary", 
                        id: "crop_popup_save" %>
 <% end %>
+
+
+<div id="preview_div" style="width: <%= initial_preview_w %>px; height: <%= initial_preview_h %>px; overflow: hidden;">
+  <%= image_tag @content.grid_tile_image.url(:large), :id => "preview" %>
+</div>
 
 <div class="gridster">
   <ul>
