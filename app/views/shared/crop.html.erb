@@ -72,27 +72,27 @@
 
 
 <h4>Preview</h4>
-<%= image_tag @content.grid_tile_image.url(:large), id: "cropbox" %>
+<div class="crop_controls">
+  <%= image_tag @content.grid_tile_image.url(:large), id: "cropbox" %>
 
+  <%= form_for @content do |f| %>
+    <!-- Form for cropping attributes -->
+    <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+      <%= f.hidden_field attribute, id: attribute %>
+    <% end %>
 
-<%= form_for @content do |f| %>
-  <!-- Form for cropping attributes -->
-  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
-    <%= f.hidden_field attribute, id: attribute %>
+    <!-- Form for grid tile size -->
+    <% for attribute in [{ :attribute_name => :grid_sizex, :label => "Tile Width - Horizontal" }, { :attribute_name => :grid_sizey, :label => "Tile Width - Vertical" }] %>
+      <p>
+        <%= f.label attribute[:attribute_name], attribute[:label] %>
+        <%= f.number_field attribute[:attribute_name], min: 0, max: 3, step: 1, id: "edit_#{attribute[:attribute_name]}" %>
+      </p>
+    <% end %>
+
+    <%= f.submit "Save", class: "btn btn-primary", 
+                         id: "crop_popup_save" %>
   <% end %>
-
-  <!-- Form for grid tile size -->
-  <% for attribute in [{ :attribute_name => :grid_sizex, :label => "Tile Width - Horizontal" }, { :attribute_name => :grid_sizey, :label => "Tile Width - Vertical" }] %>
-    <p>
-      <%= f.label attribute[:attribute_name], attribute[:label] %>
-      <%= f.number_field attribute[:attribute_name], min: 0, max: 3, step: 1, id: "edit_#{attribute[:attribute_name]}" %>
-    </p>
-  <% end %>
-
-  <%= f.submit "Save", class: "btn btn-primary", 
-                       id: "crop_popup_save" %>
-<% end %>
-
+</div>
 
 <div id="preview_div" style="width: <%= initial_preview_w %>px; height: <%= initial_preview_h %>px; overflow: hidden;">
   <%= image_tag @content.grid_tile_image.url(:large), :id => "preview" %>
