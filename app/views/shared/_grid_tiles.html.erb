@@ -14,7 +14,7 @@
   data-databaseid="<%= content.id %>">
 
   <% if grid_for_cropping && content == @content %>
-    <p>Cropped image</p>
+    <%= image_tag "crop_glyphicon.png" %>
   <% else %>
     <%= image_tag content.grid_tile_image.url(:large), class: "expand_tile", id: "tile_#{content.id}" %>
   <% end %>
