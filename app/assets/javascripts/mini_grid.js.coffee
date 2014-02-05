@@ -6,9 +6,7 @@ $ -> #DOM ready
   miniTileMarginY = 2
 
   $(".gridster ul").gridster
-    widget_margins: [miniTileMarginX, miniTileMarginY]
-    widget_base_dimensions: [miniTileWidth, miniTileHeight]
-    helper: 'clone',
-    resize: { enabled: true },
+    widget_margins: [miniTileMarginX, miniTileMarginY],
+    widget_base_dimensions: [miniTileWidth, miniTileHeight],
 
   gridster = $(".gridster ul").gridster().data('gridster');
