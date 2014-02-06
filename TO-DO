@@ -1,8 +1,6 @@
 TO-DO
 =====
 
-Re-arrange crop page to have grid on right side
-
 Adding a new item to the grid should automatically generate the proper
 grid co-ordinates so that it does not overlap
 
