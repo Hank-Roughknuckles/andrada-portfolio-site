@@ -23,6 +23,7 @@ class WorksController < ApplicationController
 
     if @content.save
       @content.reprocess_grid_tile_image if @content.cropping?
+      @position = GridPosition.find_by(parent_name: "works")
       if params[:work][:grid_tile_image].blank?
         flash[:notice] = "New Work Added"
         save_grid_position( caller: "works" )
@@ -41,6 +42,7 @@ class WorksController < ApplicationController
   def update
     @contents = Work.all
     @content = Work.find(params[:id])
+    @position = GridPosition.find_by(parent_name: "works")
     if @content.update_attributes works_params
       @content.reprocess_grid_tile_image if @content.cropping?
       if params[:work][:grid_tile_image].blank?
