@@ -8,8 +8,8 @@
   $(function(){
     var base_widget_width = <%= base_widget_width %>
     var base_widget_height = <%= base_widget_height %>
-    var preview_w = <%= initial_preview_w %>;
-    var preview_h = <%= initial_preview_h %>;
+    var preview_w = <%= base_widget_width * @content.grid_sizex %>;
+    var preview_h = <%= base_widget_height * @content.grid_sizey %>;
 
     function make_cropbox(){
       $("#cropbox").Jcrop({

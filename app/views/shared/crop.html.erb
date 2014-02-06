@@ -8,9 +8,7 @@
 <% content_for(:head) do %>
   <%= render "shared/crop_head_content", 
     :base_widget_width => base_widget_width, 
-    :base_widget_height => base_widget_height,
-    :initial_preview_w => initial_preview_w,
-    :initial_preview_h => initial_preview_h %>
+    :base_widget_height => base_widget_height %>
 <% end %>
 
 
@@ -40,6 +38,8 @@
 <div id="preview_div" style="width: <%= initial_preview_w %>px; height: <%= initial_preview_h %>px; overflow: hidden;">
   <%= image_tag @content.grid_tile_image.url(:large), :id => "preview" %>
 </div>
+
+<%= render "shared/grid_position_form", :object => @position %>
 
 <div class="gridster">
   <ul>
