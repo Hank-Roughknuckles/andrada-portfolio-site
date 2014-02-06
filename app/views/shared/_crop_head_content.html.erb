@@ -29,8 +29,6 @@
       });
     }
 
-    make_cropbox();
-
     function update_crop(coords) {
       var rx = preview_w/coords.w;
       var ry = preview_h/coords.h;
@@ -55,5 +53,7 @@
       make_cropbox();
       $('#preview_div').css({height: preview_h});
     });
+
+    make_cropbox();
   });
 </script>
