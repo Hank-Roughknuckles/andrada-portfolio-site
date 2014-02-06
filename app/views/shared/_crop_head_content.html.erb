@@ -34,9 +34,6 @@
     function update_crop(coords) {
       var rx = preview_w/coords.w;
       var ry = preview_h/coords.h;
-      console.log("preview_w = " + preview_w);
-      console.log("preview_h = " + preview_h);
-      console.log(coords);
       update_preview( rx, ry, coords );
 
       var ratio = <%= @content.grid_tile_image_geometry(:original).width %> / <%= @content.grid_tile_image_geometry(:large).width %>; 
