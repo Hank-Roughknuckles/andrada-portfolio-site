@@ -1,13 +1,16 @@
 $ -> #DOM ready
 
-  miniTileWidth = 75
-  miniTileHeight = 75
+  grid_width = $(".gridster ul").width()
+  max_columns = 6
   miniTileMarginX = 2
   miniTileMarginY = 2
+  miniTileWidth = (grid_width - 2 * miniTileMarginX * (max_columns - 1) + miniTileMarginX * 2) / max_columns
+  miniTileHeight = miniTileWidth
 
   gridster = $(".gridster ul").gridster
     widget_margins: [miniTileMarginX, miniTileMarginY],
     widget_base_dimensions: [miniTileWidth, miniTileHeight],
+    max_rows: 6,
     draggable: {
       stop: (e, ui, $widget) ->
         setTimeout(savePositions, 200)

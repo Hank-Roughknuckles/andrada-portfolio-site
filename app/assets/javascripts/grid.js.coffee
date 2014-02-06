@@ -1,9 +1,11 @@
 $ -> #DOM Ready
 
-  tileWidth = 138
-  tileHeight = 138
+  grid_width = $(".gridster ul").width()
+  max_columns = 6
   tileMarginX = 5
   tileMarginY = 5
+  tileWidth = (grid_width - 2 * tileMarginX * (max_columns - 1) + tileMarginX * 2) / max_columns
+  tileHeight = tileWidth
   currentLightbox = null #id of the currently expanded lightbox
   uploadedImage = null
   dragged = false
@@ -142,8 +144,9 @@ $ -> #DOM Ready
 
   #Turn on gridster
   $(".gridster ul").gridster
-    widget_margins: [tileMarginX, tileMarginY]
-    widget_base_dimensions: [tileWidth, tileHeight]
+    widget_margins: [tileMarginX, tileMarginY],
+    widget_base_dimensions: [tileWidth, tileHeight],
+    max_rows: 6,
     draggable: {
       start: (e, ui, $widget) ->
         console.log "dragging!"
