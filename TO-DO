@@ -1,8 +1,6 @@
 TO-DO
 =====
 
-Set max rows/cols in grid and mini-grid
-
 Adding a new item to the grid should automatically generate the proper
 grid co-ordinates so that it does not overlap
 
