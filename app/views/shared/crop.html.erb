@@ -20,23 +20,25 @@
   </div>
 
   <!-- The Form -->
-  <%= form_for @content do |f| %>
-    <!-- Form for cropping attributes -->
-    <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
-      <%= f.hidden_field attribute, id: attribute %>
-    <% end %>
+  <div class="form_container">
+    <%= form_for @content do |f| %>
+      <!-- Form for cropping attributes -->
+      <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+        <%= f.hidden_field attribute, id: attribute %>
+      <% end %>
 
-    <!-- Form for grid tile size -->
-    <% for attribute in [{ :attribute_name => :grid_sizex, :label => "Tile Width - Horizontal" }, { :attribute_name => :grid_sizey, :label => "Tile Height - Vertical" }] %>
-      <p>
-        <%= f.label attribute[:attribute_name], attribute[:label] %>
-        <%= f.number_field attribute[:attribute_name], min: 1, max: 5, step: 1, id: "edit_#{attribute[:attribute_name]}" %>
-      </p>
-    <% end %>
+      <!-- Form for grid tile size -->
+      <% for attribute in [{ :attribute_name => :grid_sizex, :label => "Tile Width - Horizontal" }, { :attribute_name => :grid_sizey, :label => "Tile Height - Vertical" }] %>
+        <p>
+          <%= f.label attribute[:attribute_name], attribute[:label] %>
+          <%= f.number_field attribute[:attribute_name], min: 1, max: 5, step: 1, id: "edit_#{attribute[:attribute_name]}" %>
+        </p>
+      <% end %>
 
-    <%= f.submit "Save", class: "btn btn-primary", 
-                         id: "crop_popup_save" %>
-  <% end %>
+      <%= f.submit "Save", class: "btn btn-primary", 
+                           id: "crop_popup_save" %>
+    <% end %>
+  </div>
 </div>
 <div class="clearfix"></div>
 <!-- The Preview Image -->
