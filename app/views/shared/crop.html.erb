@@ -14,8 +14,12 @@
 
 <h4>Preview</h4>
 <div class="crop_controls">
-  <%= image_tag @content.grid_tile_image.url(:large), id: "cropbox" %>
+  <!-- The Cropbox -->
+  <div class="cropbox_container">
+    <%= image_tag @content.grid_tile_image.url(:large), id: "cropbox" %>
+  </div>
 
+  <!-- The Form -->
   <%= form_for @content do |f| %>
     <!-- Form for cropping attributes -->
     <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
@@ -34,10 +38,13 @@
                          id: "crop_popup_save" %>
   <% end %>
 </div>
-
+<div class="clearfix"></div>
+<!-- The Preview Image -->
 <div id="preview_div" style="width: <%= initial_preview_w %>px; height: <%= initial_preview_h %>px; overflow: hidden;">
   <%= image_tag @content.grid_tile_image.url(:large), :id => "preview" %>
 </div>
+
+
 
 <%= render "shared/grid_position_form", :object => @position %>
 
