@@ -14,6 +14,8 @@ $ -> #DOM ready
     }
   gridster = $(".gridster ul").gridster().data('gridster');
 
+
+  # Change tile size on changing the form dimensions
   $("form #edit_grid_sizex, form #edit_grid_sizey").change  ->
     gridster.resize_widget($(".highlighted"), $("form #edit_grid_sizex").val(), $("form #edit_grid_sizey").val(), false);
 
