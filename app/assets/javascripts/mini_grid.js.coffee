@@ -5,7 +5,7 @@ $ -> #DOM ready
   miniTileMarginX = 2
   miniTileMarginY = 2
 
-  $(".gridster ul").gridster
+  gridster = $(".gridster ul").gridster
     widget_margins: [miniTileMarginX, miniTileMarginY],
     widget_base_dimensions: [miniTileWidth, miniTileHeight],
     draggable: {
@@ -13,6 +13,10 @@ $ -> #DOM ready
         setTimeout(savePositions, 200)
     }
   gridster = $(".gridster ul").gridster().data('gridster');
+
+  $("form #edit_grid_sizex, form #edit_grid_sizey").change  ->
+    gridster.resize_widget($(".highlighted"), $("form #edit_grid_sizex").val(), $("form #edit_grid_sizey").val(), false);
+
   ##
   # savePositions
   #
