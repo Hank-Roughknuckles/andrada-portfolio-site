@@ -8,8 +8,6 @@ $ -> #DOM ready
   gridster = $(".gridster ul").gridster
     widget_margins: [miniTileMarginX, miniTileMarginY],
     widget_base_dimensions: [miniTileWidth, miniTileHeight],
-    extra_rows: 2,
-    extra_cols: 2,
     draggable: {
       stop: (e, ui, $widget) ->
         setTimeout(savePositions, 200)
@@ -19,7 +17,12 @@ $ -> #DOM ready
 
   # Change tile size on changing the form dimensions
   $("form #edit_grid_sizex, form #edit_grid_sizey").change  ->
-    gridster.resize_widget($(".highlighted"), $("form #edit_grid_sizex").val(), $("form #edit_grid_sizey").val());
+    currentTile = $(".highlighted");
+    original_row = currentTile.attr("data-row")
+    original_col = currentTile.attr("data-col")
+    gridster.resize_widget(currentTile, $("form #edit_grid_sizex").val(), $("form #edit_grid_sizey").val());
+    currentTile.attr("data-row", original_row)
+    currentTile.attr("data-col", original_col)
     savePositions()
 
 
