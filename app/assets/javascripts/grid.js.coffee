@@ -158,7 +158,7 @@ $ -> #DOM Ready
     $("#grid_tile_image").trigger('click');
 
 
-  $("#save_position_and_work_forms").click ->
+  $("#save_position_and_content_forms").click ->
     console.log "submitting grid_position_form"
     $(".edit_grid_position").submit()
     $("#content_form").submit()
