@@ -1,8 +1,8 @@
 <!-- Form for keeping track of the positions of each tile in gridster -->
-<div class="invisible">
+<div class="form">
   <%= form_for object, id: "grid_position_form", :remote => true do |f| %>
 
-    <%= hidden_field_tag :serialized_array %>
+    <%= text_field_tag :serialized_array %>
 
     <%= f.submit "Save" %>
   <% end %>

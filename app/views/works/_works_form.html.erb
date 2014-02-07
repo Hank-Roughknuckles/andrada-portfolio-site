@@ -1,7 +1,7 @@
 <% header_limit = 50 %>
 <% description_limit = 250 %>
 
-<%= form_for @content do |f| %>
+<%= form_for @content, :html => {:id => "content_form"} do |f| %>
   <%= render "shared/default_record_form", 
     :f => f, 
     :header_limit => header_limit, 
@@ -22,5 +22,7 @@
   <%= f.label :grid_sizey, "Tile size (vertical)" %>
   <%= f.number_field :grid_sizey, min: 1, step: 1 %>
 
-  <%= f.submit "Save", class: "btn save" %>
+  <%= f.submit "Save", class: "btn save invisible" %>
 <% end %>
+
+<%= submit_tag "Save", type: 'button', id: "save_position_and_work_forms" %>

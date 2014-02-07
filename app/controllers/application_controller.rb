@@ -97,16 +97,23 @@ class ApplicationController < ActionController::Base
   
   def save_grid_position( options = {} )
     if options[:caller].downcase == "works" 
-      positions = GridPosition.find_by(parent_name: "works").serialized_array
+      grid_position_record = GridPosition.find_by(parent_name: "works")
+      positions = grid_position_record.serialized_array
       model = Work
 
     elsif options[:caller].downcase == "current_projects"
-      positions = GridPosition.find_by(parent_name: "current_projects").serialized_array
+      grid_position_record = GridPosition.find_by(parent_name: "current_projects")
+      positions = grid_position_record.serialized_array
       model = CurrentProject
     end
 
     positions = JSON.parse( positions )
     positions.each do |position|
+      if position["databaseid"] == "new"
+        # replace the "new" field data with the just created record's id
+        position["databaseid"] = @content.id
+      end
+
       begin
         error_occurred = false
         content = model.find( position["databaseid"] )
@@ -120,6 +127,9 @@ class ApplicationController < ActionController::Base
                                      grid_sizey: position["sizey"] )
         end
       end
-    end
+  end
+
+    # Save the position array back in GridPosition for later use
+    grid_position_record.update_attributes( serialized_array: positions.map { |o| Hash[o.each_pair.to_a] }.to_json )
   end
 end

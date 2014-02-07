@@ -55,12 +55,11 @@ $ -> #DOM Ready
   # savePositions
   #
   savePositions = ->
-    console.log "Saving grid positions"
     tiles = getPositions()
-    console.log "tile positions = "
-    console.log tiles
+    # console.log "tile positions = "
+    # console.log tiles
     $("#serialized_array").val JSON.stringify(tiles)
-    $(".edit_grid_position").submit()
+    # $(".edit_grid_position").submit()
 
 
   ##
@@ -68,12 +67,12 @@ $ -> #DOM Ready
   #
   getPositions = ->
     tilePositions = []
-    console.log "searching gridster elements..."
+    # console.log "searching gridster elements..."
     $(".gridster ul li").each (i, element) ->
-      console.log "current element = "
-      console.log element
+      # console.log "current element = "
+      # console.log element
       if $(element).attr('data-row') && $(element).attr('data-col') && $(element).attr('data-sizex') && $(element).attr('data-sizey')
-        console.log "saving position of #{element.id}: row = #{$(element).attr('data-row')}, col = #{$(element).attr('data-col')}, sizex = #{$(element).attr('data-sizex')}, sizey = #{$(element).attr('data-sizey')}, databaseID = #{$(element).attr('data-databaseID')}"
+        # console.log "saving position of #{element.id}: row = #{$(element).attr('data-row')}, col = #{$(element).attr('data-col')}, sizex = #{$(element).attr('data-sizex')}, sizey = #{$(element).attr('data-sizey')}, databaseID = #{$(element).attr('data-databaseID')}"
         current = 
           row:          $(element).attr('data-row')
           column:       $(element).attr('data-col')
@@ -159,6 +158,10 @@ $ -> #DOM Ready
     $("#grid_tile_image").trigger('click');
 
 
+  $("#save_position_and_work_forms").click ->
+    console.log "submitting grid_position_form"
+    $(".edit_grid_position").submit()
+    $("#content_form").submit()
   # ##
   # # showCropPopup
   # #
