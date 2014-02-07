@@ -1,10 +1,17 @@
 TO-DO
 =====
 
-Adding a new item to the grid should automatically generate the proper
-grid co-ordinates so that it does not overlap
+Check vertical height of envelope div.  should be unlimited 
 
-make edit table disappear
+fix delete buttons in edit mode to only take up 20px x 20px
+
+eliminate need to expressly type grid position when making new tile
+
+Make save reminder method for grid
+
+get rid of edit table
+
+choose "media upload" radio button automatically when an image is uploaded
 
 Make progess bar in current projects
 
