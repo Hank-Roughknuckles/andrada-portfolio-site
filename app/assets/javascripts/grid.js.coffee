@@ -165,6 +165,11 @@ $ -> #DOM Ready
     gridster.disable();
 
 
+  #Add a "new" tile if the user in in the new view
+  if document.URL.match(/new/)
+    gridster.add_widget '<li class="new highlighted" data-databaseid="new">New item</li>', 1, 1
+
+
   $(".close, .overlay").click ->
     closeLightbox(currentLightbox)
 
