@@ -42,7 +42,7 @@ class CurrentProjectsController < ApplicationController
   def update
     @contents = CurrentProject.all
     @content = CurrentProject.find(params[:id])
-    @position = GridPosition.find_by(parent_name: "works")
+    @position = GridPosition.find_by(parent_name: "current_projects")
 
     if @content.update_attributes current_project_params
       @content.reprocess_grid_tile_image if @content.cropping?
