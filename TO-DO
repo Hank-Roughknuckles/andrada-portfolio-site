@@ -1,8 +1,6 @@
 TO-DO
 =====
 
-Remove border from envelop in works and current projects
-
 Adding a new item to the grid should automatically generate the proper
 grid co-ordinates so that it does not overlap
 
