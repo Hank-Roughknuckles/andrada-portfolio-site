@@ -12,60 +12,6 @@ $ -> #DOM Ready
   gridster = null
 
 #####   Functions   #####
-  # ##
-  # # showCropPopup
-  # #
-  # showCropPopup = (image) ->
-  #   buildCropPopup()
-  #   $(".crop_image_popup").show()
-  #   currentLightbox = "crop"
-  #
-  #
-  # ##
-  # # buildCropPopup
-  # #
-  # buildCropPopup = ->
-  #   imageDimensions = getImageDimensions(uploadedImage)
-  #   imageDimensions = scaleDownImage(imageDimensions, {width: 225, height: 190})
-  #   $(".image_preview").attr
-  #     src: uploadedImage,
-  #     width: imageDimensions.width,
-  #     height: imageDimensions.height
-
-
-  # ##
-  # # getImageDimensions
-  # #
-  # getImageDimensions = (passed_image) ->
-  #   i = new Image()
-  #   i.src = passed_image
-  #   return { width: i.width, height: i.height }
-
-
-  # ##
-  # # scaleDownImage
-  # #
-  # scaleDownImage = ( original, maxDimensions ) ->
-  #   #if original is smaller than max size
-  #   if original.width <= maxDimensions.width && original.height <= maxDimensions.height
-  #     return original
-  #
-  #
-  #   if original.width <= original.height
-  #     factor = original.height / maxDimensions.height
-  #   else
-  #     factor = original.width / maxDimensions.width
-  #
-  #   if factor >= 1
-  #     original.width = original.width / factor
-  #     original.height = original.height / factor
-  #   else
-  #     original.width = original.width * factor
-  #     original.height = original.height * factor
-  #
-  #   return original
-  
- 
   ##
   # showLightbox
   #
@@ -213,3 +159,57 @@ $ -> #DOM Ready
     $("#grid_tile_image").trigger('click');
 
 
+  # ##
+  # # showCropPopup
+  # #
+  # showCropPopup = (image) ->
+  #   buildCropPopup()
+  #   $(".crop_image_popup").show()
+  #   currentLightbox = "crop"
+  #
+  #
+  # ##
+  # # buildCropPopup
+  # #
+  # buildCropPopup = ->
+  #   imageDimensions = getImageDimensions(uploadedImage)
+  #   imageDimensions = scaleDownImage(imageDimensions, {width: 225, height: 190})
+  #   $(".image_preview").attr
+  #     src: uploadedImage,
+  #     width: imageDimensions.width,
+  #     height: imageDimensions.height
+
+
+  # ##
+  # # getImageDimensions
+  # #
+  # getImageDimensions = (passed_image) ->
+  #   i = new Image()
+  #   i.src = passed_image
+  #   return { width: i.width, height: i.height }
+
+
+  # ##
+  # # scaleDownImage
+  # #
+  # scaleDownImage = ( original, maxDimensions ) ->
+  #   #if original is smaller than max size
+  #   if original.width <= maxDimensions.width && original.height <= maxDimensions.height
+  #     return original
+  #
+  #
+  #   if original.width <= original.height
+  #     factor = original.height / maxDimensions.height
+  #   else
+  #     factor = original.width / maxDimensions.width
+  #
+  #   if factor >= 1
+  #     original.width = original.width / factor
+  #     original.height = original.height / factor
+  #   else
+  #     original.width = original.width * factor
+  #     original.height = original.height * factor
+  #
+  #   return original
+  
+ 
