@@ -43,6 +43,7 @@ class WorksController < ApplicationController
     @contents = Work.all
     @content = Work.find(params[:id])
     @position = GridPosition.find_by(parent_name: "works")
+
     if @content.update_attributes works_params
       @content.reprocess_grid_tile_image if @content.cropping?
       if params[:work][:grid_tile_image].blank?
