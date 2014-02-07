@@ -7,22 +7,7 @@
     :header_limit => header_limit, 
     :description_limit => description_limit %>
 
-  <%= f.label :grid_tile_image %>
-  <%= f.file_field :grid_tile_image, id: "grid_tile_image", class: "grid_tile_image_upload" %>
-
-  <%= f.label :grid_row %>
-  <%= f.number_field :grid_row, min: 1, max: 10, step: 1 %>
-
-  <%= f.label :grid_column %>
-  <%= f.number_field :grid_column, min: 1, max: 10, step: 1 %>
-
-  <%= f.label :grid_sizex, "Tile size (horizontal)" %>
-  <%= f.number_field :grid_sizex, min: 1, step: 1 %>
-
-  <%= f.label :grid_sizey, "Tile size (vertical)" %>
-  <%= f.number_field :grid_sizey, min: 1, step: 1 %>
-
-  <%= f.submit "Save", class: "btn save invisible" %>
+  <%= render "shared/grid_content_form", :f => f %>
 <% end %>
 
 <%= submit_tag "Save", type: 'button', id: "save_position_and_content_forms" %>

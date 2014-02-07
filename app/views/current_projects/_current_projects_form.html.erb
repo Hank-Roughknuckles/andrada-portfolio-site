@@ -1,25 +1,15 @@
-<%= form_for @content do |f| %>
+<% header_limit = 50 %>
+<% description_limit = 250 %>
+
+<%= form_for @content, :html => {:id => "content_form"} do |f| %>
   <%= render "shared/default_record_form", :f => f, 
-                                           :header_limit => 50, 
-                                           :description_limit => 250  %>
-
-  <%= f.label :grid_tile_image %>
-  <%= f.file_field :grid_tile_image, id: "grid_tile_image" %>
-
-  <%= f.label :grid_row %>
-  <%= f.number_field :grid_row, min: 0, max: 6, step: 1 %>
-
-  <%= f.label :grid_column %>
-  <%= f.number_field :grid_column, min: 0, step: 1 %>
-
-  <%= f.label :grid_sizex, "Tile size (horizontal)" %>
-  <%= f.number_field :grid_sizex, min: 0, max: 6, step: 1 %>
-
-  <%= f.label :grid_sizey, "Tile size (vertical)" %>
-  <%= f.number_field :grid_sizey, min: 0, step: 1 %>
+                                           :header_limit => header_limit, 
+                                           :description_limit => description_limit  %>
 
   <%= f.label :progress, "Progress (%)" %>
   <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
 
-  <%= f.submit "Save" %>
+  <%= render "shared/grid_content_form", :f => f %>
 <% end %>
+
+<%= submit_tag "Save", type: 'button', id: "save_position_and_content_forms" %>
