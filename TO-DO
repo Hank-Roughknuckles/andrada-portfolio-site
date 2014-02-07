@@ -4,6 +4,8 @@ TO-DO
 Adding a new item to the grid should automatically generate the proper
 grid co-ordinates so that it does not overlap
 
+make edit table disappear
+
 Make progess bar in current projects
 
 Add Delete action to the edit page for works and current_projects
