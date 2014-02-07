@@ -15,14 +15,21 @@ class CurrentProjectsController < ApplicationController
     @contents = CurrentProject.all
     @content = CurrentProject.new( current_project_params )
 
-    if @content.update_attributes current_project_params
-      save_grid_position( caller: "current_projects" )
-      flash[:notice] = "Project saved successfully"
-      redirect_to action: "index"
+    if @content.save
+      @content.reprocess_grid_tile_image if @content.cropping?
+      @position = GridPosition.find_by(parent_name: "current_projects")
+      if params[:current_project][:grid_tile_image].blank?
+        flash[:notice] = "New Project Added"
+        save_grid_position( caller: "current_projects" )
+        redirect_to action: "index"
+      else
+        save_grid_position( caller: "current_projects" )
+        render "shared/crop"
+      end
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
       on Vimeo or Youtube"
-      render 'edit'
+      render 'new'
     end
   end
 
@@ -35,10 +42,17 @@ class CurrentProjectsController < ApplicationController
   def update
     @contents = CurrentProject.all
     @content = CurrentProject.find(params[:id])
+    @position = GridPosition.find_by(parent_name: "works")
+
     if @content.update_attributes current_project_params
-      save_grid_position( caller: "current_projects" )
-      flash[:notice] = "Project updated successfully"
-      redirect_to action: "index"
+      @content.reprocess_grid_tile_image if @content.cropping?
+      if params[:current_project][:grid_tile_image].blank?
+        save_grid_position( caller: "current_projects" )
+        redirect_to action: "index"
+      else
+        save_grid_position( caller: "current_projects" )
+        render "shared/crop"
+      end
     else
       flash[:alert] = "Invalid video link.  Please use a link to a video
       on Vimeo or Youtube"
@@ -63,6 +77,7 @@ class CurrentProjectsController < ApplicationController
                                             :media_choice, :media_image,
                                             :grid_row, :grid_column,
                                             :grid_sizex, :grid_sizey,
-                                            :grid_tile_image)
+                                            :grid_tile_image, :crop_x,
+                                            :crop_y, :crop_h, :crop_w )
   end
 end
