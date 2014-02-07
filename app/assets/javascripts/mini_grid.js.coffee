@@ -7,6 +7,8 @@ $ -> #DOM ready
   miniTileWidth = (grid_width - 2 * miniTileMarginX * (max_columns - 1) + miniTileMarginX * 2) / max_columns
   miniTileHeight = miniTileWidth
 
+
+  #Turn on gridster
   gridster = $(".gridster ul").gridster
     widget_margins: [miniTileMarginX, miniTileMarginY],
     widget_base_dimensions: [miniTileWidth, miniTileHeight],
