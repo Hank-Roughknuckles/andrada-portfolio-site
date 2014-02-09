@@ -52,16 +52,6 @@ $ -> #DOM Ready
 
 
   ##
-  # savePositions
-  #
-  savePositions = ->
-    tiles = getPositions()
-    # console.log "tile positions = "
-    # console.log tiles
-    $("#serialized_array").val JSON.stringify(tiles)
-
-
-  ##
   # getPositions
   #
   getPositions = ->
@@ -81,7 +71,7 @@ $ -> #DOM Ready
 
         tilePositions.push current
 
-    return tilePositions
+    return JSON.stringify(tilePositions)
 
 
 #####   The main functions   #####
@@ -98,7 +88,7 @@ $ -> #DOM Ready
 
       stop: (e, ui, $widget) ->
         console.log "drag stopped. saving positions..."
-        setTimeout(savePositions, 200)
+        setTimeout(getPositions, 200)
         dragged = false
     }
   gridster = $(".gridster ul").gridster().data('gridster');
@@ -159,10 +149,13 @@ $ -> #DOM Ready
 
   $("#save_position_and_content_forms").click ->
     console.log "submitting grid_position_form"
-    if $("input#serialized_array").val()
-      $(".edit_grid_position").submit()
+    $("input#serialized_array").val(getPositions())
+    # console.log $("input#serialized_array").val()
+    $(".edit_grid_position").submit()
 
     $("#content_form").submit()
+
+
   # ##
   # # showCropPopup
   # #
