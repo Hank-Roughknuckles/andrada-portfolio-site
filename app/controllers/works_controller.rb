@@ -13,7 +13,7 @@ class WorksController < ApplicationController
 
   def new
     @contents = Work.all
-    @content = Work.new( media_link: "https://vimeo.com/14470340", media_choice: "link" )
+    @content = Work.new( media_link: "https://vimeo.com/14470340", media_choice: "link", grid_row: 1, grid_column: 1, grid_sizex: 1, grid_sizey: 1 )
     @position = GridPosition.find_by(parent_name: "works")
   end
 

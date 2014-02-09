@@ -7,7 +7,7 @@ class CurrentProjectsController < ApplicationController
 
   def new
     @contents = CurrentProject.all
-    @content = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50, media_choice: "link" )
+    @content = CurrentProject.new( media_link: "https://vimeo.com/14470340", progress: 50, media_choice: "link", grid_row: 1, grid_column: 1, grid_sizex: 1, grid_sizey: 1 )
     @position = GridPosition.find_by(parent_name: "current_projects")
   end
 
