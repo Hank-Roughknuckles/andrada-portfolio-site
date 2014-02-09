@@ -1,8 +1,6 @@
 TO-DO
 =====
 
-Check vertical height of envelope div.  should be unlimited 
-
 fix delete buttons in edit mode to only take up 20px x 20px
 
 eliminate need to expressly type grid position when making new tile
