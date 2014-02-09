@@ -21,12 +21,12 @@
 
 
   <% unless surpress_details %>
-  <a href=# class="edit_tools">
+  <div class="edit_tools fake_link">
     <%= image_tag "glyphicon_button_delete.png", 
                    size: "20x20", 
                    id: "tile_delete_#{content.id}",
                    class: "tile_delete" %>
-  </a>
+  </div>
   <% end %>
   </li>
   <%= (render "shared/content_lightbox", :content => content) unless surpress_details %>
