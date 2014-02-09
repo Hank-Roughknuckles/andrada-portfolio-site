@@ -2,6 +2,11 @@ $selected_blue: #8094a6;
 
 .gridster
 {
+  .gs-w 
+  {
+    position: absolute;
+  }
+
   li
   {
     list-style-type: none;
