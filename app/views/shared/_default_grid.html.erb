@@ -3,14 +3,13 @@
 <% end %>
 
 
-<% if edit_mode %>
-  <div class="toggle_edit_tools">
-    <a href=#>Toggle Edit Mode</a>
-  </div>
-<% end %>
-
-
 <div class="gridster <%= "edit_grid" if edit_mode %>">
+  <% if edit_mode %>
+    <div class="toggle_edit_tools">
+      <a href=#>Toggle Edit Mode</a>
+    </div>
+  <% end %>
+
   <ul>
     <%= render "shared/grid_tiles" %>
   </ul>
