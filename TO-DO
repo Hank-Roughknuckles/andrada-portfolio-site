@@ -6,6 +6,8 @@ resizing an image in the crop view gives a js error about grid size x, fix it
 
 Make altering grid size in edit view dynamically change appearance of grid
 
+Change form position in edit/new for works/current projects - make it move down as grid gets larger
+
 Make save reminder method for grid
 
 get rid of edit table
