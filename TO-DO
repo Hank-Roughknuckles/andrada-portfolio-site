@@ -1,7 +1,10 @@
 TO-DO
 =====
 
-eliminate need to expressly type grid position when making new tile
+resizing an image in the crop view gives a js error about grid size x, fix it
+  -This particularly happened when adding a new "work"
+
+Make altering grid size in edit view dynamically change appearance of grid
 
 Make save reminder method for grid
 
