@@ -128,7 +128,7 @@ $ -> #DOM Ready
 
 
   # Buttons for deleting tiles
-  $(".gridster a img.tile_delete").click ->
+  $(".gridster li .tile_delete").click ->
     lightboxID = @id.match(/tile_delete_([0-9]+)/)[1]
 
     if confirm("Are you sure you want to delete this? This can't be undone")
