@@ -6,18 +6,27 @@
 <% end %>
 
 <% for content in @contents  %>
-  <li class="grid_tile grid_tile_<%= content.id %> <%= "highlighted" if content == @content %>" 
+  <li class="<%= "grid_tile grid_tile_#{content.id}" %>" 
   data-row="<%= content.grid_row %>" 
   data-col="<%= content.grid_column %>" 
   data-sizex="<%= content.grid_sizex %>" 
   data-sizey="<%= content.grid_sizey %>"
   data-databaseid="<%= content.id %>">
 
-  <% if grid_for_cropping && content == @content %>
-    <%= image_tag "crop_glyphicon.png" %>
+
+  <% image_class = "expand_tile tile_image" %>
+  <% if content == @content %>
+    <% image_class = image_class + " highlighted" %>
   <% else %>
-    <%= image_tag content.grid_tile_image.url(:large), class: "expand_tile tile_image", id: "tile_#{content.id}" %>
+    <% image_class = image_class + " faded" %>
   <% end %>
+
+  <% if grid_for_cropping && content == @content %>
+    <%= image_tag "crop_glyphicon.png", class: image_class, id: "tile_#{content.id}" %>
+  <% elsif !grid_for_cropping %>
+    <%= image_tag content.grid_tile_image.url(:large), class: image_class, id: "tile_#{content.id}" %>
+  <% end %>
+
 
 
   <% if( user_signed_in? && !surpress_details ) %>

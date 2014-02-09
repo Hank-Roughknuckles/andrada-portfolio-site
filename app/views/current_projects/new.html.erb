@@ -5,7 +5,7 @@
 <h3>New Project</h3>
 
 <div class="envelope">
-  <%= render "shared/default_grid", :draggable => true, :active_record_object => CurrentProject  %>
+  <%= render "shared/default_grid", :draggable => true, :emphasize_highlighted => true, :active_record_object => CurrentProject  %>
 </div>
 
 <%= render "current_projects_form", :project => @project %>

@@ -2,7 +2,7 @@
 <%= render "head_contents" %>
 
 <div class="envelope">
-  <%= render "shared/default_grid", :draggable => false, :active_record_object => Work %>
+  <%= render "shared/default_grid", :draggable => false, :emphasize_highlighted => false, :active_record_object => Work %>
 </div>
 
 <% if user_signed_in? %>

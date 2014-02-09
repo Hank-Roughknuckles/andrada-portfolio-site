@@ -421,17 +421,22 @@ body
     }
   }
 
-  .edit_grid 
+  .emphasize_highlighted 
   {
-    li 
+    .faded 
     {
       opacity: 0.15;
     }
 
-    li.highlighted
+    .highlighted
     {
       opacity: 1;
     }
+  }
+
+  img.tile_delete
+  {
+    opacity: 1;
   }
 
   .toggle_edit_tools

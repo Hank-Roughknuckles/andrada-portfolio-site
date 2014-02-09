@@ -1,9 +1,12 @@
 <% if !local_assigns.has_key? :draggable %>
   draggable = false
 <% end %>
+<% if !local_assigns.has_key? :emphasize_highlighted %>
+  emphasize_highlighted = false
+<% end %>
 
 
-<div class="gridster <%= "edit_grid" if user_signed_in? %>">
+<div class="gridster <%= "emphasize_highlighted" if emphasize_highlighted %>">
   <% if user_signed_in? %>
     <div class="toggle_edit_tools fake_link">
       Toggle Edit Mode
