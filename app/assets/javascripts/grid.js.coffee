@@ -59,7 +59,6 @@ $ -> #DOM Ready
     # console.log "tile positions = "
     # console.log tiles
     $("#serialized_array").val JSON.stringify(tiles)
-    # $(".edit_grid_position").submit()
 
 
   ##
@@ -160,7 +159,9 @@ $ -> #DOM Ready
 
   $("#save_position_and_content_forms").click ->
     console.log "submitting grid_position_form"
-    $(".edit_grid_position").submit()
+    if $("input#serialized_array").val()
+      $(".edit_grid_position").submit()
+
     $("#content_form").submit()
   # ##
   # # showCropPopup
