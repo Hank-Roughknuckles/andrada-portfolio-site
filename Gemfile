@@ -39,7 +39,9 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+group :test, :darwin do
+  gem 'rb-fsevent'
+end
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
