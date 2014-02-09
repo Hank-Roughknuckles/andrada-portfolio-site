@@ -39,10 +39,11 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem "spork", "> 0.9.0.rc"
   gem 'guard-rspec'
   gem "guard-spork"
