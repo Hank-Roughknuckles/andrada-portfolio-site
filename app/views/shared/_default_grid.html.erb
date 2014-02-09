@@ -1,10 +1,10 @@
-<% if !local_assigns.has_key? :edit_mode %>
-  edit_mode = false
+<% if !local_assigns.has_key? :draggable %>
+  draggable = false
 <% end %>
 
 
-<div class="gridster <%= "edit_grid" if edit_mode %>">
-  <% if edit_mode %>
+<div class="gridster <%= "edit_grid" if user_signed_in? %>">
+  <% if user_signed_in? %>
     <div class="toggle_edit_tools fake_link">
       Toggle Edit Mode
     </div>
@@ -16,7 +16,7 @@
 </div>
 
 
-<% if edit_mode %>
+<% if draggable == true %>
   <%= render "shared/grid_position_form", :object => @position %>
 <% else %>
   <span class="invisible" id="drag_disabled"></span>

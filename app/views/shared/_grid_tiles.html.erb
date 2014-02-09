@@ -20,7 +20,7 @@
   <% end %>
 
 
-  <% unless surpress_details %>
+  <% if( user_signed_in? && !surpress_details ) %>
   <div class="edit_tools fake_link">
     <%= image_tag "glyphicon_button_delete.png", 
                    size: "20x20", 
