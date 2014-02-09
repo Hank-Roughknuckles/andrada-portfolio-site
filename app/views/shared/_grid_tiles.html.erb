@@ -23,7 +23,7 @@
 
   <% if grid_for_cropping && content == @content %>
     <%= image_tag "crop_glyphicon.png", class: image_class, id: "tile_#{content.id}" %>
-  <% elsif !grid_for_cropping %>
+  <% else %>
     <%= image_tag content.grid_tile_image.url(:large), class: image_class, id: "tile_#{content.id}" %>
   <% end %>
 
