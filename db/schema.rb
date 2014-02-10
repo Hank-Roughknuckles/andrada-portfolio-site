@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140129072333) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "about_me_contents", force: true do |t|
     t.string   "header"
     t.string   "description"
@@ -93,8 +96,8 @@ ActiveRecord::Schema.define(version: 20140129072333) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "works", force: true do |t|
     t.string   "media_link"
@@ -107,7 +110,6 @@ ActiveRecord::Schema.define(version: 20140129072333) do
     t.string   "media_image_content_type"
     t.integer  "media_image_file_size"
     t.datetime "media_image_updated_at"
-    t.datetime "background_image_updated_at"
     t.integer  "grid_row"
     t.integer  "grid_column"
     t.integer  "grid_sizex"
