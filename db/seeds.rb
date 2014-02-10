@@ -12,6 +12,6 @@ AboutMeContent.create(id: 0, header: "Who I Am", description: "Lorem ipsum sit d
 AboutMeContent.create(id: 1, header: "What I Do", description: "Lorem ipsum sit dolor amet", button_title: "Qualifications")
 AboutMeContent.create(id: 2, header: "What I Love", description: "Lorem ipsum sit dolor amet", button_title: "Bio")
 
-Showreel.create(id: 0, header: "My Showreel", description: "Lorem ipsum sit dolor amet", video_link: "https://vimeo.com/83571847")
+Showreel.create(id: 0, header: "My Showreel", description: "Lorem ipsum sit dolor amet", media_link: "https://vimeo.com/83571847")
 
-Works.create(id: 0, video_link: "https://vimeo.com/83571847", header: "Work #1 - Sending kids to school", description: "Lorem ipsum sit dolor amet")
+Works.create(id: 0, media_link: "https://vimeo.com/83571847", header: "Work #1 - Sending kids to school", description: "Lorem ipsum sit dolor amet")
