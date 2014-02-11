@@ -41,3 +41,11 @@ test:
   pool: 5
   username: portfolio
   password: 
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: andrada_production
+  pool: 5
+  username: portfolio
+  password: 
