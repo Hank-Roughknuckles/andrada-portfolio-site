@@ -22,7 +22,7 @@ $ -> #DOM ready
 
   # Change tile size on changing the form dimensions
   $("form #edit_grid_sizex, form #edit_grid_sizey").change  ->
-    currentTile = $(".highlighted");
+    currentTile = $(".highlighted").parent();
     original_row = currentTile.attr("data-row")
     original_col = currentTile.attr("data-col")
     gridster.resize_widget(currentTile, $("form #edit_grid_sizex").val(), $("form #edit_grid_sizey").val());
