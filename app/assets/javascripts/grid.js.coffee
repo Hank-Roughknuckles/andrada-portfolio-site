@@ -47,7 +47,6 @@ $ -> #DOM Ready
   # deleteTile
   #
   deleteTile = (lightboxNumber) ->
-    console.log "Delete the thing here"
     $("input#delete_work_#{lightboxNumber}").trigger("click")
 
 
