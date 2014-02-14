@@ -5,6 +5,8 @@ Make save reminder method for grid
 
 get rid of edit table
 
+add list of edit and deletes to grid partial (to allow for grid tile tools to work)
+
 choose "media upload" radio button automatically when an image is uploaded
 
 Make progess bar in current projects
