@@ -123,6 +123,13 @@ $ -> #DOM Ready
       deleteTile lightboxID
 
 
+  # Buttons on each tile for editing
+  $(".gridster li .tile_edit").click ->
+    lightboxID = @id.match(/tile_edit_([0-9]+)/)[1]
+    address = $("#edit_item_#{lightboxID}").attr("href")
+    window.location.replace(address)
+
+
   #Toggle edit tools button
   $(".toggle_edit_tools").click ->
     $(".edit_tools").toggle()
