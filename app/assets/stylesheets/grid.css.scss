@@ -38,9 +38,19 @@ $selected_blue: #8094a6;
   }
 }
 
-img.tile_delete
+.edit_tools 
 {
-  opacity: 1;
+  img
+  {
+    opacity: 1;
+  }
+
+  .tile_edit
+  {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
 }
 
 .toggle_edit_tools
