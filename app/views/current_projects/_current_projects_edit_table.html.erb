@@ -20,7 +20,7 @@
     <td><%= content.header %></td>
     <td><%= content.description %></td>
     <td><%= content.progress %></td>
-    <td><%= link_to "Edit", edit_current_project_path(content), id: "edit_current_project_#{content.id}" %></td>
+    <td><%= link_to "Edit", edit_current_project_path(content), id: "edit_item_#{content.id}" %></td>
     <td><%= button_to "Delete", content, method: "delete", id: "delete_work_#{content.id}" %></td>
   </tr>
 <% end %>
