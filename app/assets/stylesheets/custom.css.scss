@@ -391,6 +391,7 @@ body
     }
   }
 
+
   //add content
   .add_new
   {
@@ -404,6 +405,10 @@ body
   {
     cursor: pointer;
     color: #428bca;
-    text-decoration: underline;
+
+    &:hover
+    {
+      text-decoration: underline;
+    }
   }
 }
