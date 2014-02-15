@@ -7,5 +7,5 @@
 
 <% if user_signed_in? %>
   <span class="add_new"><%= link_to 'Add New Item', new_current_project_path %></span>
-  <%= render "current_projects_edit_table" %>
+  <%= render "shared/edit_table" %>
 <% end %>
