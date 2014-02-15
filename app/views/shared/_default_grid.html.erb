@@ -17,15 +17,15 @@
     <%= render "shared/grid_tiles" %>
   </ul>
 
-  <% if user_signed_in? %>
-    <div class="toggle_edit_tools fake_link">
-      Toggle Edit Mode
-    </div>
-
-    <%= render "shared/edit_table" %>
-  <% end %>
-
 </div>
+
+
+<% if user_signed_in? %>
+  <div class="toggle_edit_tools fake_link">
+    Toggle Edit Mode
+  </div>
+  <%= render "shared/edit_table" %>
+<% end %>
 
 
 <% if draggable == true %>
