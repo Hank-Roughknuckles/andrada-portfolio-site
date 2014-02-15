@@ -6,7 +6,6 @@
   <tr>
     <% if request.original_url.match /work/ %>
       <% path = edit_work_path( content ) %>
-      <%= request.original_url %>
     <% elsif request.original_url.match /current_project/ %>
       <% path = edit_current_project_path( content ) %>
     <% else %>
