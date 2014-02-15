@@ -47,7 +47,7 @@ $ -> #DOM Ready
   # deleteTile
   #
   deleteTile = (lightboxNumber) ->
-    $("input#delete_work_#{lightboxNumber}").trigger("click")
+    $("input#delete_item_#{lightboxNumber}").trigger("click")
 
 
   ##
