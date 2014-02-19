@@ -1,8 +1,5 @@
 TO-DO
 =====
-
-Make save reminder method for grid
-
 get rid of edit table
 
 add list of edit and deletes to grid partial (to allow for grid tile tools to work)
@@ -16,8 +13,7 @@ Add Delete action to the edit page for works and current_projects
 Write model/contact_spec to test cases of email addresses and blanks
 before/after email
 
-install ack and ack-vim
-
+Make save reminder method for grid
 
 OPTIONAL
 ========
