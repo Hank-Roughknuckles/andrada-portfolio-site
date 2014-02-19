@@ -2,5 +2,9 @@
 
 <%= form_for @content do |f| %>
   <%= render "shared/default_record_form", :f => f %>
+
+  <%= f.label :background_image %>
+  <%= f.file_field :background_image, id: "background_image_upload" %>
+
   <%= f.submit "Save" %>
 <% end %>
