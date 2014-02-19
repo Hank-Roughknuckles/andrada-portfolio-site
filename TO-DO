@@ -2,13 +2,14 @@ TO-DO
 =====
 get rid of edit table
 
-add list of edit and deletes to grid partial (to allow for grid tile tools to work)
-
 choose "media upload" radio button automatically when an image is uploaded
 
 Make progess bar in current projects
 
 Add Delete action to the edit page for works and current_projects
+
+go to crop page after selecting background image for about_me and for showreel
+  Also later for contact page
 
 Write model/contact_spec to test cases of email addresses and blanks
 before/after email
