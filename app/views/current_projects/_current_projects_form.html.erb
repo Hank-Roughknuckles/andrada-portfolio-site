@@ -15,4 +15,6 @@
 <% end %>
 
 
-<%= button_to "Delete", @content, method: "delete", id: "delete_item_#{@content.id}" %>
+<% if request.original_url =~ /edit/  %>
+  <%= button_to "Delete", @content, method: "delete", id: "delete_item_#{@content.id}" %>
+<% end %>
