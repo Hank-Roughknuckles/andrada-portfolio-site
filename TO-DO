@@ -1,12 +1,12 @@
 TO-DO
 =====
-get rid of edit table
-
 choose "media upload" radio button automatically when an image is uploaded
 
 Make progess bar in current projects
 
 Add Delete action to the edit page for works and current_projects
+
+move down "toggle edit mode" link on works (and maybe current_projects) edit page to where it'll be next to the grid
 
 go to crop page after selecting background image for about_me and for showreel
   Also later for contact page
