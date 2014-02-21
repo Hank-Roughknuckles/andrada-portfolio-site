@@ -95,14 +95,32 @@ $ -> #DOM Ready
   # getProgressBarSize
   #
   getProgressBarSize = (progress) ->
-    return
+    maxWidth = 205
+
+    if progress > 100
+      return "#{maxWidth}px"
+    if progress < 0
+      return "0"
+
+    # min = 0, max = 205
+    width = progress * maxWidth / 100
+    return "#{width}px"
 
 
   ##
   # getProgressBarColor
   #
   getProgressBarColor = (progress) ->
-    return
+    if progress > 100
+      return "#00FF00"
+    if progress < 0
+      return "FF0000"
+
+    redHex = Math.round((-2.55 * progress) + 255)
+    console.log "redHex = #{redHex}"
+    greenHex = Math.round(2.55 * progress)
+    console.log "greenHex = #{greenHex}"
+    return "rgb(#{redHex}, #{greenHex}, 0)"
 
 #####   The main functions   #####
 
