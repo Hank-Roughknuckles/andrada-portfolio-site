@@ -20,8 +20,6 @@ $ -> #DOM Ready
     lightbox.show()
 
     lightboxNumber = lightbox.attr("class").match(/[0-9]+/)[0]
-    # console.log lightbox
-    # console.log lightboxNumber
     if $(".progress_bar_#{lightboxNumber}").length > 0
       showProgressBar $(".progress_bar_#{lightboxNumber}")
 
