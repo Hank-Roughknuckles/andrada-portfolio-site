@@ -19,6 +19,12 @@ $ -> #DOM Ready
     $(".overlay").show()
     lightbox.show()
 
+    lightboxNumber = lightbox.attr("class").match(/[0-9]+/)[0]
+    # console.log lightbox
+    # console.log lightboxNumber
+    if $(".progress_bar_#{lightboxNumber}").length > 0
+      showProgressBar $(".progress_bar_#{lightboxNumber}")
+
 
   ##
   # closeLightbox
@@ -76,7 +82,9 @@ $ -> #DOM Ready
   ##
   # showProgressBar
   #
-  showProgressBar (progressBar, progress) ->
+  showProgressBar = (progressBar) ->
+    progressBarNumber = progressBar.attr("class").match(/[0-9]+/)[0]
+    console.log progressBarNumber
     return
 
 #####   The main functions   #####
