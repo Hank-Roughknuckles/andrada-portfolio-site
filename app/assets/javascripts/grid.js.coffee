@@ -37,6 +37,9 @@ $ -> #DOM Ready
       $(".content_#{lightbox}").hide()
       $(".content_preview .content_#{lightbox}").show()
 
+      if $(".progress_bar_#{lightbox}").length > 0
+        $(".progress_bar_#{lightbox}").css("width", 0 )
+
     currentLightbox = null;
 
 
