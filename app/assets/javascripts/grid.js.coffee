@@ -82,10 +82,13 @@ $ -> #DOM Ready
   ##
   # showProgressBar
   #
-  showProgressBar = (progressBar) ->
-    progressBarNumber = progressBar.attr("class").match(/[0-9]+/)[0]
-    # console.log progressBarNumber
-    progress = $(".content_progress_#{progressBarNumber}").html().match(/[0-9]+/)[0]
+  showProgressBar = (progressBar, progressAmount) ->
+    if progressAmount
+      progress = progressAmount
+    else
+      progressBarNumber = progressBar.attr("class").match(/[0-9]+/)[0]
+      progress = $(".content_progress_#{progressBarNumber}").html().match(/[0-9]+/)[0]
+
     progressBar.css("width", getProgressBarSize(progress) )
     progressBar.css("background-color", getProgressBarColor(progress) )
     return
@@ -111,15 +114,14 @@ $ -> #DOM Ready
   # getProgressBarColor
   #
   getProgressBarColor = (progress) ->
+    # Return red if greater than 100, green if < 0
     if progress > 100
       return "#00FF00"
     if progress < 0
       return "FF0000"
 
     redHex = Math.round((-2.55 * progress) + 255)
-    console.log "redHex = #{redHex}"
     greenHex = Math.round(2.55 * progress)
-    console.log "greenHex = #{greenHex}"
     return "rgb(#{redHex}, #{greenHex}, 0)"
 
 #####   The main functions   #####
@@ -146,6 +148,12 @@ $ -> #DOM Ready
   if document.URL.match(/edit/)
     mainContentNumber = $(".content_preview .content_detail").attr("class").match(/[0-9]+/)[0]
     showProgressBar $(".progress_bar_#{mainContentNumber}")
+
+    console.log $("#current_project_progress").val()
+
+    #set progress bar to amount in form field when the field changes
+    $("#current_project_progress").change ->
+      showProgressBar $(".progress_bar_#{mainContentNumber}"), $("#current_project_progress").val()
     return
 
 
