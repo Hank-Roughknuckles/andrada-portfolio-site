@@ -21,7 +21,7 @@ $ -> #DOM Ready
 
     lightboxNumber = lightbox.attr("class").match(/[0-9]+/)[0]
     if $(".progress_bar_#{lightboxNumber}").length > 0
-      showProgressBar $(".progress_bar_#{lightboxNumber}")
+      showProgressBar $(".progress_bar_#{lightboxNumber}"), {animate: true}
 
 
   ##
@@ -80,15 +80,22 @@ $ -> #DOM Ready
   ##
   # showProgressBar
   #
-  showProgressBar = (progressBar, progressAmount) ->
-    if progressAmount
-      progress = progressAmount
+  showProgressBar = (progressBar, options) ->
+    if options['animate']
+      console.log "animate = #{options['animate']}"
+
+    if options['value']
+      progress = options['value']
     else
       progressBarNumber = progressBar.attr("class").match(/[0-9]+/)[0]
       progress = $(".content_progress_#{progressBarNumber}").html().match(/[0-9]+/)[0]
 
-    progressBar.css("width", getProgressBarSize(progress) )
     progressBar.css("background-color", getProgressBarColor(progress) )
+
+    if options['animate']
+      progressBar.animate("width", getProgressBarSize(progress) )
+    else
+      progressBar.css("width", getProgressBarSize(progress) )
     return
 
 
@@ -145,13 +152,11 @@ $ -> #DOM Ready
   #if page is an edit page, make the progress bar at start
   if document.URL.match(/edit/)
     mainContentNumber = $(".content_preview .content_detail").attr("class").match(/[0-9]+/)[0]
-    showProgressBar $(".progress_bar_#{mainContentNumber}"), $("#current_project_progress").val()
-
-    console.log $("#current_project_progress").val()
+    showProgressBar $(".progress_bar_#{mainContentNumber}"), { value: $("#current_project_progress").val(), animate: true }
 
     #set progress bar to amount in form field when the field changes
     $("#current_project_progress").change ->
-      showProgressBar $(".progress_bar_#{mainContentNumber}"), $("#current_project_progress").val()
+      showProgressBar $(".progress_bar_#{mainContentNumber}"), { value: $("#current_project_progress").val() }
     return
 
 
