@@ -142,6 +142,13 @@ $ -> #DOM Ready
   gridster = $(".gridster ul").gridster().data('gridster');
 
 
+  #if page is an edit page, make the progress bar at start
+  if document.URL.match(/edit/)
+    mainContentNumber = $(".content_preview .content_detail").attr("class").match(/[0-9]+/)[0]
+    showProgressBar $(".progress_bar_#{mainContentNumber}")
+    return
+
+
   #if #drag_disabled exists, then don't let the user drag tiles
   if $("#drag_disabled").length > 0
     gridster.disable();
