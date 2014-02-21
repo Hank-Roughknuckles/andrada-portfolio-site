@@ -25,7 +25,7 @@
 
     <!-- The Progress (if any) -->
     <% if @content.class.table_name == "current_projects" %>
-    <div class="content_progress">
+    <div class="content_progress content_progress_<%= content.id %>">
       <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
       % Completed
       <%= render "shared/progress_bar", :content => content %>

@@ -12,7 +12,7 @@
 
   <!-- The Progress (if any) -->
   <% if content.class.table_name == "current_projects" %>
-  <div class="content_progress">
+  <div class="content_progress content_progress_<%= content.id %>">
     <%= content.progress %>% Completed
     <%= render "shared/progress_bar", :content => content %>
   </div>

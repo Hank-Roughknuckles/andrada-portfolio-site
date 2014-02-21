@@ -85,8 +85,9 @@ $ -> #DOM Ready
   showProgressBar = (progressBar) ->
     progressBarNumber = progressBar.attr("class").match(/[0-9]+/)[0]
     # console.log progressBarNumber
-    progress = $(".content_progress").html().match(/[0-9]+/)[0]
-    console.log progress
+    progress = $(".content_progress_#{progressBarNumber}").html().match(/[0-9]+/)[0]
+    progressBar.css("width", getProgressBarSize(progress) )
+    progressBar.css("background-color", getProgressBarColor(progress) )
     return
 
 
