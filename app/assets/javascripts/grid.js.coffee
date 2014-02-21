@@ -122,7 +122,7 @@ $ -> #DOM Ready
 
 
   $(".expand_tile").mouseup ->
-    console.log "finished clicking on a tile! dragged = #{dragged}"
+    # console.log "finished clicking on a tile! dragged = #{dragged}"
     if !dragged
       numberRegex = /[0-9]+/
       currentLightbox = @id.match(numberRegex)
