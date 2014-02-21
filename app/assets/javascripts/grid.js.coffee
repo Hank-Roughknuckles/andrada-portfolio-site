@@ -73,6 +73,12 @@ $ -> #DOM Ready
     return JSON.stringify(tilePositions)
 
 
+  ##
+  # showProgressBar
+  #
+  showProgressBar (progressBar, progress) ->
+    return
+
 #####   The main functions   #####
 
   #Turn on gridster
