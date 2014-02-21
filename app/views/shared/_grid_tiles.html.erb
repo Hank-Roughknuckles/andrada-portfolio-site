@@ -14,6 +14,7 @@
   data-databaseid="<%= content.id %>">
 
 
+  <%# Add highlighted or faded class %>
   <% image_class = "expand_tile tile_image" %>
   <% if content == @content %>
     <% image_class = image_class + " highlighted" %>
@@ -21,6 +22,7 @@
     <% image_class = image_class + " faded" %>
   <% end %>
 
+  <%# Use crop icon or grid's photo %>
   <% if grid_for_cropping && content == @content %>
     <%= image_tag "crop_glyphicon.png", class: image_class, id: "tile_#{content.id}" %>
   <% else %>
@@ -28,7 +30,7 @@
   <% end %>
 
 
-
+  <%# Add edit tools %>
   <% if( user_signed_in? && !surpress_details ) %>
   <div class="edit_tools fake_link">
     <%# Delete button %>
