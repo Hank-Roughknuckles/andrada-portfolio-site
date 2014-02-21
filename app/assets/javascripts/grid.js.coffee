@@ -88,6 +88,19 @@ $ -> #DOM Ready
     progress = $(".content_progress").html().match(/[0-9]+/)[0]
     console.log progress
     return
+
+
+  ##
+  # getProgressBarSize
+  #
+  getProgressBarSize = (progress) ->
+    return
+
+
+  ##
+  # getProgressBarColor
+  #
+  getProgressBarColor = (progress) ->
     return
 
 #####   The main functions   #####
