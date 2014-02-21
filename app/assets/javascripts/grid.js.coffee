@@ -147,7 +147,7 @@ $ -> #DOM Ready
   #if page is an edit page, make the progress bar at start
   if document.URL.match(/edit/)
     mainContentNumber = $(".content_preview .content_detail").attr("class").match(/[0-9]+/)[0]
-    showProgressBar $(".progress_bar_#{mainContentNumber}")
+    showProgressBar $(".progress_bar_#{mainContentNumber}"), $("#current_project_progress").val()
 
     console.log $("#current_project_progress").val()
 
