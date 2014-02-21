@@ -8,4 +8,14 @@
   width: 228px;
   border-left: #444444 1px solid;
   padding-top: 10px;
+
+  .progress_bar 
+  {
+    width: 50px;
+    height: 15px;
+    border-radius: 10px;
+    margin: 10px 0 0 10px;
+    background-color: green;
+  }
 }
+
