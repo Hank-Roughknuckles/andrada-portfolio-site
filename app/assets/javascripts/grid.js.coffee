@@ -93,7 +93,7 @@ $ -> #DOM Ready
     progressBar.css("background-color", getProgressBarColor(progress) )
 
     if options['animate']
-      progressBar.animate("width", getProgressBarSize(progress) )
+      progressBar.animate {width: getProgressBarSize(progress)}
     else
       progressBar.css("width", getProgressBarSize(progress) )
     return
