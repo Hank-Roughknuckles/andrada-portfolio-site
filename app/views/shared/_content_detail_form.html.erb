@@ -28,7 +28,7 @@
     <div class="content_progress">
       <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
       % Completed
-      <%= render "shared/progress_bar" %>
+      <%= render "shared/progress_bar", :content => content %>
     </div>
     <% end %>
 
