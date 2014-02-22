@@ -25,23 +25,6 @@ describe "WorksPages" do
         end
 
         it { should have_content "Sign Out" }
-        
-        describe "The admin edit table" do
-          it { should have_content "Video Thumbnail" }
-          it { should have_content "Video Link" }
-          it { should have_content "Header" }
-          it { should have_content "Description" }
-
-          it { should have_link "Add New Item" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works1.header}\"]" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works1.description}\"]" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works1.media_link}\"]" }
-          it { should have_xpath "//table/tr/td/iframe" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works2.header}\"]" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works2.description}\"]" }
-          it { should have_xpath "//table/tr/td[text()=\"#{works2.media_link}\"]" }
-          it { should have_xpath "//table/tr/td/a[text()=\"Edit\"]" }
-        end
       end
     end
   end
