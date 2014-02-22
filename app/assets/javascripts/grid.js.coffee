@@ -84,9 +84,6 @@ $ -> #DOM Ready
   # showProgressBar
   #
   showProgressBar = (progressBar, options) ->
-    if options['animate']
-      console.log "animate = #{options['animate']}"
-
     if options['value']
       progress = options['value']
     else
@@ -141,11 +138,11 @@ $ -> #DOM Ready
     max_rows: 6,
     draggable: {
       start: (e, ui, $widget) ->
-        console.log "dragging!"
+        # console.log "dragging!"
         dragged = true
 
       stop: (e, ui, $widget) ->
-        console.log "drag stopped. saving positions..."
+        # console.log "drag stopped. saving positions..."
         setTimeout(getPositions, 200)
         dragged = false
     }
@@ -202,6 +199,7 @@ $ -> #DOM Ready
 
   #Toggle edit tools button
   $(".toggle_edit_tools").click ->
+    console.log "clicked it!"
     $(".edit_tools").toggle()
 
 
@@ -224,7 +222,7 @@ $ -> #DOM Ready
 
 
   $("#save_position_and_content_forms").click ->
-    console.log "submitting grid_position_form"
+    # console.log "submitting grid_position_form"
     $("input#serialized_array").val(getPositions())
     # console.log $("input#serialized_array").val()
     $(".edit_grid_position").submit()
