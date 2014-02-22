@@ -16,7 +16,6 @@
 <div class="toggle_edit_tools fake_link">
   Toggle Edit Mode
 </div>
-<%= render "shared/edit_table" %>
 <% end %>
 
 
@@ -24,9 +23,12 @@
   <ul>
     <%= render "shared/grid_tiles" %>
   </ul>
-
 </div>
 
+
+<% if user_signed_in? %>
+<%= render "shared/edit_table" %>
+<% end %>
 
 <% if draggable == true %>
   <%= render "shared/grid_position_form", :object => @position %>
