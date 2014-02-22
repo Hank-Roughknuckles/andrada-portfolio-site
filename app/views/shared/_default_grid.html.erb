@@ -12,20 +12,20 @@
 <% end %>
 
 
+<% if user_signed_in? %>
+<div class="toggle_edit_tools fake_link">
+  Toggle Edit Mode
+</div>
+<%= render "shared/edit_table" %>
+<% end %>
+
+
 <div class="gridster <%= "emphasize_highlighted" if emphasize_highlighted %>">
   <ul>
     <%= render "shared/grid_tiles" %>
   </ul>
 
 </div>
-
-
-<% if user_signed_in? %>
-  <div class="toggle_edit_tools fake_link">
-    Toggle Edit Mode
-  </div>
-  <%= render "shared/edit_table" %>
-<% end %>
 
 
 <% if draggable == true %>
