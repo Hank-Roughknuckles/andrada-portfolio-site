@@ -199,7 +199,6 @@ $ -> #DOM Ready
 
   #Toggle edit tools button
   $(".toggle_edit_tools").click ->
-    console.log "clicked it!"
     $(".edit_tools").toggle()
 
 
