@@ -4,10 +4,6 @@ don't create a new work/current_project before going to crop page.  This
 will prevent the bug that causes it to create multiple items if the page
 is refreshed in the crop view
 
-Make progess bar in current projects
-
-move down "toggle edit mode" link on works (and maybe current_projects) edit page to where it'll be next to the grid
-
 go to crop page after selecting background image for about_me and for showreel
   Also later for contact page
 
