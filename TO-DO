@@ -1,16 +1,21 @@
 TO-DO
 =====
-don't create a new work/current_project before going to crop page.  This
-will prevent the bug that causes it to create multiple items if the page
-is refreshed in the crop view
+
+Account for a long list of grid tiles
 
 go to crop page after selecting background image for about_me and for showreel
   Also later for contact page
+
+enable ability to change email and password for admin access
 
 Write model/contact_spec to test cases of email addresses and blanks
 before/after email
 
 Make save reminder method for grid
+
+Don't create a new work/current_project before going to crop page.  This
+will prevent the bug that causes it to create multiple items if the page
+is refreshed in the crop view
 
 OPTIONAL
 ========
@@ -18,5 +23,4 @@ OPTIONAL
 
 REFACTOR
 ========
-
 Make methods that show / hide the save reminder in nav bar and about me contents edit DRY
