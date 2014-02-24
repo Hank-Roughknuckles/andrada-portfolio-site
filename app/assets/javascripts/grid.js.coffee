@@ -47,7 +47,8 @@ $ -> #DOM Ready
   # showSaveReminder
   #
   showSaveReminder = ->
-    console.log "NOTE: make showSaveReminder"
+    # console.log "NOTE: make showSaveReminder"
+    return
 
 
   ##
