@@ -3,10 +3,10 @@ TO-DO
 
 Account for a long list of grid tiles
 
+enable ability to change email and password for admin access
+
 go to crop page after selecting background image for about_me and for showreel
   Also later for contact page
-
-enable ability to change email and password for admin access
 
 Write model/contact_spec to test cases of email addresses and blanks
 before/after email
