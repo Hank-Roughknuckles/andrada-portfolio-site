@@ -172,6 +172,7 @@ $ -> #DOM Ready
         setTimeout(getPositions, 200)
         dragged = false
     }
+
   gridster = $(".gridster ul").gridster().data('gridster');
 
 
