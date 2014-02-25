@@ -2,6 +2,7 @@
 
 <% base_widget_width = 138 %>
 <% base_widget_height = 138 %>
+<% max_grid_columns = 6 %>
 <% initial_preview_w = base_widget_width * @content.grid_sizex %>
 <% initial_preview_h = base_widget_height * @content.grid_sizey %>
 
@@ -29,12 +30,12 @@
 
       <!-- Form for grid tile size -->
       <% for attribute in [ 
-        {:attribute_name => :grid_sizex, :label => "Tile Width - Horizontal"}, 
-        {:attribute_name => :grid_sizey, :label => "Tile Height - Vertical"}
+        {:attribute_name => :grid_sizex, :label => "Tile Width - Horizontal", :max_value => (max_grid_columns + 1 - @content.grid_column)}, 
+        {:attribute_name => :grid_sizey, :label => "Tile Height - Vertical", :max_value => 20}
       ] %>
         <p>
           <%= f.label attribute[:attribute_name], attribute[:label] %>
-          <%= f.number_field attribute[:attribute_name], min: 1, max: 6, step: 1, id: "edit_#{attribute[:attribute_name]}" %>
+          <%= f.number_field attribute[:attribute_name], min: 1, max: attribute[:max_value], step: 1, id: "edit_#{attribute[:attribute_name]}" %>
         </p>
       <% end %>
 
