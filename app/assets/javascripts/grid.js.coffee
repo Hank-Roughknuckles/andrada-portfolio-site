@@ -59,6 +59,12 @@ $ -> #DOM Ready
 
 
   ##
+  # updateTileDebugInfo
+  #
+  updateTileDebugInfo = (tile, info) ->
+    console.log "updateTileDebugInfo called!"
+
+  ##
   # getPositions
   #
   getPositions = ->
@@ -77,6 +83,8 @@ $ -> #DOM Ready
           databaseid:   $(element).attr('data-databaseid')
 
         tilePositions.push current
+
+        updateTileDebugInfo $(element), current
 
     return JSON.stringify(tilePositions)
 
