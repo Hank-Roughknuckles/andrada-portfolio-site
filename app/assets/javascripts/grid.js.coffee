@@ -130,6 +130,8 @@ $ -> #DOM Ready
     greenHex = Math.round(2.55 * progress)
     return "rgb(#{redHex}, #{greenHex}, 0)"
 
+
+
 #####   The main functions   #####
 
   #Turn on gridster
