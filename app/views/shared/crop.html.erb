@@ -22,7 +22,7 @@
   <!-- The Form -->
   <div class="form_container">
     <%= form_for @content do |f| %>
-      <!-- Form for cropping attributes -->
+      <%# Form for cropping attributes %>
       <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
         <%= f.hidden_field attribute, id: attribute %>
       <% end %>
