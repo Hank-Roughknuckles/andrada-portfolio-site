@@ -8,6 +8,18 @@ $ -> #DOM ready
   miniTileHeight = miniTileWidth
 
 
+  ##
+  # changeMaxWidth   
+  #
+  # Changes the "max" attribute of the grid_sizex form field to the passed
+  # maxWidth
+  #
+  # @param int maxWidth - The maximum width that the currently selected
+  #   tile should have 
+  changeMaxWidth = ( maxWidth ) ->
+    $("#edit_grid_sizex").attr("max", maxWidth)
+    return
+
   #Turn on gridster
   gridster = $(".gridster ul").gridster
     widget_margins: [miniTileMarginX, miniTileMarginY],
@@ -15,6 +27,13 @@ $ -> #DOM ready
     max_cols: 6,
     draggable: {
       stop: (e, ui, $widget) ->
+        # change the max value of the width form field if the dragged tile
+        # is the one being cropped
+        if $(e.target).attr("class").match(/highlighted/)
+          console.log "finished dragging"
+          draggedTile = $(e.target).parent()
+          changeMaxWidth( draggedTile, max_columns + 1 - draggedTile.attr("data-col") )
+
         setTimeout(savePositions, 200)
     }
   gridster = $(".gridster ul").gridster().data('gridster');
