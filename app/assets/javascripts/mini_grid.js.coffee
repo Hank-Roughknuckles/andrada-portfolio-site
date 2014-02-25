@@ -20,6 +20,10 @@ $ -> #DOM ready
     $("#edit_grid_sizex").attr("max", maxWidth)
     return
 
+  #Call on page load to prevent width overflow
+  changeMaxWidth max_columns + 1 - $(".highlighted").parent().attr("data-col")
+
+
   #Turn on gridster
   gridster = $(".gridster ul").gridster
     widget_margins: [miniTileMarginX, miniTileMarginY],
