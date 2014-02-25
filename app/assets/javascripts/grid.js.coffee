@@ -177,6 +177,7 @@ $ -> #DOM Ready
     closeLightbox(currentLightbox)
 
 
+  #Show lightbox when a tile is clicked
   $(".expand_tile").mouseup ->
     # console.log "finished clicking on a tile! dragged = #{dragged}"
     if !dragged
