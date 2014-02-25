@@ -75,7 +75,8 @@ $ -> #DOM Ready
   #             sizex,
   #             sizey  }
   updateTileDebugInfo = (tile, info) ->
-    tile.find("span").html("row: #{info.row} <br>col: #{info.column} <br>sizex: #{info.sizex} <br>sizey: #{info.sizey}")
+    if tile.find("span").length > 0
+      tile.find("span").html("row: #{info.row} <br>col: #{info.column} <br>sizex: #{info.sizex} <br>sizey: #{info.sizey}")
 
 
   ##
