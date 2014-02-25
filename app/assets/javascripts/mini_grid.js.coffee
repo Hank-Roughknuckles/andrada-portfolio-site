@@ -71,7 +71,9 @@ $ -> #DOM ready
     original_row = currentTile.attr("data-row")
     original_col = currentTile.attr("data-col")
 
-    gridster.resize_widget(currentTile, $("form #edit_grid_sizex").val(), $("form #edit_grid_sizey").val());
+    # gridster.resize_widget(currentTile, $("form #edit_grid_sizex").val(), $("form #edit_grid_sizey").val());
+    currentTile.attr("data-sizex", $("form #edit_grid_sizex").val())
+    currentTile.attr("data-sizey", $("form #edit_grid_sizey").val())
     currentTile.attr("data-row", original_row)
     currentTile.attr("data-col", original_col)
     savePositions()
