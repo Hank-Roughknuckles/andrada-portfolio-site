@@ -4,7 +4,7 @@ $ -> #DOM ready
   max_columns = 6
   miniTileMarginX = 2
   miniTileMarginY = 2
-  miniTileWidth = (grid_width - 2 * miniTileMarginX * (max_columns - 1) + miniTileMarginX * 2) / max_columns
+  miniTileWidth = Math.round (grid_width - 2 * miniTileMarginX * (max_columns - 1) + miniTileMarginX * 2) / max_columns
   miniTileHeight = miniTileWidth
 
 
