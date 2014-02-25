@@ -61,8 +61,22 @@ $ -> #DOM Ready
   ##
   # updateTileDebugInfo
   #
+  # changes the debug information (shown in the span in each tile) for the
+  # inputted tile.  The new value of the debugging info is dependent on
+  # the info object in the argument.  Note: This function will only change
+  # the debugging info if debugging is enabled (i.e. - there is already
+  # a span child element in the tile argument)
+  #
+  # @param JqueryObject tile - the jquery object for a <li> element inside
+  #   the gridster ul
+  # @param Object info - an object with of the following form
+  #   info = {  row,
+  #             column,
+  #             sizex,
+  #             sizey  }
   updateTileDebugInfo = (tile, info) ->
-    console.log "updateTileDebugInfo called!"
+    tile.find("span").html("row: #{info.row} <br>col: #{info.column} <br>sizex: #{info.sizex} <br>sizey: #{info.sizey}")
+
 
   ##
   # getPositions
