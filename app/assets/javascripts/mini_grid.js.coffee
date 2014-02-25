@@ -12,7 +12,7 @@ $ -> #DOM ready
   gridster = $(".gridster ul").gridster
     widget_margins: [miniTileMarginX, miniTileMarginY],
     widget_base_dimensions: [miniTileWidth, miniTileHeight],
-    max_rows: 6,
+    max_cols: 6,
     draggable: {
       stop: (e, ui, $widget) ->
         setTimeout(savePositions, 200)

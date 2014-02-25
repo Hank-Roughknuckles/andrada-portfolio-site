@@ -161,7 +161,7 @@ $ -> #DOM Ready
   $(".gridster ul").gridster
     widget_margins: [tileMarginX, tileMarginY],
     widget_base_dimensions: [tileWidth, tileHeight],
-    max_rows: 6,
+    max_cols: 6,
     draggable: {
       start: (e, ui, $widget) ->
         # console.log "dragging!"
