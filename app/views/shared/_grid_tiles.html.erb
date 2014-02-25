@@ -5,6 +5,8 @@
   <% grid_for_cropping = false %>
 <% end %>
 
+<% debugging = true %>
+
 <% for content in @contents  %>
   <li class="<%= "grid_tile grid_tile_#{content.id}" %>" 
   data-row="<%= content.grid_row %>" 
@@ -13,9 +15,9 @@
   data-sizey="<%= content.grid_sizey %>"
   data-databaseid="<%= content.id %>">
 
-
   <%# Add highlighted or faded class %>
   <% image_class = "expand_tile tile_image" %>
+  <% image_class = image_class + " debugging" if debugging %>
   <% if content == @content %>
     <% image_class = image_class + " highlighted" %>
   <% else %>
@@ -29,6 +31,14 @@
     <%= image_tag content.grid_tile_image.url(:large), class: image_class, id: "tile_#{content.id}" %>
   <% end %>
 
+  <% if debugging %>
+    <span class="debugging">
+      row: <%= content.grid_row %> <br>
+      col: <%= content.grid_column %> <br>
+      sizex: <%= content.grid_sizex %> <br>
+      sizey: <%= content.grid_sizey %> <br>
+    </span>
+  <% end %>
 
   <%# Add edit tools %>
   <% if( user_signed_in? && !surpress_details ) %>

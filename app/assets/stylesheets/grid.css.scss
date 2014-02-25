@@ -16,6 +16,18 @@ $selected_blue: #8094a6;
       width: 100%;
       height: 100%;
     }
+
+    img.debugging
+    {
+      position: absolute;
+      top: 0;
+    }
+
+    span.debugging
+    {
+      position: absolute;
+      background-color: white;
+    }
   }
 
   li.new
