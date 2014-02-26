@@ -6,10 +6,6 @@ enable ability to change email and password for admin access
 on edit page load, take value in grid_sizex and grid_sizey and set the li
 items as such
 
-save button in current_projects#edit doesn't work
-
-make sure that user can't make a tile that extends past column 6
-
 go to crop page after selecting background image for about_me and for showreel
   Also later for contact page
 

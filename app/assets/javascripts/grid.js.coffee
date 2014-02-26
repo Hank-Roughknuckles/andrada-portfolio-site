@@ -184,7 +184,6 @@ $ -> #DOM Ready
     #set progress bar to amount in form field when the field changes
     $("#current_project_progress").change ->
       showProgressBar $(".progress_bar_#{mainContentNumber}"), { value: $("#current_project_progress").val() }
-    return
 
 
   #if #drag_disabled exists, then don't let the user drag tiles
