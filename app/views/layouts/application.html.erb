@@ -28,9 +28,7 @@
       <div class="sign_in">
         <%= link_to "Sign Out", destroy_user_session_path, :method =>
         :delete %>
-      </div>
-      <div class="change_password">
-        <%= link_to "Change your password", edit_user_registration_path %>
+         | <%= link_to "Account Settings", edit_user_registration_path %>
       </div>
     <% else %>
       <div class="sign_in">
