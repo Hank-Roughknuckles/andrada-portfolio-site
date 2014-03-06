@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     height = options[:height] || 375
 
     if options[:link] && options[:uploaded_image_url]
-      raise ArgumentError, "embed_media canno have both \"link\" and
+      raise ArgumentError, "embed_media cannot have both \"link\" and
       \"uploaded_image_url\" arguments"
     end
 
