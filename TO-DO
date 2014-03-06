@@ -1,6 +1,8 @@
 TO-DO
 =====
 
+fix min-height for lightbox
+
 on edit page load, take value in grid_sizex and grid_sizey and set the li
 items as such
 
