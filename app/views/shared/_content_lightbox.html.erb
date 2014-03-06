@@ -32,7 +32,7 @@
 
   <% if edit_page == true %>
     <%= render "shared/content_detail_form", :content => content,
-      :header_limit => 50, :description_limit => 250 %>
+      :header_limit => 30, :description_limit => 250 %>
   <% else %>
     <%= render "shared/content_detail_display", :content => content %>
   <% end %>
