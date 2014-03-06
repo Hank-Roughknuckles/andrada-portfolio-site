@@ -7,6 +7,9 @@ items as such
 go to crop page after selecting background image for about_me and for showreel
   Also later for contact page
 
+clean up forms, make them look pretty.  especially for works and
+current_projects
+
 Write model/contact_spec to test cases of email addresses and blanks
 before/after email
 
