@@ -383,8 +383,8 @@ body
       font-size: 17px;
       padding: 0 15px;
       margin: 0 0;
-      max-width: 200px;
-      width: 200px;
+      max-width: 228px;
+      width: 228px;
       border-right: #444444 1px solid;
 
       textarea
@@ -437,6 +437,7 @@ body
   {
     display: table-cell;
     width: 228px;
+    min-width: 228px;
     border-left: #444444 1px solid;
     padding-top: 10px;
   }
