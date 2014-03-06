@@ -219,10 +219,10 @@ body
     position: relative;
     z-index: 10000;
     background-color: $background_tan;
-    width: 1200px;
-    height: 600px;
+    /* height: 600px; */
     text-align: center;
-    left: -164px;
+    margin-left: auto;
+    margin-right: auto;
     top: -166px;
   }
 
