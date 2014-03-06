@@ -367,6 +367,8 @@ body
 
   .lightbox_bottom
   {
+    height: 69px;
+    max-height: 69px;
     background-color: #000000;
     opacity:0.8;
     filter:alpha(opacity=80); /* For IE8 and earlier */
@@ -395,7 +397,9 @@ body
 
     .content_description
     {
-      height: inherit;
+      height: 69px;
+      max-height: 69px;
+      padding: 0 5px;
       display: table-cell;
       vertical-align: middle;
       width: 670px;
