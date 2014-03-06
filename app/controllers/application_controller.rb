@@ -24,8 +24,8 @@ class ApplicationController < ActionController::Base
   # given a link to a vimeo video, return the id number for the video to
   # be used in the embed code in the view
   def embed_media( options = {} )
-    width = options[:width] || 500
-    height = options[:height] || 375
+    width = options[:width] || 633
+    height = options[:height] || 475
 
     if options[:link] && options[:uploaded_image_url]
       raise ArgumentError, "embed_media cannot have both \"link\" and
