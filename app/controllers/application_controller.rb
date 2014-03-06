@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
                          height: height)
 
     elsif options[:uploaded_image_url]
-      return "<img src=\"#{options[:uploaded_image_url]}\" width=\"#{width}\" height=\"#{height}\">".html_safe
+      return "<img src=\"#{options[:uploaded_image_url]}\">".html_safe
 
     elsif !options[:uploaded_image_url] && !options[:link]
       return broken_image_tag(height, width)

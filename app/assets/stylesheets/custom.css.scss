@@ -294,6 +294,12 @@ body
     height: 531px;
     line-height: 531px;
     
+    img
+    {
+      max-height: 475px;
+      max-width: 800px;
+    }
+
     iframe
     {
       vertical-align: middle;
