@@ -385,6 +385,13 @@ body
       max-width: 200px;
       width: 200px;
       border-right: #444444 1px solid;
+
+      textarea
+      {
+        margin: 5px 0 0 -5px;
+        text-align:center;
+        max-width: 175px;
+      }
     }
 
     .content_description
