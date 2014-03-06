@@ -432,4 +432,12 @@ body
       text-decoration: underline;
     }
   }
+  
+  .content_progress
+  {
+    display: table-cell;
+    width: 228px;
+    border-left: #444444 1px solid;
+    padding-top: 10px;
+  }
 }
