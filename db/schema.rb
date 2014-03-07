@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129072333) do
+ActiveRecord::Schema.define(version: 20140307160906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "about_me_contents", force: true do |t|
     t.string   "header"
-    t.string   "description"
+    t.text     "description"
     t.string   "button_title"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140129072333) do
 
   create_table "current_projects", force: true do |t|
     t.string   "header"
-    t.string   "description"
+    t.text     "description"
     t.integer  "progress"
     t.string   "media_link"
     t.datetime "created_at"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20140129072333) do
   create_table "showreels", force: true do |t|
     t.string   "media_link"
     t.string   "header"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "media_choice"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20140129072333) do
   create_table "works", force: true do |t|
     t.string   "media_link"
     t.string   "header"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "media_choice"
