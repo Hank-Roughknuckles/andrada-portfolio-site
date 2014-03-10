@@ -39,11 +39,11 @@
 </div>
 
 <% if edit_page == true %>
-  <%= form_for @content do |f| %>
-    <div class="fake_link">
-      Change media content
-    </div>
-    <div class="invisible media_content_lightbox">
+  <div class="fake_link">
+    Change media content
+  </div>
+  <div class="invisible media_content_lightbox">
+    <%= form_for @content do |f| %>
       <%= f.radio_button :media_choice, "link", id: 'media_choice_radio_link' %>
       <%= f.label :media_choice_link, "Use Hosted Link" %>
       <%= f.label :media_link %>
@@ -53,6 +53,6 @@
       <%= f.label :media_choice_upload, "Use File Upload" %>
       <%= f.label :media_image %>
       <%= f.file_field :media_image, id: "media_image_upload" %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>
