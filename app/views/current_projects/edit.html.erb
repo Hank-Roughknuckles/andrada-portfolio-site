@@ -9,7 +9,6 @@
 </div>
 
 <div class="envelope">
+  <%= render "current_projects_form", :content => @content %>
   <%= render "shared/default_grid", :draggable => true, :emphasize_highlighted => true, :active_record_object => CurrentProject %>
 </div>
-
-<%= render "current_projects_form", :content => @content %>
