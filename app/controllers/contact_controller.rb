@@ -1,5 +1,6 @@
 class ContactController < ApplicationController
   before_filter :authorize, :except => :show
+  helper_method :get_slide_background_css
 
   def show
     @contact_info = Contact.find params[:id] 
@@ -21,6 +22,6 @@ class ContactController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:email, :vimeo_id)
+    params.require(:contact).permit(:email, :vimeo_id, :background_image)
   end
 end
