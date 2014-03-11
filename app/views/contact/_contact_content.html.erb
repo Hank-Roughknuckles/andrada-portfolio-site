@@ -1,0 +1,18 @@
+<div class="envelope" 
+  style="<%= get_background_css Contact, @contact_info.id %>">
+
+<%= form_for @contact_info do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :vimeo_id, "Vimeo ID" %>
+  <%= f.text_field :vimeo_id %>
+
+  <%= f.label :background_image %>
+  <%= f.file_field :background_image, id: "background_image_upload" %>
+  <%= render "shared/dimension_message" %>
+
+  <%= f.submit "Save" %>
+<% end %>
+
+</div>
