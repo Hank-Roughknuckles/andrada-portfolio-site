@@ -1,18 +1,34 @@
 <div class="envelope" 
   style="<%= get_background_css Contact, @contact_info.id %>">
 
-<%= form_for @contact_info do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<%# Render a form if it's the edit page %>
+<% if request.original_url =~ /edit/ %>
+  <%= form_for @contact_info do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
 
-  <%= f.label :vimeo_id, "Vimeo ID" %>
-  <%= f.text_field :vimeo_id %>
+    <%= f.label :vimeo_id, "Vimeo ID" %>
+    <%= f.text_field :vimeo_id %>
 
-  <%= f.label :background_image %>
-  <%= f.file_field :background_image, id: "background_image_upload" %>
-  <%= render "shared/dimension_message" %>
+    <%= f.label :background_image %>
+    <%= f.file_field :background_image, id: "background_image_upload" %>
+    <%= render "shared/dimension_message" %>
 
-  <%= f.submit "Save" %>
+    <%= f.submit "Save" %>
+  <% end %>
+
+
+<%# Render a normal display if it's not the edit page %>
+<% else %>
+  <div class="fake_link">Email</div>
+  <div class="dropdown dropdown_email">
+    <%= @contact_info.email %>
+  </div>
+
+  <div class="fake_link">Vimeo</div>
+  <div class="dropdown dropdown_vimeo">
+    <%= @contact_info.vimeo_id %>
+  </div>
 <% end %>
 
-</div>
+</div> <!-- END envelope div -->
