@@ -1,4 +1,6 @@
 class Contact < ActiveRecord::Base
+  has_attached_file :background_image
+
   #email regex here
   EmailRegex = /[a-zA-Z0-9\-_]+@\w+\.(com|net|org)/i
 
