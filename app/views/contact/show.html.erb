@@ -1,16 +1,6 @@
 <% provide( :title, "Contact" ) %>
 
-<div class="envelope">
-  <div class="fake_link">Email</div>
-  <div class="dropdown dropdown_email">
-    <%= @contact_info.email %>
-  </div>
-
-  <div class="fake_link">Vimeo</div>
-  <div class="dropdown dropdown_vimeo">
-    <%= @contact_info.vimeo_id %>
-  </div>
-</div>
+<%= render "contact_content" %>
 
 <% if user_signed_in? %>
   <%= link_to 'Edit Contact Info', edit_contact_path(@contact_info) %>
