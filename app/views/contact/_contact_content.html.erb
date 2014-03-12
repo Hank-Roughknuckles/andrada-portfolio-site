@@ -21,7 +21,7 @@
 
         <div class="facebook">
           <%= image_tag "fb_icon.png", size: "48" %> 
-          TODO: put facebook info here
+          <%= f.text_field :facebook %>
         </div>
 
         <%= f.label :background_image %>
@@ -47,7 +47,7 @@
 
       <div class="facebook">
         <%= image_tag "fb_icon.png", size: "48" %> 
-        TODO: put facebook info here
+        <%= @contact_info.facebook %>
       </div>
     <% end %>
   </div>

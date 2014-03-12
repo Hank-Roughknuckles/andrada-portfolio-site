@@ -22,6 +22,9 @@ class ContactController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:email, :vimeo_id, :background_image)
+    params.require(:contact).permit(:email, 
+                                    :vimeo_id, 
+                                    :facebook,
+                                    :background_image)
   end
 end
