@@ -7,7 +7,7 @@ $ ->
     $(".contact_form").fadeIn(250)
 
   $(".contact_form_submit").click ->
-    if $(".sender_email_container > input").val() is "" || $(".body_form_container > textarea").val() is ""
+    if $(".sender_email").val() is "" || $(".body_form").val() is ""
       $(".alert").text("Please enter both your email address and
       a message.")
     else
