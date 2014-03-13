@@ -17,6 +17,18 @@
   }
 }
 
-.contact_details {
-  margin-left: 30px;
+.contact_form {
+  float: left;
+  margin-left: 100px;
+  margin-top: 45px;
+
+  .sender_email, .body_form {
+    /* background-color: #676460; */
+    /* TODO: color the inside of the inputs */
+  }
+
+  .body_form {
+    margin-top: 25px;
+  }
 }
+
