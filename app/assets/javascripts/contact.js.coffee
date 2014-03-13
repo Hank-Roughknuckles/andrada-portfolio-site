@@ -8,6 +8,7 @@ $ ->
 
   $(".contact_form_submit").click ->
     if $(".sender_email_container > input").val() is "" || $(".body_form_container > textarea").val() is ""
-      $(".alert").text("Please enter both your email and a message")
+      $(".alert").text("Please enter both your email address and
+      a message.")
     else
       $(".actual_submit_button").trigger("click")
