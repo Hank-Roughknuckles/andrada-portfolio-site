@@ -21,6 +21,14 @@ class ContactController < ApplicationController
     end
   end
 
+  def send_mail
+    email = params[:email]
+    body = params[:body]
+    ContactMailer.contact_email(email, body).deliver
+    flash[:notice] = "Message successfully sent"
+    redirect_to Contact.first
+  end
+
   def contact_params
     params.require(:contact).permit(:email, 
                                     :vimeo_id, 
