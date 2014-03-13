@@ -25,6 +25,7 @@ $form_grey: #676460;
   float: left;
   margin-left: 100px;
   margin-top: 45px;
+  display: none;
 
   .sender_email, .body_form {
     background-color: $form_grey;
