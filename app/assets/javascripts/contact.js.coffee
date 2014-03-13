@@ -4,4 +4,4 @@
 
 $ ->
   $(".form_show").click ->
-    $(".contact_form").fadeIn()
+    $(".contact_form").fadeIn(250)
