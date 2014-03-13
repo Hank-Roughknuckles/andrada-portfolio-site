@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$form_grey: #676460;
+
 .dropdown {
   display: none;
 }
@@ -25,8 +27,8 @@
   margin-top: 45px;
 
   .sender_email, .body_form {
-    /* background-color: #676460; */
-    /* TODO: color the inside of the inputs */
+    background-color: $form_grey;
+    width: 245px;
   }
 
   .body_form {
