@@ -70,8 +70,11 @@
         <%= text_area ':body', nil, placeholder: "Your message", 
                                     class: "body_form" %>
       </div>
-
-      <%= submit_tag "Submit", class: "contact_form_submit" %>
+      
+      <div class="contact_form_submit">
+        Submit
+      </div>
+      <%= submit_tag "Submit", class: "invisible" %>
     <% end %>
   </div> <!-- END contact_form div -->
 
