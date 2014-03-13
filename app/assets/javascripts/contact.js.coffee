@@ -5,6 +5,7 @@
 $ ->
   $(".form_show").click ->
     $(".contact_form").fadeIn(250)
+    $(".sender_email").focus()
 
   $(".contact_form_submit").click ->
     if $(".sender_email").val() is "" || $(".body_form").val() is ""
