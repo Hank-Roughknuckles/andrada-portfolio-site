@@ -43,12 +43,16 @@
 
         <div class="vimeo">
           <%= image_tag "vimeo_icon.png", size: "30" %> 
-          <%= @contact_info.vimeo_id %>
+          <a href="<%= @contact_info.vimeo_id %>">
+            <%= @contact_info.vimeo_id %>
+          </a>
         </div>
 
         <div class="facebook">
           <%= image_tag "fb_icon.png", size: "30" %> 
-          <%= @contact_info.facebook %>
+          <a href="<%= @contact_info.facebook %>">
+            <%= @contact_info.facebook %>
+          </a>
         </div>
       <% end %>
     </div>
