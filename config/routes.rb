@@ -15,6 +15,8 @@ AndradaPortfolioSite::Application.routes.draw do
   resources :contact
   resources :grid_positions
 
+  match '/send_mail', to: 'contact#send_mail', via: 'post'
+
   get '/login' => 'sessions#new'
   get '/logout' =>  'sessions#destroy'
 
