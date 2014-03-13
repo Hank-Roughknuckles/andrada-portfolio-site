@@ -32,9 +32,14 @@ $form_grey: #676460;
     border-radius: 9px;
   }
 
+  .sender_email {
+    padding-left: 10px;
+  }
+
   .body_form {
     margin-top: 25px;
     height: 275px;
+    padding: 10px;
   }
 
   .contact_form_submit {
