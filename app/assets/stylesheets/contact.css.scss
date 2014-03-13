@@ -29,6 +29,7 @@ $form_grey: #676460;
   .sender_email, .body_form {
     background-color: $form_grey;
     width: 245px;
+    border-radius: 9px;
   }
 
   .body_form {
@@ -38,6 +39,7 @@ $form_grey: #676460;
 
   .contact_form_submit {
     background-color: $form_grey;
+    border-radius: 12px;
     margin-top: 10px; 
     margin-left: 10px; 
   }
