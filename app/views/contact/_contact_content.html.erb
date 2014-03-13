@@ -57,12 +57,14 @@
 
   <div class="contact_form">
     <%= form_tag(send_mail_path) do %>
-      <div class="sender_email">
+      <div class="sender_email_container">
         <%= text_field_tag ':email', nil, 
-          placeholder: "Your email address" %>
+          placeholder: "Your email address",
+          class: "sender_email" %>
       </div>
-      <div class="body_form">
-        <%= text_area ':body', nil, placeholder: "Your message" %>
+      <div class="body_form_container">
+        <%= text_area ':body', nil, placeholder: "Your message", 
+                                    class: "body_form" %>
       </div>
 
       <%= submit_tag "Submit" %>
