@@ -54,4 +54,18 @@
     </div>
   </div> <!-- END contact div -->
 
+  <div class="return_email_form">
+    <%= form_tag(send_mail_path) do %>
+      <div class="submit_email">
+        <%= text_field_tag ':email', nil, 
+          placeholder: "Your email address" %>
+      </div>
+      <div class="body_form">
+        <%= text_area ':body', nil, placeholder: "Your message" %>
+      </div>
+
+      <%= submit_tag "Submit" %>
+    <% end %>
+  </div>
+
 </div> <!-- END envelope div -->

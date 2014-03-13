@@ -5,12 +5,3 @@
 <% end %>
 
 <%= render "contact_content" %>
-
-<div class="mail_form">
-  <%= form_tag(send_mail_path) do %>
-    <%= text_field_tag ':email', nil, placeholder: "Your email address" %>
-    <%= text_area ':body', nil, placeholder: "Your message" %>
-
-    <%= submit_tag "Submit" %>
-  <% end %>
-</div>
