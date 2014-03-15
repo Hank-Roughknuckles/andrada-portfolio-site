@@ -259,16 +259,16 @@ $ -> #DOM Ready
   #Form stuff
   
   #Forms will update displays as they are altered
-  $("form > #current_project_header").keyup ->
+  $("form #current_project_header").keyup ->
     console.log this
     $('.content_preview .content_header').html($(this).val())
 
 
-  $("form > #current_project_description").keyup ->
+  $("form #current_project_description").keyup ->
     $('.content_preview .content_description').html($(this).val())
 
 
-  $("form > #current_project_progress").keyup ->
+  $("form #current_project_progress").keyup ->
     $('.content_preview .progress_amount').html("#{$(this).val()}% Completed")
 
 
