@@ -260,7 +260,6 @@ $ -> #DOM Ready
   
   #Forms will update displays as they are altered
   $("form #current_project_header").keyup ->
-    console.log this
     $('.content_preview .content_header').html($(this).val())
 
 
