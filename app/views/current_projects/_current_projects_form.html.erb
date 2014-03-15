@@ -6,8 +6,13 @@
                                            :header_limit => header_limit, 
                                            :description_limit => description_limit  %>
 
-  <%= f.label :progress, "Progress (%)" %>
-  <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
+  <br />
+
+  <h4>Project Progress</h4>
+  <div>
+    <%= f.label :progress, "Progress (%)" %>
+    <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
+  </div>
 
   <%= render "shared/grid_content_form", :f => f %>
 
