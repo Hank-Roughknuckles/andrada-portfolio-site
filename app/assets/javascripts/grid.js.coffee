@@ -257,18 +257,36 @@ $ -> #DOM Ready
 
 
   #Form stuff
-  
   #Forms will update displays as they are altered
-  $("form #current_project_header").keyup ->
-    $('.content_preview .content_header').html($(this).val())
 
+  #Update header
+  updateHeader = ->
+    $('.content_preview .content_header').html($("form #current_project_header").val())
+
+  $("form #current_project_header").keyup ->
+    updateHeader()
+  $("form #current_project_header").change ->
+    updateHeader()
+
+
+  #Update description
+  updateDescription = ->
+    $('.content_preview .content_description').html($("form #current_project_description").val())
 
   $("form #current_project_description").keyup ->
-    $('.content_preview .content_description').html($(this).val())
+    updateDescription()
+  $("form #current_project_description").change ->
+    updateDescription()
 
+
+  #Update Progress
+  updateProgress = ->
+    $('.content_preview .progress_amount').html("#{$("form #current_project_progress").val()}% Completed")
 
   $("form #current_project_progress").keyup ->
-    $('.content_preview .progress_amount').html("#{$(this).val()}% Completed")
+    updateProgress()
+  $("form #current_project_progress").change ->
+    updateProgress()
 
 
   # ##
