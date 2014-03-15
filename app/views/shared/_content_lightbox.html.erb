@@ -29,10 +29,5 @@
     <% end %>
   </div>
 
-  <% if edit_page == true %>
-    <%= render "shared/content_detail_form", :content => content,
-      :header_limit => 30, :description_limit => 200 %>
-  <% else %>
-    <%= render "shared/content_detail_display", :content => content %>
-  <% end %>
+  <%= render "shared/content_detail_display", :content => content %>
 </div>
