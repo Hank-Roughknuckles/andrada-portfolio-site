@@ -261,7 +261,9 @@ $ -> #DOM Ready
 
   #Update header
   updateHeader = ->
-    $('.content_preview .content_header').html($("form .header_input").val())
+    $('.content_preview .content_header')
+      .html($("form .header_input")
+      .val())
 
   $("form .header_input").keyup ->
     updateHeader()
@@ -271,7 +273,9 @@ $ -> #DOM Ready
 
   #Update description
   updateDescription = ->
-    $('.content_preview .content_description').html($("form .description_input").val())
+    $('.content_preview .content_description')
+      .html($("form .description_input")
+      .val())
 
   $("form .description_input").keyup ->
     updateDescription()
@@ -281,7 +285,9 @@ $ -> #DOM Ready
 
   #Update Progress
   updateProgress = ->
-    $('.content_preview .progress_amount').html("#{$("form .progress_input").val()}% Completed")
+    $('.content_preview .progress_amount')
+      .html("#{$("form .progress_input")
+      .val()}% Completed")
 
   $("form .progress_input").keyup ->
     updateProgress()
