@@ -12,12 +12,14 @@
   <h4>Project Progress</h4>
   <div>
     <%= f.label :progress, "Progress (%)" %>
-    <%= f.number_field :progress, min: 0, max: 100, step: 1 %>
+    <%= f.number_field :progress, 
+      class: "progress_input", min: 0, max: 100, step: 1 %>
   </div>
 
   <%= render "shared/grid_content_form", :f => f %>
 
-  <%= submit_tag "Save", type: 'button', id: "save_position_and_content_forms" %>
+  <%= submit_tag "Save", 
+    type: 'button', id: "save_position_and_content_forms" %>
 <% end %>
 
 

@@ -261,31 +261,31 @@ $ -> #DOM Ready
 
   #Update header
   updateHeader = ->
-    $('.content_preview .content_header').html($("form #current_project_header").val())
+    $('.content_preview .content_header').html($("form .header_input").val())
 
-  $("form #current_project_header").keyup ->
+  $("form .header_input").keyup ->
     updateHeader()
-  $("form #current_project_header").change ->
+  $("form .header_input").change ->
     updateHeader()
 
 
   #Update description
   updateDescription = ->
-    $('.content_preview .content_description').html($("form #current_project_description").val())
+    $('.content_preview .content_description').html($("form .description_input").val())
 
-  $("form #current_project_description").keyup ->
+  $("form .description_input").keyup ->
     updateDescription()
-  $("form #current_project_description").change ->
+  $("form .description_input").change ->
     updateDescription()
 
 
   #Update Progress
   updateProgress = ->
-    $('.content_preview .progress_amount').html("#{$("form #current_project_progress").val()}% Completed")
+    $('.content_preview .progress_amount').html("#{$("form .progress_input").val()}% Completed")
 
-  $("form #current_project_progress").keyup ->
+  $("form .progress_input").keyup ->
     updateProgress()
-  $("form #current_project_progress").change ->
+  $("form .progress_input").change ->
     updateProgress()
 
 
