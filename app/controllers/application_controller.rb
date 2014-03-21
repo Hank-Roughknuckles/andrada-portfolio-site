@@ -16,9 +16,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def broken_image_tag( height = 375, width = 500 )
-    return "<img src=\"/assets/placeholder.png\" alt=\"No image added
-    yet\" width=\"#{width}\" height=\"#{height}\">".html_safe
+  def broken_image_tag( height = 375, width = 500, classname="")
+    return "<img class=\"#{classname}\" 
+    src=\"/assets/placeholder.png\" alt=\"No image added yet\" 
+    width=\"#{width}\" height=\"#{height}\">".html_safe
   end
 
   # given a link to a vimeo video, return the id number for the video to
@@ -38,10 +39,10 @@ class ApplicationController < ActionController::Base
                          height: height)
 
     elsif options[:uploaded_image_url]
-      return "<img src=\"#{options[:uploaded_image_url]}\">".html_safe
+      return "<img src=\"#{options[:uploaded_image_url]}\" class=\"#{options[:class]}\">".html_safe
 
     elsif !options[:uploaded_image_url] && !options[:link]
-      return broken_image_tag(height, width)
+      return broken_image_tag(height, width, options[:class])
     end
 
   end
@@ -54,7 +55,7 @@ class ApplicationController < ActionController::Base
       if link =~ /youtube\.com\/.+/
         youtube_id = link.match(/v=([^&]*)/)[1]
 
-        return "<iframe width=\"#{options[:width]}\"
+        return "<iframe class=\"#{options[:class]}\" width=\"#{options[:width]}\"
         height=\"#{options[:height]}\"
         src=\"//www.youtube.com/embed/TBvPaqMZyo8\" frameborder=\"0\"
         allowfullscreen></iframe>".html_safe
@@ -63,7 +64,8 @@ class ApplicationController < ActionController::Base
       elsif link =~ /vimeo\.com/
         vimeo_id = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/.match(link)[6]
 
-        return "<iframe src=\"//player.vimeo.com/video/#{vimeo_id}\"
+        return "<iframe class=\"#{options[:class]}\" 
+        src=\"//player.vimeo.com/video/#{vimeo_id}\"
         width=\"#{options[:width]}\" height=\"#{options[:height]}\"
         frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
         allowfullscreen></iframe>".html_safe
