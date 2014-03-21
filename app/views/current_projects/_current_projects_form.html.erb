@@ -2,9 +2,10 @@
 <% description_limit = 200 %>
 
 <%= form_for @content, :html => {:id => "content_form"} do |f| %>
-  <%= render "shared/default_record_form", :f => f, 
-                                           :header_limit => header_limit, 
-                                           :description_limit => description_limit  %>
+  <%= render "shared/default_record_form", 
+    :f => f, 
+    :header_limit => header_limit, 
+    :description_limit => description_limit  %>
 
   <br />
 
