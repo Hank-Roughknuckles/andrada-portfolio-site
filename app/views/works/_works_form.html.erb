@@ -9,10 +9,12 @@
 
   <%= render "shared/grid_content_form", :f => f %>
 
-  <%= submit_tag "Save", type: 'button', id: "save_position_and_content_forms" %>
+  <%= submit_tag "Save", type: 'button', 
+    id: "save_position_and_content_forms" %>
 <% end %>
 
 
 <% if request.original_url =~ /edit/  %>
-  <%= button_to "Delete", @content, method: "delete", id: "delete_item_#{@content.id}" %>
+  <%= button_to "Delete", @content, method: "delete", 
+    id: "delete_item_#{@content.id}" %>
 <% end %>

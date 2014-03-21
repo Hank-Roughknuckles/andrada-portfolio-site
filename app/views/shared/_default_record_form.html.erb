@@ -7,7 +7,8 @@
 <div>
 <% if local_assigns.has_key? :header_limit %>
   <%= f.label :header, "Header (#{header_limit} chars max)" %>
-  <%= f.text_field :header, class: "header_input", :maxlength => header_limit %>
+  <%= f.text_field :header, 
+    class: "header_input", :maxlength => header_limit %>
 <% else %>
   <%= f.label :header %>
   <%= f.text_field :header %>
@@ -17,8 +18,10 @@
 <!-- Description -->
 <div>
 <% if local_assigns.has_key? :description_limit %>
-  <%= f.label :description, "Description (#{description_limit} chars max)" %>
-  <%= f.text_area :description, class: "description_input", :maxlength => description_limit %>
+  <%= f.label :description, 
+    "Description (#{description_limit} chars max)" %>
+  <%= f.text_area :description, 
+    class: "description_input", :maxlength => description_limit %>
 <% else %>
   <%= f.label :description %>
   <%= f.text_area :description %>
@@ -39,7 +42,8 @@
 <p> or </p>
 
 <div>
-<%= f.radio_button :media_choice, "upload", id: 'media_choice_radio_upload' %>
+  <%= f.radio_button :media_choice, 
+    "upload", id: 'media_choice_radio_upload' %>
 <%= f.label :media_choice_upload, "Use File Upload" %>
 <%= f.label :media_image %>
 <%= f.file_field :media_image, id: "media_image_upload" %>
