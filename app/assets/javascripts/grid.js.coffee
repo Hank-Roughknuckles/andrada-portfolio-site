@@ -154,6 +154,44 @@ $ -> #DOM Ready
     return "rgb(#{redHex}, #{greenHex}, 0)"
 
 
+  ##
+  # checkMediaLinkSyntax
+  #
+  # Checks whether the value of #media_link_input matches a vimeo or
+  # youtube link and calls showlinkerror or showlinksuccess depending
+  #
+  checkMediaLinkSyntax = () ->
+    link = $("#media_link_input").val()
+    if (link.match(/youtube\.com\/.+/) || link.match(/vimeo\.com/))
+      showLinkSuccess()
+    else
+      showLinkError()
+
+
+  ##
+  # showLinkError
+  # 
+  # Adds .has-error to .link_input_group to make the inputs red. Also
+  # displays an error message in the .preview_errors span
+  showLinkError = () ->
+    linkGroup = $(".link_input_group")
+    linkGroup.removeClass("has-success");
+    linkGroup.addClass("has-error");
+    $("span.preview_errors").html("Please use a youtube or vimeo link");
+
+
+  ##
+  # showLinkSuccess
+  #
+  # Adds .has-success to .link_input_group to make the inputs green. Also
+  # removes any error messages in the .preview_errors span
+  showLinkSuccess = () ->
+    linkGroup = $(".link_input_group")
+    linkGroup.addClass("has-success");
+    linkGroup.removeClass("has-error");
+    $("span.preview_errors").html("");
+
+
 
 #####   The main functions   #####
 
@@ -295,6 +333,11 @@ $ -> #DOM Ready
     updateProgress()
 
 
+
+
+  #Video link preview stuff
+  #========================
+
   #Show preview of linked video when click .preview_video_link
   $(".preview_video_link").click ->
     link = $("#media_link_input").val()
@@ -322,28 +365,13 @@ $ -> #DOM Ready
       showLinkError();
 
 
-  # $(".preview_video_link").focus ->
-  #   checkMediaLinkSyntax()
-  #
-  #
-  # checkMediaLinkSyntax = () ->
-  #   if (link.match(/youtube\.com\/.+/) || link.match(/vimeo\.com/))
-  #     showLinkSuccess()
-  #   else
-  #     showLinkError()
-
-
-  showLinkError = () ->
-    linkGroup = $(".link_input_group")
-    linkGroup.removeClass("has-success");
-    linkGroup.addClass("has-error");
-    $("span.preview_errors").html("Please use a youtube or vimeo link");
-
-  showLinkSuccess = () ->
-    linkGroup = $(".link_input_group")
-    linkGroup.addClass("has-success");
-    linkGroup.removeClass("has-error");
-    $("span.preview_errors").html("");
+  #Show error or success message for media link on focus and on keyup
+  $("#media_link_input").focus ->
+    checkMediaLinkSyntax()
+  $("#media_link_input").keyup ->
+    checkMediaLinkSyntax()
+  $("#media_link_input").change ->
+    checkMediaLinkSyntax()
 
 
   # ##
