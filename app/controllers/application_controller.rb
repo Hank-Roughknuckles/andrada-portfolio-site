@@ -36,7 +36,8 @@ class ApplicationController < ActionController::Base
     if options[:link]
       return embed_video(link: options[:link], 
                          width: width, 
-                         height: height)
+                         height: height,
+                         class: options[:class])
 
     elsif options[:uploaded_image_url]
       return "<img src=\"#{options[:uploaded_image_url]}\" class=\"#{options[:class]}\">".html_safe
