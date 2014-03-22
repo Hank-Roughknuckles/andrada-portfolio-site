@@ -319,7 +319,7 @@ $ -> #DOM Ready
 
     else
       #handle wrong link type
-      alert "Wrong type.  Enter a vimeo or youtube link"
+      $("span.preview_errors").html("Please use a youtube or vimeo link");
 
 
   # ##
