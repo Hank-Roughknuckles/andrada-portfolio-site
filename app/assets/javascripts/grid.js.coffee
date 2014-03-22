@@ -298,10 +298,9 @@ $ -> #DOM Ready
   #Show preview of linked video when click .preview_video_link
   $(".preview_video_link").click ->
     link = $("#media_link_input").val()
+
     if link.match /youtube\.com\/.+/
-      #handle youtube link
       youtubeID = link.match(/v=([^&]*)/)[1]
-      console.log youtubeID
       $(".content_preview .media_viewer")
         .replaceWith("<iframe class=\"media_viewer\" width=\"633\" 
           height=\"475\" src=\"//www.youtube.com/embed/#{youtubeID}\" 
@@ -309,7 +308,14 @@ $ -> #DOM Ready
 
     else if link.match /vimeo\.com/
       #handle vimeo link
-      alert "It's a vimeo link"
+      vimeoID = link.match(/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/)[6]
+      console.log vimeoID
+      $(".content_preview .media_viewer")
+        .replaceWith("<iframe class=\"media_viewer\" 
+          width=\"633\" height=\"475\"
+          src=\"//player.vimeo.com/video/#{vimeoID}\"
+          frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
+          allowfullscreen></iframe>")
 
     else
       #handle wrong link type
