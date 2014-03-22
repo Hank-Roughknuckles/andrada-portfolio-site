@@ -8,7 +8,7 @@
 <% if local_assigns.has_key? :header_limit %>
   <%= f.label :header, "Header (#{header_limit} chars max)" %>
   <%= f.text_field :header, 
-    class: "header_input", :maxlength => header_limit %>
+    class: "form-control header_input", :maxlength => header_limit %>
 <% else %>
   <%= f.label :header %>
   <%= f.text_field :header %>
@@ -21,7 +21,7 @@
   <%= f.label :description, 
     "Description (#{description_limit} chars max)" %>
   <%= f.text_area :description, 
-    class: "description_input", :maxlength => description_limit %>
+    class: "form-control description_input", :maxlength => description_limit %>
 <% else %>
   <%= f.label :description %>
   <%= f.text_area :description %>
@@ -32,22 +32,22 @@
 
 <!-- Media (the picture or video that appears with the content) -->
 <h4>Choose Media</h4>
-<div>
+<div class="link_input_group">
 <%= f.radio_button :media_choice, "link", id: 'media_choice_radio_link' %>
-<%= f.label :media_choice_link, "Use Hosted Link" %>
-<%= f.label :media_link %>
-<%= f.text_field :media_link , id: "media_link_input" %>
+<%= f.label :media_choice_link, "Use a Video Link", 
+  class: "control-label" %>
+<%= f.text_field :media_link , class: "form-control",
+  id: "media_link_input" %>
 <%= submit_tag 'Preview', 
   class: "preview_video_link", :type => 'button' %>
-<span class="preview_errors"></span>
+<span class="preview_errors help-block"></span>
 </div>
 
 <p> or </p>
 
-<div>
+<div class="image_upload_group">
   <%= f.radio_button :media_choice, 
     "upload", id: 'media_choice_radio_upload' %>
-<%= f.label :media_choice_upload, "Use File Upload" %>
-<%= f.label :media_image %>
+<%= f.label :media_choice_upload, "Upload an image" %>
 <%= f.file_field :media_image, id: "media_image_upload" %>
 </div>
