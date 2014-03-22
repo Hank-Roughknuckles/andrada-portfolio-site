@@ -305,21 +305,45 @@ $ -> #DOM Ready
         .replaceWith("<iframe class=\"media_viewer\" width=\"633\" 
           height=\"475\" src=\"//www.youtube.com/embed/#{youtubeID}\" 
           frameborder=\"0\" allowfullscreen></iframe>")
+      showLinkSuccess()
 
     else if link.match /vimeo\.com/
       #handle vimeo link
       vimeoID = link.match(/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/)[6]
-      console.log vimeoID
       $(".content_preview .media_viewer")
         .replaceWith("<iframe class=\"media_viewer\" 
           width=\"633\" height=\"475\"
           src=\"//player.vimeo.com/video/#{vimeoID}\"
           frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
           allowfullscreen></iframe>")
+      showLinkSuccess()
 
     else
-      #handle wrong link type
-      $("span.preview_errors").html("Please use a youtube or vimeo link");
+      showLinkError();
+
+
+  # $(".preview_video_link").focus ->
+  #   checkMediaLinkSyntax()
+  #
+  #
+  # checkMediaLinkSyntax = () ->
+  #   if (link.match(/youtube\.com\/.+/) || link.match(/vimeo\.com/))
+  #     showLinkSuccess()
+  #   else
+  #     showLinkError()
+
+
+  showLinkError = () ->
+    linkGroup = $(".link_input_group")
+    linkGroup.removeClass("has-success");
+    linkGroup.addClass("has-error");
+    $("span.preview_errors").html("Please use a youtube or vimeo link");
+
+  showLinkSuccess = () ->
+    linkGroup = $(".link_input_group")
+    linkGroup.addClass("has-success");
+    linkGroup.removeClass("has-error");
+    $("span.preview_errors").html("");
 
 
   # ##
