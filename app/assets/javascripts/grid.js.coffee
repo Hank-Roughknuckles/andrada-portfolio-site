@@ -366,12 +366,11 @@ $ -> #DOM Ready
 
 
   #Show error or success message for media link on focus and on keyup
-  $("#media_link_input").focus ->
-    checkMediaLinkSyntax()
-  $("#media_link_input").keyup ->
-    checkMediaLinkSyntax()
-  $("#media_link_input").change ->
-    checkMediaLinkSyntax()
+  $("#media_link_input")
+    .focus -> checkMediaLinkSyntax()
+    .keyup -> checkMediaLinkSyntax()
+    .change -> checkMediaLinkSyntax()
+    .click -> checkMediaLinkSyntax()
 
 
   # ##
