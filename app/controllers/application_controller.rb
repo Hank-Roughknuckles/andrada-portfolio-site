@@ -55,10 +55,10 @@ class ApplicationController < ActionController::Base
       if link =~ /youtube\.com\/.+/
         youtube_id = link.match(/v=([^&]*)/)[1]
 
-        return "<iframe class=\"#{options[:class]}\" width=\"#{options[:width]}\"
-        height=\"#{options[:height]}\"
-        src=\"//www.youtube.com/embed/TBvPaqMZyo8\" frameborder=\"0\"
-        allowfullscreen></iframe>".html_safe
+        return "<iframe class=\"#{options[:class]}\" 
+        width=\"#{options[:width]}\" height=\"#{options[:height]}\"
+        src=\"//www.youtube.com/embed/#{youtube_id}\" 
+        frameborder=\"0\" allowfullscreen></iframe>".html_safe
 
       # if vimeo
       elsif link =~ /vimeo\.com/
