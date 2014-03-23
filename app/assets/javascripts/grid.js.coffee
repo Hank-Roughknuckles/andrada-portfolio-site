@@ -378,11 +378,18 @@ $ -> #DOM Ready
 
   #Show error or success message for media link on focus and on keyup
   $("#media_link_input")
-    .focus -> checkMediaLinkSyntax()
-    .keyup -> checkMediaLinkSyntax()
-    .change -> checkMediaLinkSyntax()
-    .click -> checkMediaLinkSyntax()
-    #TODO: set radio button if any of these happen
+    .focus -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
+    .keyup -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
+    .change -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
+    .click -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
 
 
   # Upload image preview stuff
