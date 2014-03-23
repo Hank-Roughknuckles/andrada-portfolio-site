@@ -355,7 +355,7 @@ $ -> #DOM Ready
         height=\"475\" src=\"//www.youtube.com/embed/#{youtubeID}\" 
         frameborder=\"0\" allowfullscreen></iframe>")
 
-      replaceMedia $iframeCode
+      $(".media_viewer").replaceWith($iframeCode)
 
       showLinkSuccess()
 
@@ -371,25 +371,16 @@ $ -> #DOM Ready
           frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
           allowfullscreen></iframe>")
 
-      replaceMedia $iframeCode
+      $(".media_viewer").replaceWith($iframeCode)
 
       showLinkSuccess()
 
 
-  replaceMedia = ( $replacementCode ) ->
-    $oldMediaViewer = $(".media_viewer") 
-    $(".media_viewer").replaceWith($replacementCode)
-    savePreviousMedia( $oldMediaViewer )
-
-
-  savePreviousMedia = ($previousMedia) -> 
-    if $previousMedia.is("iframe")
-      console.log "previous was a video"
-      $(".media_viewer").data( "previousVideo", $previousMedia )
-
-    else if $previousMedia.is("img")
-      console.log "previous was an image"
-      $(".media_viewer").data( "previousImage", $previousMedia )
+  # saveUploadedImage = ($uploadedImag) -> 
+  #   if $uploadedImag.is("img")
+  #     $("body").data( "uploadedImage", $uploadedImag )
+  #   else
+  #     return "error"
 
     # $(".media_viewer").data( "previousVideo", oldMediaViewer )
 
@@ -400,6 +391,7 @@ $ -> #DOM Ready
     .keyup -> checkMediaLinkSyntax()
     .change -> checkMediaLinkSyntax()
     .click -> checkMediaLinkSyntax()
+    #TODO: set radio button if any of these happen
 
 
   # Upload image preview stuff
@@ -411,11 +403,14 @@ $ -> #DOM Ready
     file = input[0].files[0]
     reader = new FileReader()
     reader.onload = (e) ->
-      uploadedImage = e.target.result
+      $uploadedImage = $("<img class=\"media_viewer\" 
+        src=\"#{e.target.result}\">")
 
-      $replacementCode = $("<img class=\"media_viewer\" 
-        src=\"#{uploadedImage}\">")
-      replaceMedia $replacementCode
+      #replace .media_viewer with the uploaded image
+      $(".media_viewer").replaceWith($uploadedImage)
+
+      #save the uploaded image in case the user needs it later
+      $("body").data( "uploadedImage", $uploadedImage )
 
       showSaveReminder()
     reader.readAsDataURL file
