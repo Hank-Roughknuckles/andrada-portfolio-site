@@ -279,12 +279,6 @@ $ -> #DOM Ready
     reader.readAsDataURL file
 
 
-  #Upload different image when "Change image" is clicked in the crop image
-  #popup
-  $(".crop_image_popup .crop_change_image").click ->
-    $("#grid_tile_image").trigger('click');
-
-
   $("#save_position_and_content_forms").click ->
     # console.log "submitting grid_position_form"
     $("input#serialized_array").val(getPositions())
