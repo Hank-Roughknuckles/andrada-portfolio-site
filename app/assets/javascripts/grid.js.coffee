@@ -351,11 +351,13 @@ $ -> #DOM Ready
     youtubeID = match[2]
 
     if match and youtubeID.length is 11 
-      $(".content_preview .media_viewer")
-        .replaceWith("<iframe class=\"media_viewer\" width=\"633\" 
-          height=\"475\" src=\"//www.youtube.com/embed/#{youtubeID}\" 
-          frameborder=\"0\" allowfullscreen></iframe>")
-        showLinkSuccess()
+      iframeCode = "<iframe class=\"media_viewer\" width=\"633\" 
+        height=\"475\" src=\"//www.youtube.com/embed/#{youtubeID}\" 
+        frameborder=\"0\" allowfullscreen></iframe>"
+
+      replaceMedia iframeCode
+
+      showLinkSuccess()
 
 
   embedVimeoVideo = ( linkURL ) ->
@@ -363,14 +365,33 @@ $ -> #DOM Ready
     vimeoID = match[1]
 
     if match and vimeoID
-      $(".content_preview .media_viewer")
-        .replaceWith("<iframe class=\"media_viewer\" 
+      iframeCode = "<iframe class=\"media_viewer\" 
           width=\"633\" height=\"475\"
           src=\"//player.vimeo.com/video/#{vimeoID}\"
           frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
-          allowfullscreen></iframe>")
+          allowfullscreen></iframe>"
+
+      replaceMedia iframeCode
 
       showLinkSuccess()
+
+
+  replaceMedia = ( replacementCode, mediaType ) ->
+    oldMediaViewer = $(".media_viewer") 
+    $(".media_viewer").replaceWith(replacementCode)
+    savePreviousMedia( oldMediaViewer )
+
+
+  savePreviousMedia = (previousMedia) -> 
+    if previousMedia.is("iframe")
+      console.log "previous was a video"
+      $(".media_viewer").data( "previousVideo", previousMedia )
+
+    else if previousMedia.is("img")
+      console.log "previous was an image"
+      $(".media_viewer").data( "previousImage", previousMedia )
+
+    # $(".media_viewer").data( "previousVideo", oldMediaViewer )
 
 
   #Show error or success message for media link on focus and on keyup
@@ -391,9 +412,10 @@ $ -> #DOM Ready
     reader = new FileReader()
     reader.onload = (e) ->
       uploadedImage = e.target.result
-      $(".content_preview .media_viewer")
-        .replaceWith("<img class=\"media_viewer\" 
-          src=\"#{uploadedImage}\">")
+
+      replacementCode = "<img class=\"media_viewer\" 
+        src=\"#{uploadedImage}\">"
+      replaceMedia replacementCode
+
       showSaveReminder()
     reader.readAsDataURL file
-
