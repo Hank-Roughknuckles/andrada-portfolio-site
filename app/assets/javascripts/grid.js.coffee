@@ -376,15 +376,6 @@ $ -> #DOM Ready
       showLinkSuccess()
 
 
-  # saveUploadedImage = ($uploadedImag) -> 
-  #   if $uploadedImag.is("img")
-  #     $("body").data( "uploadedImage", $uploadedImag )
-  #   else
-  #     return "error"
-
-    # $(".media_viewer").data( "previousVideo", oldMediaViewer )
-
-
   #Show error or success message for media link on focus and on keyup
   $("#media_link_input")
     .focus -> checkMediaLinkSyntax()
