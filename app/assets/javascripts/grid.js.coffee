@@ -351,11 +351,11 @@ $ -> #DOM Ready
     youtubeID = match[2]
 
     if match and youtubeID.length is 11 
-      iframeCode = "<iframe class=\"media_viewer\" width=\"633\" 
+      $iframeCode = $("<iframe class=\"media_viewer\" width=\"633\" 
         height=\"475\" src=\"//www.youtube.com/embed/#{youtubeID}\" 
-        frameborder=\"0\" allowfullscreen></iframe>"
+        frameborder=\"0\" allowfullscreen></iframe>")
 
-      replaceMedia iframeCode
+      replaceMedia $iframeCode
 
       showLinkSuccess()
 
@@ -365,31 +365,31 @@ $ -> #DOM Ready
     vimeoID = match[1]
 
     if match and vimeoID
-      iframeCode = "<iframe class=\"media_viewer\" 
+      $iframeCode = $("<iframe class=\"media_viewer\" 
           width=\"633\" height=\"475\"
           src=\"//player.vimeo.com/video/#{vimeoID}\"
           frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
-          allowfullscreen></iframe>"
+          allowfullscreen></iframe>")
 
-      replaceMedia iframeCode
+      replaceMedia $iframeCode
 
       showLinkSuccess()
 
 
-  replaceMedia = ( replacementCode, mediaType ) ->
-    oldMediaViewer = $(".media_viewer") 
-    $(".media_viewer").replaceWith(replacementCode)
-    savePreviousMedia( oldMediaViewer )
+  replaceMedia = ( $replacementCode ) ->
+    $oldMediaViewer = $(".media_viewer") 
+    $(".media_viewer").replaceWith($replacementCode)
+    savePreviousMedia( $oldMediaViewer )
 
 
-  savePreviousMedia = (previousMedia) -> 
-    if previousMedia.is("iframe")
+  savePreviousMedia = ($previousMedia) -> 
+    if $previousMedia.is("iframe")
       console.log "previous was a video"
-      $(".media_viewer").data( "previousVideo", previousMedia )
+      $(".media_viewer").data( "previousVideo", $previousMedia )
 
-    else if previousMedia.is("img")
+    else if $previousMedia.is("img")
       console.log "previous was an image"
-      $(".media_viewer").data( "previousImage", previousMedia )
+      $(".media_viewer").data( "previousImage", $previousMedia )
 
     # $(".media_viewer").data( "previousVideo", oldMediaViewer )
 
@@ -413,9 +413,9 @@ $ -> #DOM Ready
     reader.onload = (e) ->
       uploadedImage = e.target.result
 
-      replacementCode = "<img class=\"media_viewer\" 
-        src=\"#{uploadedImage}\">"
-      replaceMedia replacementCode
+      $replacementCode = $("<img class=\"media_viewer\" 
+        src=\"#{uploadedImage}\">")
+      replaceMedia $replacementCode
 
       showSaveReminder()
     reader.readAsDataURL file
