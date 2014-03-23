@@ -288,6 +288,7 @@ $ -> #DOM Ready
     $("#content_form").submit()
 
 
+
   #Form stuff
   #Forms will update displays as they are altered
 
