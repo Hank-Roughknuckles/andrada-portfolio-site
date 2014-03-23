@@ -36,7 +36,6 @@ $ ->
     file = input[0].files[0]
     reader = new FileReader()
     reader.onload = (e) ->
-      console.log "something was uploaded"
       image_base64 = e.target.result
       $(".slide_preview, .slide").css({"background": "url(#{image_base64})"})
       showSaveReminder()
