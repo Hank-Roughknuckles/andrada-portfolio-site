@@ -414,3 +414,14 @@ $ -> #DOM Ready
 
       showSaveReminder()
     reader.readAsDataURL file
+
+
+  #If someone selects the "upload an image" radio button when there is
+  #already one uploaded, replace the preview with the one that's already
+  #uploaded
+  $("#media_choice_radio_upload").click ->
+    $uploadedImage = $("body").data()["uploadedImage"]
+    $currentMedia = $(".media_viewer")
+
+    if $uploadedImage and (not $uploadedImage.is( $currentMedia ))
+      $currentMedia.replaceWith $uploadedImage
