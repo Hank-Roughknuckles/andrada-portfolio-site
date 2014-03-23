@@ -379,3 +379,21 @@ $ -> #DOM Ready
     .keyup -> checkMediaLinkSyntax()
     .change -> checkMediaLinkSyntax()
     .click -> checkMediaLinkSyntax()
+
+
+  # Upload image preview stuff
+  # (Deals with updating the preview image in the lightbox whenever the
+  # user chooses to upload an image as the main content
+  # =====================================================================
+  $("#media_image_upload").change (event) ->
+    input = $(event.currentTarget)
+    file = input[0].files[0]
+    reader = new FileReader()
+    reader.onload = (e) ->
+      uploadedImage = e.target.result
+      $(".content_preview .media_viewer")
+        .replaceWith("<img class=\"media_viewer\" 
+          src=\"#{uploadedImage}\">")
+      showSaveReminder()
+    reader.readAsDataURL file
+
