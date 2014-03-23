@@ -334,32 +334,48 @@ $ -> #DOM Ready
 
   #Video link preview stuff
   #========================
+  youtubeLinkRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/ 
+  vimeoLinkRegex = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/
 
   #Show preview of linked video when click .preview_video_link
   $(".preview_video_link").click ->
     link = $("#media_link_input").val()
 
-    if link.match /youtube\.com\/.+/
-      youtubeID = link.match(/v=([^&]*)/)[1]
+    if link.match youtubeLinkRegex
+      embedYoutubeVideo( link )
+
+    else if link.match vimeoLinkRegex
+      embedVimeoVideo( link )
+
+    else
+      showLinkError();
+
+
+  embedYoutubeVideo = ( linkURL ) ->
+    match = linkURL.match(youtubeLinkRegex)
+    youtubeID = match[2]
+
+    if match and youtubeID.length is 11 
       $(".content_preview .media_viewer")
         .replaceWith("<iframe class=\"media_viewer\" width=\"633\" 
           height=\"475\" src=\"//www.youtube.com/embed/#{youtubeID}\" 
           frameborder=\"0\" allowfullscreen></iframe>")
-      showLinkSuccess()
+        showLinkSuccess()
 
-    else if link.match /vimeo\.com/
-      #handle vimeo link
-      vimeoID = link.match(/^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/)[6]
+
+  embedVimeoVideo = ( linkURL ) ->
+    match = linkURL.match(vimeoLinkRegex)
+    vimeoID = match[6]
+
+    if match and vimeoID
       $(".content_preview .media_viewer")
         .replaceWith("<iframe class=\"media_viewer\" 
           width=\"633\" height=\"475\"
           src=\"//player.vimeo.com/video/#{vimeoID}\"
           frameborder=\"0\" webkitallowfullscreen mozallowfullscreen
           allowfullscreen></iframe>")
-      showLinkSuccess()
 
-    else
-      showLinkError();
+      showLinkSuccess()
 
 
   #Show error or success message for media link on focus and on keyup
