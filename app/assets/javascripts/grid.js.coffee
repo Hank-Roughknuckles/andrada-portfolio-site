@@ -303,10 +303,9 @@ $ -> #DOM Ready
       .html($("form .header_input")
       .val())
 
-  $("form .header_input").keyup ->
-    updateHeader()
-  $("form .header_input").change ->
-    updateHeader()
+  $("form .header_input")
+    .keyup -> updateHeader()
+    .change -> updateHeader()
 
 
   #Update description
@@ -315,10 +314,9 @@ $ -> #DOM Ready
       .html($("form .description_input")
       .val())
 
-  $("form .description_input").keyup ->
-    updateDescription()
-  $("form .description_input").change ->
-    updateDescription()
+  $("form .description_input")
+    .keyup -> updateDescription()
+    .change -> updateDescription()
 
 
   #Update Progress
@@ -327,10 +325,9 @@ $ -> #DOM Ready
       .html("#{$("form .progress_input")
       .val()}% Completed")
 
-  $("form .progress_input").keyup ->
-    updateProgress()
-  $("form .progress_input").change ->
-    updateProgress()
+  $("form .progress_input")
+    .keyup -> updateProgress()
+    .change -> updateProgress()
 
 
 
