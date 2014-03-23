@@ -331,11 +331,11 @@ $ -> #DOM Ready
 
 
 
-
   #Video link preview stuff
   #========================
   youtubeLinkRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/ 
-  vimeoLinkRegex = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/
+  # vimeoLinkRegex = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/
+  vimeoLinkRegex = /https?:\/\/(?:[\w]+\.)*vimeo\.com(?:[\/\w]*\/videos?)?\/([0-9]+)[^\s]*/
 
   #Show preview of linked video when click .preview_video_link
   $(".preview_video_link").click ->
@@ -365,7 +365,7 @@ $ -> #DOM Ready
 
   embedVimeoVideo = ( linkURL ) ->
     match = linkURL.match(vimeoLinkRegex)
-    vimeoID = match[6]
+    vimeoID = match[1]
 
     if match and vimeoID
       $(".content_preview .media_viewer")
