@@ -7,8 +7,13 @@
 
 <h3>Add New Work</h3>
 
-<div class="envelope">
-  <%= render "shared/default_grid", :draggable => true, :emphasize_highlighted => true, :active_record_object => Work %>
+<div class="content_preview">
+  <%= render "shared/content_lightbox", :content => @content, 
+    :edit_page => true %>
 </div>
 
-<%= render "works_form" %>
+<div class="envelope">
+  <%= render "works_form" %>
+  <%= render "shared/default_grid", :draggable => true, 
+    :emphasize_highlighted => true, :active_record_object => Work %>
+</div>

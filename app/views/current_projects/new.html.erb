@@ -4,11 +4,14 @@
 
 <h3>New Project</h3>
 
-<div class="envelope">
-  <%= render "shared/default_grid", :draggable => true, :emphasize_highlighted => true, :active_record_object => CurrentProject  %>
+<div class="content_preview">
+  <%= render "shared/content_lightbox", :content => @content, 
+    :edit_page => true %>
 </div>
 
-<%= render "current_projects_form", :project => @project %>
-
-<%# <%= render "project_content", :project => @project %>
-
+<div class="envelope">
+  <%= render "current_projects_form", :content => @content %>
+  <%= render "shared/default_grid", :draggable => true, 
+    :emphasize_highlighted => true, 
+    :active_record_object => CurrentProject %>
+</div>
