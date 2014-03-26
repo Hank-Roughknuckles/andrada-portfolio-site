@@ -3,7 +3,9 @@ class Work < ActiveRecord::Base
   validates_presence_of :media_choice
   before_validation :strip_whitespace
   has_attached_file :media_image
-  has_attached_file :grid_tile_image, :styles => { :small => "100x100#", :large => "500x500>" }, :processors => [:cropper]
+  has_attached_file :grid_tile_image, 
+    :styles => { :small => "100x100#", :large => "500x500>" }, 
+    :processors => [:cropper]
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h 
 
   def cropping?
@@ -12,7 +14,8 @@ class Work < ActiveRecord::Base
 
   def grid_tile_image_geometry(style = :original)
     @geometry ||= {}
-    @geometry[style] ||= Paperclip::Geometry.from_file(grid_tile_image.path(style))
+    @geometry[style] ||= Paperclip::Geometry.from_file(
+      grid_tile_image.path(style))
   end
 
   def reprocess_grid_tile_image
