@@ -84,9 +84,10 @@ $ -> #DOM ready
   #
   savePositions = ->
     # console.log "saving positions..."
-    tiles = getPositions()
-    # console.log tiles
-    $("#serialized_array").val JSON.stringify(tiles)
+    gridPositions = JSON.stringify getPositions()
+    # console.log gridPositions
+    # $("#grid_position_serialized_array").val(gridPositions)
+    $("#grid_position_serialized_array").html(gridPositions)
     # console.log $("#serialized_array").val()
     $(".edit_grid_position").submit()
     # console.log "grid positions submitted to DB"
