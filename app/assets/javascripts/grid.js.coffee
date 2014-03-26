@@ -296,7 +296,7 @@ $ -> #DOM Ready
     $(".edit_tools").toggle()
 
 
-  # Open image edit lightbox when upload a new image
+  # Show save reminder when upload a new image
   $(".grid_tile_image_upload").change (event) ->
     currentElement = $.trim($(".current_element_id").text())
     input = $(event.currentTarget)
