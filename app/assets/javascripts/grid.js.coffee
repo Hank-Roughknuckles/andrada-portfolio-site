@@ -168,6 +168,20 @@ $ -> #DOM Ready
       showLinkError()
 
 
+  # disableSaveButton
+  # ================
+  # Makes the save button unuseable.  (adds the 'disabled' status)
+  disableSaveButton = () ->
+    $('#save_position_and_content_forms').attr('disabled', 'disabled')
+
+
+  # enableSaveButton
+  # ================
+  # Makes the save button useable.  (removes 'disabled' status)
+  enableSaveButton = () ->
+    $('#save_position_and_content_forms').removeAttr('disabled')
+
+
   ##
   # showLinkError
   # 
@@ -178,6 +192,7 @@ $ -> #DOM Ready
     linkGroup.removeClass("has-success");
     linkGroup.addClass("has-error");
     $("span.preview_errors").html("Please use a youtube or vimeo link");
+    disableSaveButton()
 
 
   ##
@@ -190,7 +205,21 @@ $ -> #DOM Ready
     linkGroup.addClass("has-success");
     linkGroup.removeClass("has-error");
     $("span.preview_errors").html("");
+    enableSaveButton()
 
+
+  ##
+  # removeLinkStatus
+  # 
+  # Removes any success or error messages from the video link group.  Used
+  # when the link is not selected so as to not keep the annoying error
+  # message up when it's not needed.
+  removeLinkStatus = () ->
+    linkGroup = $(".link_input_group")
+    linkGroup.removeClass("has-success");
+    linkGroup.removeClass("has-error");
+    $("span.preview_errors").html("");
+    $('#save_position_and_content_forms').removeAttr('disabled')
 
 
 #####   The main functions   #####
@@ -381,22 +410,6 @@ $ -> #DOM Ready
       showLinkSuccess()
 
 
-  #Show error or success message for media link on focus and on keyup
-  $("#media_link_input")
-    .focus -> 
-      checkMediaLinkSyntax()
-      $("#media_choice_radio_link").prop('checked', true)
-    .keyup -> 
-      checkMediaLinkSyntax()
-      $("#media_choice_radio_link").prop('checked', true)
-    .change -> 
-      checkMediaLinkSyntax()
-      $("#media_choice_radio_link").prop('checked', true)
-    .click -> 
-      checkMediaLinkSyntax()
-      $("#media_choice_radio_link").prop('checked', true)
-
-
   # Upload image preview stuff
   # (Deals with updating the preview image in the lightbox whenever the
   # user chooses to upload an image as the main content
@@ -428,3 +441,39 @@ $ -> #DOM Ready
 
     if $uploadedImage and (not $uploadedImage.is( $currentMedia ))
       $currentMedia.replaceWith $uploadedImage
+
+  
+  #Form validation stuff
+  #=====================
+
+  #at startup, validate the video link
+  if $("#media_choice_radio_link").prop('checked')
+    checkMediaLinkSyntax()
+  else
+    removeLinkStatus()
+    enableSaveButton()
+
+
+  #validate link syntax when the "link" radio button is chosen
+  $("#media_choice_radio_link").click ->
+    checkMediaLinkSyntax()
+
+  #remove validation for link when the "upload" radio button is chosen
+  $("#media_choice_radio_upload").click ->
+    removeLinkStatus()
+    enableSaveButton()
+
+  #Show error or success message for media link on focus and on keyup
+  $("#media_link_input")
+    .focus -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
+    .keyup -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
+    .change -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
+    .click -> 
+      checkMediaLinkSyntax()
+      $("#media_choice_radio_link").prop('checked', true)
