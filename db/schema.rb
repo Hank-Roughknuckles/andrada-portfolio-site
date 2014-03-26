@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311190046) do
+ActiveRecord::Schema.define(version: 20140326095050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140311190046) do
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
+    t.string   "facebook"
   end
 
   create_table "current_projects", force: true do |t|
@@ -63,7 +64,7 @@ ActiveRecord::Schema.define(version: 20140311190046) do
 
   create_table "grid_positions", force: true do |t|
     t.string   "parent_name"
-    t.string   "serialized_array"
+    t.text     "serialized_array"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
