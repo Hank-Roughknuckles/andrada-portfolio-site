@@ -27,9 +27,11 @@
 
   <%# Use crop icon or grid's photo %>
   <% if grid_for_cropping && content == @content %>
-    <%= image_tag "crop_glyphicon.png", class: image_class, id: "tile_#{content.id}" %>
+    <%= image_tag "crop_glyphicon.png", 
+      class: image_class, id: "tile_#{content.id}" %>
   <% else %>
-    <%= image_tag content.grid_tile_image.url(:large), class: image_class, id: "tile_#{content.id}" %>
+    <%= image_tag content.grid_tile_image.url(:large), 
+      class: image_class, id: "tile_#{content.id}" %>
   <% end %>
 
   <% if debugging %>
@@ -62,3 +64,4 @@
 
   <%= (render "shared/content_lightbox", :content => content) unless surpress_details %>
 <% end %>
+

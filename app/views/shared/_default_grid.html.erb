@@ -19,7 +19,8 @@
 <% end %>
 
 
-<div class="gridster <%= "emphasize_highlighted" if emphasize_highlighted %>">
+<div class="gridster 
+  <%= "emphasize_highlighted" if emphasize_highlighted %>">
   <ul>
     <%= render "shared/grid_tiles" %>
   </ul>
@@ -31,7 +32,7 @@
 <% end %>
 
 <% if draggable == true %>
-  <%= render "shared/grid_position_form", :object => @position %>
+  <%= render "shared/grid_position_form" %>
 <% else %>
   <span class="invisible" id="drag_disabled"></span>
 <% end %>

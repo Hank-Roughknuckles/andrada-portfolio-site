@@ -280,13 +280,18 @@ $ -> #DOM Ready
 
 
   $("#save_position_and_content_forms").click ->
-    # console.log "submitting grid_position_form"
-    $("input#serialized_array").val(getPositions())
-    # console.log $("input#serialized_array").val()
+    gridPositions = getPositions()
+    $("#grid_position_serialized_array").val(gridPositions)
+
     $(".edit_grid_position").submit()
 
-    $("#content_form").submit()
-
+    #Submit the full form when grid position is finished submitting
+    $(".edit_grid_position").on("ajax:success", (e, data, status, xhr) ->
+      console.log "submitted grid positions successfully"
+      $("#content_form").submit()
+    ).bind "ajax:error", (e, xhr, status, error) ->
+      console.log "error in submitting grid positions"
+      console.log error
 
 
   #Form stuff
