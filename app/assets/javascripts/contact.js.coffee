@@ -61,4 +61,3 @@ $ ->
         $alert.show()
       )
     , 3000)
-    #TODO: fade the alert message
