@@ -35,23 +35,25 @@ $form_grey: #676460;
 
   .sender_email {
     padding-left: 10px;
+    border: 1px black solid;
   }
 
   .body_form {
     margin-top: 25px;
+    border: 1px black solid;
     height: 275px;
     padding: 10px;
   }
 
   .contact_form_submit {
     background-color: $form_grey;
+    border: 1px black solid;
     width: 76px;
     height: 23px;
     border-radius: 12px;
     margin-top: 10px; 
     margin-left: 170px; 
-    padding-left: 12px;
-    padding-top: 1px;
+    text-align: center;
     color: #cecdcc;
   }
 }
