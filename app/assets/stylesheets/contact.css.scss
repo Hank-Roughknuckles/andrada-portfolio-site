@@ -26,6 +26,11 @@ $form_grey: #676460;
   margin-left: 100px;
   margin-top: 45px;
   display: none;
+  color: #cecdcc;
+
+  .has-error {
+    color: #ff0000
+  }
 
   .sender_email, .body_form {
     background-color: $form_grey;
@@ -54,7 +59,6 @@ $form_grey: #676460;
     margin-top: 10px; 
     margin-left: 170px; 
     text-align: center;
-    color: #cecdcc;
   }
 }
 
