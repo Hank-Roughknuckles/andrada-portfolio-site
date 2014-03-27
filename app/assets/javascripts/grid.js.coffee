@@ -477,9 +477,13 @@ $ -> #DOM Ready
     if $mediaViewerImage and (not $mediaViewerImage.is( $currentMedia ))
       $currentMedia.replaceWith $mediaViewerImage
 
+
   
+  #===============================================================
+
   #Form validation stuff
-  #=====================
+
+  #===============================================================
 
   #at startup, validate the video link
   if $("#media_choice_radio_link").prop('checked')
