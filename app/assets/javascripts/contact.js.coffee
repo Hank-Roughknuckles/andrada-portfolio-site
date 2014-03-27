@@ -48,8 +48,17 @@ $ ->
   # flashAlertMessage
   #
   # Show the message in the .alert box and fade after 3000 ms
+  #
+  # After fadeout, make the alert blank and shown again so that
+  # flashAlertMessage will be ready to do it again on next call
   ##
   flashAlertMessage = (alertText) ->
-    $(".alert").text("Please enter both your email address and
-    a message.")
+    $alert = $(".alert")
+    $alert.text alertText
+    setTimeout( -> 
+      $alert.fadeOut("slow", ->
+        $alert.html('')
+        $alert.show()
+      )
+    , 3000)
     #TODO: fade the alert message
