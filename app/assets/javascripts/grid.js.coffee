@@ -467,10 +467,6 @@ $ -> #DOM Ready
       $("body").data( "mediaViewerImage", $originalMediaViewerImage )
 
 
-
-
-
-
   #If someone selects the "upload an image" radio button when there is
   #already one uploaded, replace the preview with the one that's already
   #uploaded
