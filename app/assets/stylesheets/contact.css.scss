@@ -28,10 +28,6 @@ $form_grey: #676460;
   display: none;
   color: #cecdcc;
 
-  .has-error {
-    color: #ff0000
-  }
-
   .sender_email, .body_form {
     background-color: $form_grey;
     width: 245px;
