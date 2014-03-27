@@ -3,10 +3,17 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  ##
+  # Show the conact form when the .form_show button is clicked
+  ##
   $(".form_show").click ->
     $(".contact_form").fadeIn(250)
     $(".sender_email").focus()
 
+
+  ##
+  # Validate form information
+  ##
   $(".contact_form_submit").click ->
     if $(".sender_email").val() is "" || $(".body_form").val() is ""
       $(".alert").text("Please enter both your email address and
