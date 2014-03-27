@@ -3,6 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  #================================================================
+  #
+  # Event handlers
+  #
+  #================================================================
+
   ##
   # Show the conact form when the .form_show button is clicked
   ##
@@ -24,8 +30,26 @@ $ ->
 
     if $message.val() is "" || !$email.val().match(emailRegex)
 
-      $(".alert").text("Please enter both your email address and
+      flashAlertMessage("Please enter both your email address and
       a message.")
       return false;
     else
       $(".actual_submit_button").trigger("click")
+
+
+
+  #================================================================
+  #
+  # Functions
+  #
+  #================================================================
+
+  ##
+  # flashAlertMessage
+  #
+  # Show the message in the .alert box and fade after 3000 ms
+  ##
+  flashAlertMessage = (alertText) ->
+    $(".alert").text("Please enter both your email address and
+    a message.")
+    #TODO: fade the alert message
