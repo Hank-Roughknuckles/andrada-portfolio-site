@@ -414,33 +414,72 @@ $ -> #DOM Ready
   # (Deals with updating the preview image in the lightbox whenever the
   # user chooses to upload an image as the main content
   # =====================================================================
+
+  ##
+  # At start, if the media viewer is an image, save it for later use.  If
+  # there is no image in the media viewer, we will say that the original
+  # image was a placeholder image (since that is what the preview will
+  # show if the user cancels an image upload)
+  ##
+  $mediaViewer = $(".content_preview .media_viewer")
+
+  if $mediaViewer.is("img")
+    $originalMediaViewerImage = $mediaViewer
+    $("body").data("originalMediaViewerImage", $originalMediaViewerImage)
+  else
+    $originalMediaViewerImage = $("<img class=\"media_viewer\" 
+      src=\"/assets/placeholder.png\">")
+    $("body").data("originalMediaViewerImage", $originalMediaViewerImage)
+
+
+  ##
+  # When the media_image_upload button is cliked, replace the preview
+  # image with the uploaded image.  In case the user click's cancel on the
+  # upload popup, the preview will show the original image that was on the
+  # page when the page loaded (which will either be an uploaded image or
+  # a placeholder image if the media was a video instead
+  ##
   $("#media_image_upload").change (event) ->
     input = $(event.currentTarget)
     file = input[0].files[0]
-    reader = new FileReader()
-    reader.onload = (e) ->
-      $uploadedImage = $("<img class=\"media_viewer\" 
-        src=\"#{e.target.result}\">")
+
+    if file
+      reader = new FileReader()
+      reader.readAsDataURL file
+      reader.onload = (e) ->
+        $mediaViewerImage = $("<img class=\"media_viewer\" 
+          src=\"#{e.target.result}\">")
+
+        #replace .media_viewer with the uploaded image
+        $(".media_viewer").replaceWith($mediaViewerImage)
+
+        #save the uploaded image in case the user needs it later
+        $("body").data( "mediaViewerImage", $mediaViewerImage )
+
+        showSaveReminder()
+    else 
+      $originalMediaViewerImage = $("body").data("originalMediaViewerImage")
 
       #replace .media_viewer with the uploaded image
-      $(".media_viewer").replaceWith($uploadedImage)
+      $(".media_viewer").replaceWith($originalMediaViewerImage)
 
       #save the uploaded image in case the user needs it later
-      $("body").data( "uploadedImage", $uploadedImage )
+      $("body").data( "mediaViewerImage", $originalMediaViewerImage )
 
-      showSaveReminder()
-    reader.readAsDataURL file
+
+
+
 
 
   #If someone selects the "upload an image" radio button when there is
   #already one uploaded, replace the preview with the one that's already
   #uploaded
   $("#media_choice_radio_upload").click ->
-    $uploadedImage = $("body").data()["uploadedImage"]
+    $mediaViewerImage = $("body").data()["mediaViewerImage"]
     $currentMedia = $(".media_viewer")
 
-    if $uploadedImage and (not $uploadedImage.is( $currentMedia ))
-      $currentMedia.replaceWith $uploadedImage
+    if $mediaViewerImage and (not $mediaViewerImage.is( $currentMedia ))
+      $currentMedia.replaceWith $mediaViewerImage
 
   
   #Form validation stuff
