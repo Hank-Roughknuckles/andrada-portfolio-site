@@ -13,10 +13,19 @@ $ ->
 
   ##
   # Validate form information
+  #
+  # show message in .alert box if body is blank or email address isn't
+  # valid
   ##
-  $(".contact_form_submit").click ->
-    if $(".sender_email").val() is "" || $(".body_form").val() is ""
+  $(".contact_form :submit").click (event) ->
+    emailRegex = /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/
+    $email = $(".sender_email")
+    $message = $(".body_form")
+
+    if $message.val() is "" || !$email.val().match(emailRegex)
+
       $(".alert").text("Please enter both your email address and
       a message.")
+      return false;
     else
       $(".actual_submit_button").trigger("click")
