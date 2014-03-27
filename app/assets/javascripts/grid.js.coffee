@@ -298,14 +298,15 @@ $ -> #DOM Ready
 
   # Show save reminder when upload a new image
   $(".grid_tile_image_upload").change (event) ->
-    currentElement = $.trim($(".current_element_id").text())
+    # currentElement = $.trim($(".current_element_id").text())
     input = $(event.currentTarget)
     file = input[0].files[0]
-    reader = new FileReader()
-    reader.onload = (e) ->
-      uploadedImage = e.target.result
-      showSaveReminder()
-    reader.readAsDataURL file
+    if file
+      reader = new FileReader()
+      reader.readAsDataURL file
+      reader.onload = (e) ->
+        uploadedImage = e.target.result
+        showSaveReminder()
 
 
   $("#save_position_and_content_forms").click ->
