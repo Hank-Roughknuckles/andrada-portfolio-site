@@ -38,7 +38,7 @@
       <% else %>
         <div class="gmail">
           <%= image_tag "gmail_icon.png", size: "30" %> 
-          <%= @contact_info.email %>
+          <%= mail_to @contact_info.email %>
         </div>
 
         <div class="vimeo">
