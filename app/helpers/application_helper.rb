@@ -8,4 +8,8 @@ module ApplicationHelper
       return "#{full_title} - #{page_title}"
     end
   end
+
+  def remove_http(link)
+    return link.sub /http:\/\//, ""
+  end
 end
