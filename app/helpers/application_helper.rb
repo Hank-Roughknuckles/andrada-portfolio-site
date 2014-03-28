@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def make_title( page_title )
     full_title = "Andrada Popan-Dorca"
 

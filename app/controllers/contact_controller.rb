@@ -16,8 +16,8 @@ class ContactController < ApplicationController
       flash[:notice] = "Contact information updated successfully"
       redirect_to action: "show"
     else
-      flash[:alert] = "Invalid email address, please try again"
-      render "edit"
+      flash[:alert] = "Invalid email or webpage address, please try again"
+      redirect_to edit_contact_path
     end
   end
 
