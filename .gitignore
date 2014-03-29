@@ -20,3 +20,7 @@
 
 # Ignore uploaded pictures
 /public/system/**
+
+# Ignore the smtp settings for the mailer
+config/initializers/setup_mail.rb
+
