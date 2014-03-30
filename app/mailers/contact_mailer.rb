@@ -1,10 +1,11 @@
 class ContactMailer < ActionMailer::Base
   default to: User.first.email
 
-  def contact_email(email, body)
-    @email = email
-    @body = body
+  def contact_email(sender, message)
+    @sender = sender
+    @message = message
 
-    mail(from: email, subject: "Message from your portfolio site")
+    mail(from: "themongolempire@gmail.com", 
+         subject: "Message from your portfolio site")
   end
 end

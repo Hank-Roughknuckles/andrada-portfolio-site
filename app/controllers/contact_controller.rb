@@ -22,9 +22,10 @@ class ContactController < ApplicationController
   end
 
   def send_mail
-    email = params[:email]
-    body = params[:body]
-    ContactMailer.contact_email(email, body).deliver
+    sender = params[":email"]
+    message = params[":body"][0]
+    # raise ArgumentError, "this is an error"
+    ContactMailer.contact_email(sender, message).deliver
     flash[:notice] = "Message successfully sent"
     redirect_to Contact.first
   end
