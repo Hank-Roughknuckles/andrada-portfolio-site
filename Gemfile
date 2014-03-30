@@ -6,6 +6,9 @@ gem 'rails', '4.0.1'
 # Use PostgreSQL for database management
 gem 'pg'
 
+#For the ability to send emails
+gem 'mail'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
