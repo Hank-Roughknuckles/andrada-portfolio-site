@@ -1,11 +1,3 @@
 <% provide( :title, "Edit Contact Info" ) %>
 
-<%= form_for @contact_info do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :vimeo_id, "Vimeo ID" %>
-  <%= f.text_field :vimeo_id %>
-
-  <%= f.submit "Save" %>
-<% end %>
+<%= render "contact_content" %>

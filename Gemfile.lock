@@ -226,6 +226,7 @@ DEPENDENCIES
   guard-spork
   jbuilder (~> 1.2)
   jquery-rails
+  mail
   paperclip (~> 3.0)
   pg
   rails (= 4.0.1)

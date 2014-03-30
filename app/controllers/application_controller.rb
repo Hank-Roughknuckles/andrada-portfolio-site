@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :admin?, :embed_media, :get_background_css,
+  helper_method :admin?, 
+    :embed_media, 
+    :get_background_css,
     :get_tile_image_css
 
   protected
@@ -97,7 +99,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
   def save_grid_position( options = {} )
     if options[:caller].downcase == "works" 
       grid_position_record = GridPosition.find_by(parent_name: "works")
