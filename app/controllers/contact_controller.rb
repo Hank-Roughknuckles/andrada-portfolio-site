@@ -24,7 +24,6 @@ class ContactController < ApplicationController
   def send_mail
     sender = params[":email"]
     message = params[":body"][0]
-    # raise ArgumentError, "this is an error"
     ContactMailer.contact_email(sender, message).deliver
     flash[:notice] = "Message successfully sent"
     redirect_to Contact.first
