@@ -20,3 +20,4 @@
 
 # Ignore uploaded pictures
 /public/system/**
+.env
