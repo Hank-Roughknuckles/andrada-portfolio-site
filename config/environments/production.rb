@@ -63,7 +63,7 @@ AndradaPortfolioSite::Application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
@@ -77,4 +77,14 @@ AndradaPortfolioSite::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.mandrillapp.com",
+    :port                 => 587,
+    :domain               => "andrada-popan.com",
+    :user_name            => ENV["MANDRILL_USERNAME"],
+    :password             => ENV["MANDRILL_APIKEY"],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end
