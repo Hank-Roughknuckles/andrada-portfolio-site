@@ -21,3 +21,6 @@
 # Ignore uploaded pictures
 /public/system/**
 .env
+
+# Ignore application configuration
+/config/application.yml
